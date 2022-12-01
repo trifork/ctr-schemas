@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"                 
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:ctrDGWSInterface20221201="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01"
+                  xmlns:tns="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01"
+                  targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01">
+
+    <wsdl:types>
+        <xs:schema targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/TestSchemaCtrRequest.xsd"/>           
+        </xs:schema>
+         <xs:schema targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/TestSchemaCtrResponse.xsd"/>           
+        </xs:schema> 
+    </wsdl:types>
+
+    <wsdl:message name="TestSchemaCtrRequest">
+        <wsdl:part name="TestSchemaCtrRequest" element="ctrDGWSInterface20221201:TestSchemaCtrRequest"/>
+    </wsdl:message>
+    <wsdl:message name="TestSchemaCtrResponse">
+        <wsdl:part name="TestSchemaCtrResponse" element="ctrDGWSInterface20221201:TestSchemaCtrResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="DGWSFault">
+        <wsdl:part name="faultCode" element="FaultCode"/>
+    </wsdl:message>
+
+    <wsdl:portType name="CtrDGWSInterfacePortType">
+        <wsdl:operation name="TestSchemaCtr">
+            <soap:operation soapAction="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01#TestSchemaCtr" style="document"/>
+            <wsdl:input name="TestSchemaCtrRequest"
+                        message="tns:TestSchemaCtrRequest"/>
+            <wsdl:output name="TestSchemaCtrResponse"
+                         message="tns:TestSchemaCtrResponse"/>
+            <wsdl:fault name="DGWSFault" message="tns:DGWSFault"/>
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="CtrDGWSInterfaceBinding" type="tns:CtrDGWSInterfacePortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="TestSchemaCtr">
+            <soap:operation soapAction="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01#TestSchemaCtr"
+                            style="document"/>
+            <wsdl:input>              
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DGWSFault">
+                <soap:fault name="DGWSFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>       
+    </wsdl:binding>
+
+    <wsdl:service name="CtrDGWSInterface">
+        <wsdl:port name="CtrDGWSInterfacePort" binding="tns:CtrDGWSInterfaceBinding">
+            <soap:address location="http://localhost:9999/ws/CtrDGWSInterface"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>
+
