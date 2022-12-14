@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
+		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="Source.xsd"/>
+
+	<element name="PersonIdentifier" type="ctr:PersonIdentifierType">
+		<annotation>
+			<documentation xml:lang="en-GB">Element for a person identifier, according to the Danish CPR format.</documentation>
+			<documentation xml:lang="da-DK">Element for CPR-nummer</documentation>
+		</annotation>
+	</element>
+	<complexType name="PersonIdentifierType">
+		<simpleContent>
+			<extension base="ctr:PersonIdentifierValueType">
+				<attribute name="source" type="ctr:PersonIdentifierSourceType" use="required"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<simpleType name="PersonIdentifierValueType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="50"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="PersonIdentifierSourceType">
+		<union memberTypes="ctr:PersonIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
+	</simpleType>
+
+	<simpleType name="PersonIdentifierPredefinedSourceType">
+		<restriction base="ctr:UndefinedSourceType">
+			<enumeration value="CPR"/>
+			<enumeration value="X-eCPR"/>
+			<enumeration value="SORPERSON"/>
+			<enumeration value="MedicineCardKey"/>
+		</restriction>
+	</simpleType>
+</schema>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
+		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	
+	<element name="Periode" type="ctr:PeriodeType">
+		<annotation>
+			<documentation xml:lang="en-GB">Period of time</documentation>
+			<documentation xml:lang="da-DK">Periode</documentation>
+		</annotation>
+	</element>
+	<complexType name="PeriodeType">
+		<sequence>            		
+            <element name="StartDato" type="dateTime"/>
+            <element name="SlutDato" type="dateTime"/>
+            <element name="Saldo" type="string"/>
+			<element name="UdligningsBeloeb" type="string"/>
+            <element name="ForrigeUdligningsBeloeb" type="string"/>
+            <element name="ForrigeSlutDato" type="dateTime"/>
+            <element name="UdbetaltTilskud" type="string"/>
+            <element name="BerettigetTilskud" type="string"/>            
+		</sequence>
+	</complexType>
+</schema>

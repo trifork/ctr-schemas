@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
+		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="PatientStatus.xsd"/>
+    <include schemaLocation="PersonIdentifier.xsd"/>
+    <include schemaLocation="IsChild.xsd"/>
+    <include schemaLocation="KontoStatus.xsd"/>
+
+	<element name="HentKontoStatusResponse" type="ctr:HentKontoStatusResponseType">
+		<annotation>
+			<documentation xml:lang="en-GB">Outer container element for a response with one or more konto status</documentation>
+			<documentation xml:lang="da-DK">Ydre container-element for en svar med en eller flere konto status</documentation>
+		</annotation>
+	</element>
+	<complexType name="HentKontoStatusResponseType">
+		<sequence>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
+            <element name="IsChild" type="ctr:IsChildType"/>
+            <element name="PatientStatus" type="ctr:PatientStatusType"/>
+            <element name="KontoStatus" type="ctr:KontoStatusType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</schema>

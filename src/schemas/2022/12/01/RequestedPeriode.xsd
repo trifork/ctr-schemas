@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
+		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<element name="RequestedPeriode" type="ctr:RequestedPeriodeType">
+		<annotation>
+			<documentation xml:lang="en-GB">Requested period of time type</documentation>
+			<documentation xml:lang="da-DK">Requested periode type</documentation>
+		</annotation>
+	</element>
+	<simpleType name="RequestedPeriodeType">
+		<restriction base="string">
+			<enumeration value="ukendt"/>
+			<enumeration value="aktuel"/>
+			<enumeration value="forrige"/>
+            <enumeration value="alle"/>
+		</restriction>
+	</simpleType>
+</schema>

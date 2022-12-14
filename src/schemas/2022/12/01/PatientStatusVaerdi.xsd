@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
+		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<element name="PatientStatusVaerdi" type="ctr:PatientStatusVaerdiType">
+		<annotation>
+			<documentation xml:lang="en-GB">Patient status value type</documentation>
+			<documentation xml:lang="da-DK">Patient status vaerdi type</documentation>
+		</annotation>
+	</element>
+	<simpleType name="PatientStatusVaerdiType">
+		<restriction base="string">
+			<enumeration value="ukendt"/>
+			<enumeration value="almen"/>
+			<enumeration value="terminal"/>			
+		</restriction>
+	</simpleType>
+</schema>

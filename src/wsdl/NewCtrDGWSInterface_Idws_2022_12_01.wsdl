@@ -4,9 +4,18 @@
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
                   xmlns:ctrDGWSInterface20221201="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01"
                   xmlns:tns="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01"
+                  xmlns:wsa="http://www.w3.org/2005/08/addressing"
+                  xmlns:sbf="urn:liberty:sb"
                   targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01">
 
     <wsdl:types>
+        <xs:schema targetNamespace="urn:liberty:sb">
+            <xs:include schemaLocation="../schemas/liberty/liberty-idwsf-soap-binding.xsd" />
+            <xs:include schemaLocation="../schemas/liberty/idws-fault.xsd" />
+        </xs:schema>
+        <xs:schema targetNamespace="http://www.w3.org/2005/08/addressing">
+            <xs:include schemaLocation="../schemas/2005/08/addressing/ws-addr.xsd" />
+        </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/TestSchemaCtrRequest.xsd"/>           
         </xs:schema>
@@ -22,18 +31,17 @@
         <wsdl:part name="TestSchemaCtrResponse" element="ctrDGWSInterface20221201:TestSchemaCtrResponse"/>
     </wsdl:message>
 
-    <wsdl:message name="DGWSFault">
-        <wsdl:part name="faultCode" element="FaultCode"/>
+    <wsdl:message name="IDWSFault">
+        <wsdl:part name="fault" element="sbf:IDWSFault" />
     </wsdl:message>
 
     <wsdl:portType name="CtrDGWSInterfacePortType">
-        <wsdl:operation name="TestSchemaCtr">
-            <soap:operation soapAction="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01#TestSchemaCtr" style="document"/>
-            <wsdl:input name="TestSchemaCtrRequest"
-                        message="tns:TestSchemaCtrRequest"/>
-            <wsdl:output name="TestSchemaCtrResponse"
-                         message="tns:TestSchemaCtrResponse"/>
-            <wsdl:fault name="DGWSFault" message="tns:DGWSFault"/>
+        <wsdl:operation name="TestSchemaCtrIdws">           
+            <wsdl:input name="TestSchemaCtrIdwsRequest"
+                        message="tns:TestSchemaCtrIdwsRequest"/>
+            <wsdl:output name="TestSchemaCtrIdwsResponse"
+                         message="tns:TestSchemaCtrIdwsResponse"/>
+            <wsdl:fault name="IDWSFault" message="tns:IDWSFault"/>
         </wsdl:operation>
     </wsdl:portType>
 
@@ -49,8 +57,8 @@
             <wsdl:output>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name="DGWSFault">
-                <soap:fault name="DGWSFault" use="literal"/>
+            <wsdl:fault name="IDWSFault">
+                <soap:fault name="IDWSFault" use="literal"/>
             </wsdl:fault>
         </wsdl:operation>       
     </wsdl:binding>
