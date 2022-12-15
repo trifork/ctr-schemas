@@ -33,9 +33,7 @@
 	<simpleType name="PersonIdentifierPredefinedSourceType">
 		<restriction base="ctr:UndefinedSourceType">
 			<enumeration value="CPR"/>
-			<enumeration value="X-eCPR"/>
-			<enumeration value="SORPERSON"/>
-			<enumeration value="MedicineCardKey"/>
+			<enumeration value="X-eCPR"/>						
 		</restriction>
 	</simpleType>
 </schema>

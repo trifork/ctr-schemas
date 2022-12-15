@@ -12,7 +12,7 @@
 	<element name="HentKontoStatusResponse" type="ctr:HentKontoStatusResponseType">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response with one or more konto status</documentation>
-			<documentation xml:lang="da-DK">Ydre container-element for en svar med en eller flere konto status</documentation>
+			<documentation xml:lang="da-DK">Ydre container-element for et svar med en eller flere konto status</documentation>
 		</annotation>
 	</element>
 	<complexType name="HentKontoStatusResponseType">

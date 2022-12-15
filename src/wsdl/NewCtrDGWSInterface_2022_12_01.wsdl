@@ -9,14 +9,20 @@
 
     <wsdl:types>
         <xs:schema targetNamespace="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd">
-            <xs:include schemaLocation="../schemas/medcom/dgws/2006/04/medcom.xsd"/>
+            <xs:include schemaLocation="../schemas/medcom/dgws/medcom.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/HentKontoStatusRequest.xsd"/>           
         </xs:schema>
-         <xs:schema targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/HentKontoStatusResponse.xsd"/>           
-        </xs:schema> 
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerRequest.xsd"/>           
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerResponse.xsd"/>           
+        </xs:schema>
     </wsdl:types>
      
     <wsdl:message name="MedComHeader">
@@ -28,6 +34,12 @@
     </wsdl:message>
     <wsdl:message name="HentKontoStatusResponse">
         <wsdl:part name="HentKontoStatusResponse" element="ctrDGWSInterface20221201:HentKontoStatusResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HentHenstandsOrdningerRequest">
+        <wsdl:part name="HentHenstandsOrdningerRequest" element="ctrDGWSInterface20221201:HentHenstandsOrdningerRequest"/>
+    </wsdl:message>
+    <wsdl:message name="HentHenstandsOrdningerResponse">
+        <wsdl:part name="HentHenstandsOrdningerResponse" element="ctrDGWSInterface20221201:HentHenstandsOrdningerResponse"/>
     </wsdl:message>
 
     <wsdl:message name="DGWSFault">
@@ -41,6 +53,14 @@
                         message="tns:HentKontoStatusRequest"/>
             <wsdl:output name="HentKontoStatusResponse"
                          message="tns:HentKontoStatusResponse"/>
+            <wsdl:fault name="DGWSFault" message="tns:DGWSFault"/>
+        </wsdl:operation>
+        <wsdl:operation name="HentHenstandsOrdninger">
+            <soap:operation soapAction="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01#HentHenstandsOrdninger" style="document"/>
+            <wsdl:input name="HentHenstandsOrdningerRequest"
+                        message="tns:HentHenstandsOrdningerRequest"/>
+            <wsdl:output name="HentHenstandsOrdningerResponse"
+                         message="tns:HentHenstandsOrdningerResponse"/>
             <wsdl:fault name="DGWSFault" message="tns:DGWSFault"/>
         </wsdl:operation>
     </wsdl:portType>
@@ -60,7 +80,21 @@
             <wsdl:fault name="DGWSFault">
                 <soap:fault name="DGWSFault" use="literal"/>
             </wsdl:fault>
-        </wsdl:operation>       
+        </wsdl:operation>
+
+        <wsdl:operation name="HentHenstandsOrdninger">
+            <soap:operation soapAction="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01#HentHenstandsOrdninger"
+                            style="document"/>
+            <wsdl:input>              
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name="DGWSFault">
+                <soap:fault name="DGWSFault" use="literal"/>
+            </wsdl:fault>
+        </wsdl:operation>
     </wsdl:binding>
 
     <wsdl:service name="CtrDGWSInterface">
