@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
-		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
 	<element name="PatientStatusVaerdi" type="ctr:PatientStatusVaerdiType">
@@ -10,9 +10,8 @@
 			<documentation xml:lang="da-DK">Patient status vaerdi type</documentation>
 		</annotation>
 	</element>
-	<simpleType name="PatientStatusVaerdiType">
-		<restriction base="string">
-			<enumeration value="ukendt"/>
+	<simpleType name="PatientStatusVaerdiType"> <!-- udvidetbar enum-->
+		<restriction base="string">			
 			<enumeration value="almen"/>
 			<enumeration value="terminal"/>			
 		</restriction>

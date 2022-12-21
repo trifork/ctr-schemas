@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
-		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	<include schemaLocation="Source.xsd"/>
@@ -28,15 +28,11 @@
 		<union memberTypes="ctr:OrganisationIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
 	</simpleType>
 	<simpleType name="OrganisationIdentifierPredefinedSourceType">
-		<restriction base="ctr:UndefinedSourceType">
-			<enumeration value="SKS"/>
-			<enumeration value="Yder"/>
+		<restriction base="ctr:UndefinedSourceType">			
 			<enumeration value="EAN-Lokationsnummer"/>
-			<enumeration value="CVR"/>
-			<enumeration value="CVR-P"/>
-			<enumeration value="Kommunekode"/>
+			<enumeration value="CVR"/>			
 			<enumeration value="SOR"/>
-			<enumeration value="Udenlandsk"/>
+			<enumeration value="ApoteksId"/>
 		</restriction>
 	</simpleType>
 </schema>

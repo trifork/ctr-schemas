@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
-		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
 	<include schemaLocation="PatientStatusVaerdi.xsd"/>
@@ -14,10 +14,9 @@
 	</element>
 	<complexType name="PatientStatusType">
 		<sequence>
-            <element name="Status" type="ctr:PatientStatusVaerdiType" minOccurs="1"/>
-            <element name="GaeldendeFra" type="dateTime"/>
-            <element name="GaeldendeTil" type="dateTime"/>
-            <element name="ModifiedDate" type="dateTime"/>
+            <element name="Status" type="ctr:PatientStatusVaerdiType"/>
+            <element name="GaeldendeFra" type="date"/> <!-- ny type  <minInclusive value="2000-01-01"/> <maxInclusive value="2900-01-01"/>-->
+            <element name="GaeldendeTil" type="date"/>  <!-- ny type  <minInclusive value="2000-01-01"/> <maxInclusive value="2900-01-01"/>         
 		</sequence>
 	</complexType>
 </schema>

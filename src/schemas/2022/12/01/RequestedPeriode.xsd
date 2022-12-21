@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
-		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
 	<element name="RequestedPeriode" type="ctr:RequestedPeriodeType">
@@ -10,9 +10,9 @@
 			<documentation xml:lang="da-DK">Requested periode type</documentation>
 		</annotation>
 	</element>
+    <!-- TODO lav en udvidetbar enum -->
 	<simpleType name="RequestedPeriodeType">
-		<restriction base="string">
-			<enumeration value="ukendt"/>
+		<restriction base="string">			
 			<enumeration value="aktuel"/>
 			<enumeration value="forrige"/>
             <enumeration value="alle"/>

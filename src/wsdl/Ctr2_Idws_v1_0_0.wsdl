@@ -2,11 +2,11 @@
 <wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"                 
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xmlns:ctrDGWSInterface20221201="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01"
-                  xmlns:tns="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01"
+                  xmlns:ctr100="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+                  xmlns:tns="http://lmst.dk/Ctr/xml.schema/2022/12/01"
                   xmlns:wsa="http://www.w3.org/2005/08/addressing"
                   xmlns:sbf="urn:liberty:sb"
-                  targetNamespace="http://lmst.dk/CtrDGWSInterface/xml.schema/2022/12/01">
+                  targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01">
 
     <wsdl:types>
         <xs:schema targetNamespace="urn:liberty:sb">
@@ -31,9 +31,19 @@
         <wsdl:part name="TestSchemaCtrResponse" element="ctrDGWSInterface20221201:TestSchemaCtrResponse"/>
     </wsdl:message>
 
-    <wsdl:message name="IDWSFault">
-        <wsdl:part name="fault" element="sbf:IDWSFault" />
+    <wsdl:message name="FMKDetail">
+    <wsdl:part name="fault" element="tns:FMKDetail"/>
     </wsdl:message>
+
+    <element name="FMKDetail">
+        <complexType>
+            <sequence>
+                <element name="FaultCode" type="string" />
+                <element name="FaultText" type="string" />
+                <element name="FaultDetails" type="FaultDetailsType" />
+            </sequence>
+        </complexType>
+    </element>
 
     <wsdl:portType name="CtrDGWSInterfacePortType">
         <wsdl:operation name="TestSchemaCtrIdws">           
@@ -41,7 +51,7 @@
                         message="tns:TestSchemaCtrIdwsRequest"/>
             <wsdl:output name="TestSchemaCtrIdwsResponse"
                          message="tns:TestSchemaCtrIdwsResponse"/>
-            <wsdl:fault name="IDWSFault" message="tns:IDWSFault"/>
+            <wsdl:fault name="FMKDetail" message="tns:FMKDetail"/>
         </wsdl:operation>
     </wsdl:portType>
 
@@ -57,8 +67,8 @@
             <wsdl:output>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name="IDWSFault">
-                <soap:fault name="IDWSFault" use="literal"/>
+            <wsdl:fault name="FMKDetail">
+                <soap:fault name="FMKDetail" use="literal"/>
             </wsdl:fault>
         </wsdl:operation>       
     </wsdl:binding>

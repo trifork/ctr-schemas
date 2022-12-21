@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-		xmlns:ctr="http://lmst.dk/CtrDGWSInterface"
-		targetNamespace="http://lmst.dk/CtrDGWSInterface"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
 	<include schemaLocation="Periode.xsd"/>
 	
 	<element name="KontoStatus" type="ctr:KontoStatusType">
 		<annotation>
-			<documentation xml:lang="en-GB">Konto status</documentation>
+			<documentation xml:lang="en-GB">TBD</documentation>
 			<documentation xml:lang="da-DK">Konto status</documentation>
 		</annotation>
 	</element>
 	<complexType name="KontoStatusType">
 		<sequence>           
-            <element name="Konto" type="string"/>
-            <element name="Periode" type="ctr:PeriodeType" maxOccurs="unbounded"/>
-            <element name="Besked" type="string"/>		
+            <element name="Konto" type="string"/> <!-- brug enum som i hent konto status-->
+            <element name="Periode" type="ctr:PeriodeType" maxOccurs="unbounded"/>            
 		</sequence>
 	</complexType>
 </schema>
