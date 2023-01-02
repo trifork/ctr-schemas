@@ -5,6 +5,8 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
 	<include schemaLocation="PatientStatusVaerdi.xsd"/>
+	<include schemaLocation="GaeldendeFra.xsd"/>
+	<include schemaLocation="GaeldendeTil.xsd"/>
 	
 	<element name="PatientStatus" type="ctr:PatientStatusType">
 		<annotation>
@@ -15,8 +17,8 @@
 	<complexType name="PatientStatusType">
 		<sequence>
             <element name="Status" type="ctr:PatientStatusVaerdiType"/>
-            <element name="GaeldendeFra" type="date"/> <!-- ny type  <minInclusive value="2000-01-01"/> <maxInclusive value="2900-01-01"/>-->
-            <element name="GaeldendeTil" type="date"/>  <!-- ny type  <minInclusive value="2000-01-01"/> <maxInclusive value="2900-01-01"/>         
+            <element name="GaeldendeFra" type="ctr:GaeldendeFraType"/> 
+            <element name="GaeldendeTil" type="ctr:GaeldendeTilType"/> 
 		</sequence>
 	</complexType>
 </schema>

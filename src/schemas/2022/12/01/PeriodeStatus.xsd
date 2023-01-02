@@ -4,6 +4,7 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
+	<include schemaLocation="Mondy.xsd"/>
 	
 	<element name="PeriodeStatus" type="ctr:PeriodeStatusType">
 		<annotation>
@@ -16,9 +17,9 @@
             <element name="StartDato" type="date"/> <!-- lav ny type der definerer CTR periodens start dato <minInclusive value="2020-01-01" <maxInclusive value="2900-01-01"/>/> -->
             <element name="SlutDato" type="date"/><!-- lav ny type der definerer CTR periodens slut dato <minInclusive value="2020-01-01" <maxInclusive value="2900-01-01"/> -->
             <element name="Saldo" type="string"/>
-			<element name="UdligningsBeloeb" type="string"/> <!-- lav en ny money type som i protobuf-->           
-            <element name="UdbetaltTilskud" type="string"/>
-            <element name="BerettigetTilskud" type="string"/>            
+			<element name="UdligningsBeloeb" type="ctr:MoneyType"/> <!-- lav en ny money type som i protobuf-->           
+            <element name="UdbetaltTilskud" type="ctr:MoneyType"/>
+            <element name="BerettigetTilskud" type="ctr:MoneyType"/>            
 		</sequence>
 	</complexType>
 </schema>

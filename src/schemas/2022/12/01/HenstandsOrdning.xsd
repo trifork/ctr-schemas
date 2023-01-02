@@ -5,6 +5,8 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
     <include schemaLocation="OrganisationIdentifier.xsd"/>
+	<include schemaLocation="OphoersAarsag.xsd"/>
+	<include schemaLocation="IsActive.xsd"/>
 	
 	<element name="HenstandsOrdning" type="ctr:HenstandsOrdningType">
 		<annotation>
@@ -18,8 +20,8 @@
             <element name="GaeldendeTil" type="date"/>      
             <element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
             <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
-            <element name="OphoersAarsag" type="string" minOccurs="0"/>  <!-- TODO lav nye typer -->
-            <element name="Active" type="boolean"/> <!-- TODO lav nye typer -->
+            <element name="OphoersAarsag" type="ctr:OphoersAarsagType" minOccurs="0"/>
+            <element name="Active" type="ctr:IsActive"/>
 		</sequence>
 	</complexType>
 </schema>
