@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+    
+	<element name="Bevilling" type="ctr:BevillingType">
+		<annotation>
+			<documentation xml:lang="en-GB">TBD</documentation>
+			<documentation xml:lang="da-DK">Bevilling</documentation>
+		</annotation>
+	</element>
+	<complexType name="BevillingType">
+		<sequence>
+            <element name="Type" type="ctr:BevillingsTypeType"/>
+            <element name="GaeldendeFra" type="date"/>
+            <element name="GaeldendeTil" type="date"/>      
+            <element name="AtcKode" type="ctr:AtcKodeType"/>
+            <element name="Administrationsvej" type="ctr:AdministrationsvejType"/>
+            <element name="VareNummer" type="ctr:VareNummerType"/>
+            <element name="LaegemiddelNavn" type="ctr:LaegemiddelNavnType"/>
+            <element name="JounalNummer" type="ctr:JounalNummerType"/>
+            <element name="OprettetTidspunkt" type="ctr:OprettetTidspunktType"/>
+		</sequence>
+	</complexType>
+</schema>
