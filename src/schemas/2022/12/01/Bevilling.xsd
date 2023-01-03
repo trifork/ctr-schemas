@@ -3,6 +3,12 @@
 		xmlns:ctr="http://lmst.dk/Ctr/100"
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <include schemaLocation="GaeldendeFra.xsd"/>
+	<include schemaLocation="GaeldendeTil.xsd"/>
+    <include schemaLocation="BevillingsType.xsd"/>
+    <include schemaLocation="ATCKode.xsd"/>
+    <include schemaLocation="Administrationsvej.xsd"/>
     
 	<element name="Bevilling" type="ctr:BevillingType">
 		<annotation>
@@ -13,9 +19,9 @@
 	<complexType name="BevillingType">
 		<sequence>
             <element name="Type" type="ctr:BevillingsTypeType"/>
-            <element name="GaeldendeFra" type="date"/>
-            <element name="GaeldendeTil" type="date"/>      
-            <element name="AtcKode" type="ctr:AtcKodeType"/>
+            <element name="GaeldendeFra" type="ctr:GaeldendeFraType"/>
+            <element name="GaeldendeTil" type="ctr:GaeldendeTilType"/>
+            <element name="ATCKode" type="ctr:ATCKodeType"/>
             <element name="Administrationsvej" type="ctr:AdministrationsvejType"/>
             <element name="VareNummer" type="ctr:VareNummerType"/>
             <element name="LaegemiddelNavn" type="ctr:LaegemiddelNavnType"/>

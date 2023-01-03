@@ -16,7 +16,7 @@
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
-			<element name="Filter" type="ctr:BevillingerFilterType" minOccurs="0"/>
+			<element name="Filter" type="ctr:BevillingerFilterType" minOccurs="0"/> <!-- skal denne fjernes ? -->
 		</sequence>
 	</complexType>
 </schema>

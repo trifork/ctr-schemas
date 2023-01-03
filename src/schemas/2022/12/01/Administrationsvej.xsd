@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<element name="Administrationsvej" type="ctr:AdministrationsvejType">
+		<annotation>
+			<documentation xml:lang="en-GB">TBD</documentation>
+			<documentation xml:lang="da-DK">Administrationsvej</documentation>
+		</annotation>
+	</element>
+	<simpleType name="AdministrationsvejType">
+		<restriction base="string">
+			<maxLength value="100"/>
+		</restriction>
+	</simpleType>
+</schema>
