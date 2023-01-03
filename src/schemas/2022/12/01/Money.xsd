@@ -4,6 +4,8 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" 
         attributeFormDefault="unqualified">
+
+	<include schemaLocation="CurrencyCode.xsd"/>	
 	
 	<element name="Money" type="ctr:MoneyType">
 		<annotation>
@@ -11,10 +13,11 @@
 			<documentation xml:lang="da-DK">Beløb</documentation>
 		</annotation>
 	</element>
-	<simpleType name="MoneyType"> TODO !! lav som i protobuf
-		<restriction base="string">
-			<minLength value="1"/>
-			<maxLength value="70"/>
-		</restriction>
-	</simpleType>
+	<complexType name="MoneyType">
+		<sequence>
+            <element name="CurrencyCode" type="ctr:CurrencyCodeType"/>
+            <element name="Units" type="integer"/> 
+            <element name="SubUnits" type="integer"/> 
+		</sequence>
+	</complexType>
 </schema>

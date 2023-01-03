@@ -7,6 +7,8 @@
     <include schemaLocation="OrganisationIdentifier.xsd"/>
 	<include schemaLocation="OphoersAarsag.xsd"/>
 	<include schemaLocation="IsActive.xsd"/>
+	<include schemaLocation="GaeldendeFra.xsd"/>
+	<include schemaLocation="GaeldendeTil.xsd"/>
 	
 	<element name="HenstandsOrdning" type="ctr:HenstandsOrdningType">
 		<annotation>
@@ -16,8 +18,8 @@
 	</element>
 	<complexType name="HenstandsOrdningType">
 		<sequence>
-            <element name="GaeldendeFra" type="date"/>
-            <element name="GaeldendeTil" type="date"/>      
+            <element name="GaeldendeFra" type="ctr:GaeldendeFra"/>
+            <element name="GaeldendeTil" type="ctr:GaeldendeTil"/>      
             <element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
             <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
             <element name="OphoersAarsag" type="ctr:OphoersAarsagType" minOccurs="0"/>
