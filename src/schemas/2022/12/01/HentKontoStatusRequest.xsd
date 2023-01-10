@@ -6,6 +6,7 @@
 
 	<include schemaLocation="PersonIdentifier.xsd"/>
     <include schemaLocation="RequestedPeriode.xsd"/>
+	<include schemaLocation="Konto.xsd"/>
 
 	<element name="HentKontoStatusRequest" type="ctr:HentKontoStatusRequestType">
 		<annotation>
@@ -17,7 +18,7 @@
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
-            <element name="Konto" type="string" maxOccurs="unbounded"/> <!-- udvidetbar enumeration i stedet for string, ny type. se PritType.xsd. Max length er 50-->
+            <element name="Konto" type="ctr:KontoType" maxOccurs="unbounded"/> <!-- TODO udvidetbar enumeration i stedet for string, ny type. se PrintType.xsd. Max length er 50-->
             <element name="Periode" type="ctr:RequestedPeriodeType"/>
 		</sequence>
 	</complexType>

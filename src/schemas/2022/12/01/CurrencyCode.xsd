@@ -7,8 +7,8 @@
 	
 	<element name="CurrencyCode" type="ctr:CurrencyCodeType">
 		<annotation>
-			<documentation xml:lang="en-GB">CurrencyCode</documentation>
-			<documentation xml:lang="da-DK">CurrencyCode</documentation>
+			<documentation xml:lang="en-GB">The three-letter currency code defined in ISO 4217. For instance "DKK"</documentation>
+			<documentation xml:lang="da-DK">The three-letter currency code defined in ISO 4217. For instance "DKK"</documentation>
 		</annotation>
 	</element>
 	<simpleType name="CurrencyCodeType">

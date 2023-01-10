@@ -5,6 +5,7 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
 	<include schemaLocation="Periode.xsd"/>
+	<include schemaLocation="Konto.xsd"/>
 	
 	<element name="KontoStatus" type="ctr:KontoStatusType">
 		<annotation>
@@ -14,7 +15,7 @@
 	</element>
 	<complexType name="KontoStatusType">
 		<sequence>           
-            <element name="Konto" type="string"/> <!-- brug enum som i hent konto status-->
+            <element name="Konto" type="ctr:KontoType"/>
             <element name="Periode" type="ctr:PeriodeType" maxOccurs="unbounded"/>            
 		</sequence>
 	</complexType>
