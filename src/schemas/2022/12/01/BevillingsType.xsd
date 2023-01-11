@@ -10,10 +10,20 @@
 			<documentation xml:lang="da-DK">Bevillingstype</documentation>
 		</annotation>
 	</element>
+	
 	<simpleType name="BevillingsTypeType">
-		<restriction base="string">
+		<union memberTypes="ctr:PredefinedBevillingsTypeType ctr:UndefinedBevillingsTypeType"/>
+	</simpleType>
+	<simpleType name="PredefinedBevillingsTypeType">
+		<restriction base="ctr:UndefinedBevillingsTypeType">
 			<enumeration value="enkelt"/>
 			<enumeration value="forhoejet"/>
+        </restriction>
+	</simpleType>
+	<simpleType name="UndefinedBevillingsTypeType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="200"/>
 		</restriction>
 	</simpleType>
 </schema>

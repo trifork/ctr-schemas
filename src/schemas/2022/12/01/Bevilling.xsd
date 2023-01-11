@@ -8,6 +8,7 @@
 	<include schemaLocation="GaeldendeTil.xsd"/>
     <include schemaLocation="BevillingsType.xsd"/>
     <include schemaLocation="ATCKode.xsd"/>
+    <include schemaLocation="Varenummer.xsd"/>
     <include schemaLocation="Administrationsvej.xsd"/>
     
 	<element name="Bevilling" type="ctr:BevillingType">
@@ -23,7 +24,7 @@
             <element name="GaeldendeTil" type="ctr:GaeldendeTilType"/>
             <element name="ATCKode" type="ctr:ATCKodeType"/>
             <element name="Administrationsvej" type="ctr:AdministrationsvejType"/>
-            <element name="VareNummer" type="ctr:VareNummerType"/>
+            <element name="Varenummer" type="ctr:VarenummerType"/>
             <element name="LaegemiddelNavn" type="ctr:LaegemiddelNavnType"/>
             <element name="JounalNummer" type="ctr:JounalNummerType"/>
             <element name="OprettetTidspunkt" type="ctr:OprettetTidspunktType"/>
