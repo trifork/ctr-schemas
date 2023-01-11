@@ -5,18 +5,20 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
 	<include schemaLocation="Money.xsd"/>
+	<include schemaLocation="StartDato.xsd"/>
+	<include schemaLocation="SlutDato.xsd"/>
 	
 	<element name="PeriodeStatus" type="ctr:PeriodeStatusType">
 		<annotation>
-			<documentation xml:lang="en-GB">TBD</documentation>
+			<documentation xml:lang="en-GB">Account status for a CTR period</documentation>
 			<documentation xml:lang="da-DK">Konto status for en CTR periode</documentation>
 		</annotation>
 	</element>
 	<complexType name="PeriodeStatusType">
 		<sequence>            		
-            <element name="StartDato" type="date"/> <!-- lav ny type der definerer CTR periodens start dato <minInclusive value="2020-01-01" <maxInclusive value="2900-01-01"/>/> -->
-            <element name="SlutDato" type="date"/><!-- lav ny type der definerer CTR periodens slut dato <minInclusive value="2020-01-01" <maxInclusive value="2900-01-01"/> -->
-            <element name="Saldo" type="string"/>
+            <element name="StartDato" type="ctr:StartDatoType"/> 
+            <element name="SlutDato" type="ctr:SlutDatoType"/>
+            <element name="Saldo" type="ctr:MoneyType"/>
 			<element name="UdligningsBeloeb" type="ctr:MoneyType"/>        
             <element name="UdbetaltTilskud" type="ctr:MoneyType"/>
             <element name="BerettigetTilskud" type="ctr:MoneyType"/>            

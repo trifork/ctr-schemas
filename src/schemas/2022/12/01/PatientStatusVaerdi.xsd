@@ -10,10 +10,19 @@
 			<documentation xml:lang="da-DK">Patient status vaerdi type</documentation>
 		</annotation>
 	</element>
-	<simpleType name="PatientStatusVaerdiType"> <!-- udvidetbar enum-->
-		<restriction base="string">			
-			<enumeration value="almen"/>
-			<enumeration value="terminal"/>			
-		</restriction>
+	<simpleType name="PatientStatusVaerdiType">
+		<union memberTypes="ctr:PredefinedPatientStatusVaerdiType ctr:UndefinedPatientStatusVaerdiType"/>
 	</simpleType>
+	<simpleType name="PredefinedPatientStatusVaerdiType">
+		<restriction base="ctr:UndefinedPatientStatusVaerdiType">
+			<enumeration value="almen"/>
+			<enumeration value="terminal"/>
+        </restriction>
+	</simpleType>
+	<simpleType name="UndefinedPatientStatusVaerdiType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="200"/>
+		</restriction>
+	</simpleType>	
 </schema>
