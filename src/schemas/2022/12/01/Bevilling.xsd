@@ -8,12 +8,14 @@
 	<include schemaLocation="GaeldendeTil.xsd"/>
     <include schemaLocation="BevillingsType.xsd"/>
     <include schemaLocation="ATCKode.xsd"/>
+    <include schemaLocation="JournalNummer.xsd"/>
     <include schemaLocation="Varenummer.xsd"/>
     <include schemaLocation="Administrationsvej.xsd"/>
+    <include schemaLocation="OprettetTidspunkt.xsd"/>
     
 	<element name="Bevilling" type="ctr:BevillingType">
 		<annotation>
-			<documentation xml:lang="en-GB">TBD</documentation>
+			<documentation xml:lang="en-GB">Bevilling</documentation>
 			<documentation xml:lang="da-DK">Bevilling</documentation>
 		</annotation>
 	</element>
@@ -26,7 +28,7 @@
             <element name="Administrationsvej" type="ctr:AdministrationsvejType"/>
             <element name="Varenummer" type="ctr:VarenummerType"/>
             <element name="LaegemiddelNavn" type="ctr:LaegemiddelNavnType"/>
-            <element name="JounalNummer" type="ctr:JounalNummerType"/>
+            <element name="JournalNummer" type="ctr:JournalNummerType"/>
             <element name="OprettetTidspunkt" type="ctr:OprettetTidspunktType"/>
 		</sequence>
 	</complexType>

@@ -4,13 +4,13 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<element name="Administrationsvej" type="ctr:AdministrationsvejType">
+	<element name="JournalNummer" type="ctr:JournalNummerType">
 		<annotation>
-			<documentation xml:lang="en-GB">Administrationsvej</documentation>
-			<documentation xml:lang="da-DK">Administrationsvej</documentation>
+			<documentation xml:lang="en-GB">Journalnummer</documentation>
+			<documentation xml:lang="da-DK">Journalnummer</documentation>
 		</annotation>
 	</element>
-	<simpleType name="AdministrationsvejType">
+	<simpleType name="JournalNummerType">
 		<restriction base="string">
 			<maxLength value="100"/>
 		</restriction>
