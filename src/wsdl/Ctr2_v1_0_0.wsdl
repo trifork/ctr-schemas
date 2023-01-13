@@ -1,15 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
+!DOCTYPE definitions [
+<!ENTITY ctrStandardSOAPRequestHeaders "
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />                
+">
+<!ENTITY ctrStandardSOAPResponseHeaders "
+                <soap:header use='literal' part='ResponseHeader' message='tns:ResponseHeader'/>
+">
+]>
 <wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"                 
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
                   xmlns:ctr100="http://lmst.dk/Ctr/xml.schema/2022/12/01"
                   xmlns:tns="http://lmst.dk/Ctr/xml.schema/2022/12/01"
-                  xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
+                  xmlns:medcom="http://www.medcom.dk/dgws/2006/04/medcom.xsd"
                   targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01">
 
     <wsdl:types>
-        <xs:schema targetNamespace="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd">
-            <xs:include schemaLocation="../schemas/medcom/dgws/medcom.xsd"/>
+        <xs:schema targetNamespace="http://www.medcom.dk/dgws/2006/04/medcom.xsd">
+            <xs:include schemaLocation="../schemas/medcom/dgws/2006/04/medcom.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/HentKontoStatusRequest.xsd"/>           
@@ -26,7 +35,15 @@
     </wsdl:types>
      
     <wsdl:message name="ResponseHeader">
-        <wsdl:part name="CTRHeader" element="ctr100:CTRHeader"/>
+        <wsdl:part name="CTRResponseHeader" element="ctr100:CTRResponseHeader"/>
+        <wsdl:part name="MedcomHeader" element="medcom:Header"/>
+    </wsdl:message>
+
+    <wsdl:message name="SecurityHeader">
+        <wsdl:part name="SecurityHeader" element="wsse:Security"/>
+    </wsdl:message>
+
+    <wsdl:message name="MedComHeader">
         <wsdl:part name="MedcomHeader" element="medcom:Header"/>
     </wsdl:message>
     
@@ -46,6 +63,9 @@
     <wsdl:message name="CTRFault">
         <wsdl:part name="fault" element="tns:CTRFaultDetail"/>
     </wsdl:message>
+
+    TODO 
+    specifikationen af faultDetail flyttes til en xsd fil og navngives, så den kan anvendes både til faults og warnings. evt. blot CTRDetail
 
     <element name="CTRFaultDetail">
         <complexType>
@@ -86,7 +106,7 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <!-- TODO <soap:header use="literal" part="Header" message="tns:Header"/> -->
+                <soap:header use="literal" part="Header" message="tns:CTRResponseHeader"/>
                 <soap:body use="literal"/>
             </wsdl:output>
             <wsdl:fault name="CTRFault">
@@ -101,7 +121,7 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output>
-                <!-- TODO <soap:header use="literal" part="Header" message="tns:Header"/> -->
+                <soap:header use="literal" part="Header" message="tns:CTRResponseHeader"/>
                 <soap:body use="literal"/>
             </wsdl:output>
             <wsdl:fault name="CTRFault">

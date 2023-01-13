@@ -4,19 +4,19 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
-	<include schemaLocation="Periode.xsd"/>
-	<include schemaLocation="Konto.xsd"/>
+	<include schemaLocation="PeriodeStatus.xsd"/>
+	<include schemaLocation="KontoNavn.xsd"/>
 	
 	<element name="KontoStatus" type="ctr:KontoStatusType">
 		<annotation>
-			<documentation xml:lang="en-GB">TBD</documentation>
+			<documentation xml:lang="en-GB">Account status</documentation>
 			<documentation xml:lang="da-DK">Konto status</documentation>
 		</annotation>
 	</element>
 	<complexType name="KontoStatusType">
 		<sequence>           
-            <element name="Konto" type="ctr:KontoType"/>
-            <element name="Periode" type="ctr:PeriodeType" maxOccurs="unbounded"/>            
+            <element name="KontoNavn" type="ctr:KontoNavnType"/>
+            <element name="PeriodeStatus" type="ctr:PeriodeStatusType" maxOccurs="unbounded"/>            
 		</sequence>
 	</complexType>
 </schema>

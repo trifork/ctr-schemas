@@ -6,11 +6,11 @@
 
 	<include schemaLocation="PersonIdentifier.xsd"/>
     <include schemaLocation="RequestedPeriode.xsd"/>
-	<include schemaLocation="Konto.xsd"/>
+	<include schemaLocation="KontoNavn.xsd"/>
 
 	<element name="HentKontoStatusRequest" type="ctr:HentKontoStatusRequestType">
 		<annotation>
-			<documentation xml:lang="en-GB">Element for a request for kontostatus</documentation>
+			<documentation xml:lang="en-GB">Element for a request for account status</documentation>
 			<documentation xml:lang="da-DK">Element for en forespørgsel efter kontostatus</documentation>
 		</annotation>
 	</element>
@@ -18,7 +18,7 @@
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
-            <element name="Konto" type="ctr:KontoType" maxOccurs="unbounded"/>
+            <element name="KontoNavn" type="ctr:KontoNavnType" maxOccurs="unbounded"/>
             <element name="Periode" type="ctr:RequestedPeriodeType"/>
 		</sequence>
 	</complexType>

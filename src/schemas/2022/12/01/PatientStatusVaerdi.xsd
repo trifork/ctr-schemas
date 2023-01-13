@@ -6,8 +6,8 @@
 	
 	<element name="PatientStatusVaerdi" type="ctr:PatientStatusVaerdiType">
 		<annotation>
-			<documentation xml:lang="en-GB">Patient status value type</documentation>
-			<documentation xml:lang="da-DK">Patient status vaerdi type</documentation>
+			<documentation xml:lang="en-GB">Patient status value type (e.g. Terminal status)</documentation>
+			<documentation xml:lang="da-DK">Patient status vaerdi type (eksempelvis Terminal status)</documentation>
 		</annotation>
 	</element>
 	<simpleType name="PatientStatusVaerdiType">
