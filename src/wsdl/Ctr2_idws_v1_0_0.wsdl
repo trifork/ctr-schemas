@@ -2,8 +2,7 @@
 !DOCTYPE definitions [
 <!ENTITY ctrStandardSOAPRequestHeaders "
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
-                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />                
 ">
 <!ENTITY ctrStandardSOAPResponseHeaders "
                 <soap:header use='literal' part='ResponseHeader' message='tns:ResponseHeader'/>
@@ -36,11 +35,8 @@
     </wsdl:types>
      
     <wsdl:message name="ResponseHeader">
-        <wsdl:part name="CTRResponseHeader" element="ctr100:CTRResponseHeader"/>        
-    </wsdl:message>
-
-    <wsdl:message name="OnBehalfOfHeader">
-        <wsdl:part name="OnBehalfOfHeader" element="ctr100:OnBehalfOf"/>
+        <wsdl:part name="CTRResponseHeader" element="ctr100:CTRResponseHeader"/>
+        <wsdl:part name="MedcomHeader" element="medcom:Header"/>
     </wsdl:message>
 
     <wsdl:message name="SecurityHeader">
