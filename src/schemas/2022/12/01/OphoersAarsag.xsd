@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+        xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+        elementFormDefault="qualified" 
+        attributeFormDefault="unqualified">
+	<element name="OphoersAarsag" type="ctr:OphoersAarsagType">
+		<annotation>
+			<documentation xml:lang="en-GB">Reason for ending henstandsordninger</documentation>
+			<documentation xml:lang="da-DK">Ophørs-årsag for henstandsordninger</documentation>
+		</annotation>
+	</element>
+	<simpleType name="OphoersAarsagType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="100"/>
+		</restriction>
+	</simpleType>
+</schema>

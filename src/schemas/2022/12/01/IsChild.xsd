@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<element name="IsChild" type="ctr:IsChildType">
+		<annotation>
+			<documentation xml:lang="en-GB">Indicates if the given person is a child</documentation>
+			<documentation xml:lang="da-DK">Angiver hvorvidt den givne person er et barn</documentation>
+		</annotation>
+	</element>
+	<simpleType name="IsChildType">
+		<restriction base="boolean"/>
+	</simpleType>
+</schema>

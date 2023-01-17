@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" 
+        attributeFormDefault="unqualified">
+	
+	<element name="SlutDato" type="ctr:SlutDatoType">
+		<annotation>
+			<documentation xml:lang="en-GB">Date type that defines the end date of the CTR period. </documentation>
+			<documentation xml:lang="da-DK">Dato type der definerer CTR periodens slut dato.</documentation>
+		</annotation>
+	</element>
+	<simpleType name="SlutDatoType">
+        <restriction base="date">
+            <minInclusive value="2020-01-01"/>
+            <maxInclusive value="2900-01-01"/>
+		</restriction>
+	</simpleType>
+</schema>

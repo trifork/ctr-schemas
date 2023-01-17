@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+!DOCTYPE definitions [
+<!ENTITY ctrStandardSOAPRequestHeaders "
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+">
+<!ENTITY ctrStandardSOAPResponseHeaders "
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+">
+<!ENTITY operationFaultDeclaration "
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+">
+<!ENTITY bindingFaultDeclaration "
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+">
+]>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+                  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"                 
+                  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+                  xmlns:ctr100="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+                  xmlns:tns="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+                  xmlns:medcom="http://www.medcom.dk/dgws/2006/04/medcom.xsd"
+                  targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01">
+
+    <wsdl:types>
+        <xs:schema targetNamespace="http://www.medcom.dk/dgws/2006/04/medcom.xsd">
+            <xs:include schemaLocation="../schemas/medcom/dgws/2006/04/medcom.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/HentKontoStatusRequest.xsd"/>           
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/HentKontoStatusResponse.xsd"/>           
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerRequest.xsd"/>           
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerResponse.xsd"/>           
+        </xs:schema>
+    </wsdl:types>
+     
+    <wsdl:message name="CTRResponseHeader">
+        <wsdl:part name="CTRResponseHeader" element="ctr100:ResponseHeader"/>        
+    </wsdl:message>
+
+    <wsdl:message name="OnBehalfOfHeader">
+        <wsdl:part name="OnBehalfOfHeader" element="ctr100:OnBehalfOf"/>
+    </wsdl:message>
+
+    <wsdl:message name="SecurityHeader">
+        <wsdl:part name="SecurityHeader" element="wsse:Security"/>
+    </wsdl:message>
+
+    <wsdl:message name="MedComHeader">
+        <wsdl:part name="MedcomHeader" element="medcom:Header"/>
+    </wsdl:message>
+    
+    <wsdl:message name="HentKontoStatusRequest">
+        <wsdl:part name="HentKontoStatusRequest" element="ctr100:HentKontoStatusRequest"/>
+    </wsdl:message>
+    <wsdl:message name="HentKontoStatusResponse">
+        <wsdl:part name="HentKontoStatusResponse" element="ctr100:HentKontoStatusResponse"/>
+    </wsdl:message>
+    <wsdl:message name="HentHenstandsOrdningerRequest">
+        <wsdl:part name="HentHenstandsOrdningerRequest" element="ctr100:HentHenstandsOrdningerRequest"/>
+    </wsdl:message>
+    <wsdl:message name="HentHenstandsOrdningerResponse">
+        <wsdl:part name="HentHenstandsOrdningerResponse" element="ctr100:HentHenstandsOrdningerResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="CTRDetail">
+        <wsdl:part name="fault" element="ctr100:CTRDetail"/>
+    </wsdl:message>
+
+    <wsdl:portType name="CtrPortType">
+        <wsdl:operation name="HentKontoStatus">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentKontoStatus" style="document"/>
+            <wsdl:input name="HentKontoStatusRequest"
+                        message="tns:HentKontoStatusRequest"/>
+            <wsdl:output name="HentKontoStatusResponse"
+                         message="tns:HentKontoStatusResponse"/>
+&operationFaultDeclaration;
+        </wsdl:operation>
+        <wsdl:operation name="HentHenstandsOrdninger">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentHenstandsOrdninger" style="document"/>
+            <wsdl:input name="HentHenstandsOrdningerRequest"
+                        message="tns:HentHenstandsOrdningerRequest"/>
+            <wsdl:output name="HentHenstandsOrdningerResponse"
+                         message="tns:HentHenstandsOrdningerResponse"/>
+&operationFaultDeclaration;           
+        </wsdl:operation>
+    </wsdl:portType>
+
+    <wsdl:binding name="CtrBinding" type="tns:CtrPortType">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <wsdl:operation name="HentKontoStatus">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentKontoStatus"
+                            style="document"/>
+            <wsdl:input name="HentKontoStatusRequest">
+&ctrStandardSOAPRequestHeaders;                     
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="HentKontoStatusResponse">
+&ctrStandardSOAPResponseHeaders;               
+                <soap:body use="literal"/>
+            </wsdl:output>
+&bindingFaultDeclaration;
+        </wsdl:operation>
+
+        <wsdl:operation name="HentHenstandsOrdninger">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentHenstandsOrdninger"
+                            style="document"/>
+            <wsdl:input name="HentHenstandsOrdningerRequest">
+&ctrStandardSOAPRequestHeaders;
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="HentHenstandsOrdningerResponse">
+&ctrStandardSOAPResponseHeaders;
+                <soap:body use="literal"/>
+            </wsdl:output>
+&bindingFaultDeclaration;
+        </wsdl:operation>
+    </wsdl:binding>
+
+    <wsdl:service name="Ctr">
+        <wsdl:port name="CtrPort" binding="tns:CtrBinding">
+            <soap:address location="http://localhost:9999/ws/Ctr"/>
+        </wsdl:port>
+    </wsdl:service>
+
+</wsdl:definitions>
+
