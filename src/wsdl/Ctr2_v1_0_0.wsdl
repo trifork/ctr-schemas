@@ -6,7 +6,7 @@
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
 ">
 <!ENTITY ctrStandardSOAPResponseHeaders "
-                <soap:header use='literal' part='ResponseHeader' message='tns:ResponseHeader'/>
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
 ">
 <!ENTITY operationFaultDeclaration "
             <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
@@ -43,8 +43,8 @@
         </xs:schema>
     </wsdl:types>
      
-    <wsdl:message name="ResponseHeader">
-        <wsdl:part name="CTRResponseHeader" element="ctr100:CTRResponseHeader"/>        
+    <wsdl:message name="CTRResponseHeader">
+        <wsdl:part name="CTRResponseHeader" element="ctr100:ResponseHeader"/>        
     </wsdl:message>
 
     <wsdl:message name="OnBehalfOfHeader">
@@ -101,11 +101,12 @@
         <wsdl:operation name="HentKontoStatus">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentKontoStatus"
                             style="document"/>
-            <wsdl:input>               
+            <wsdl:input name="HentKontoStatusRequest">
+&ctrStandardSOAPRequestHeaders;                     
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output>
-                <soap:header use="literal" part="Header" message="tns:CTRResponseHeader"/>
+            <wsdl:output name="HentKontoStatusResponse">
+&ctrStandardSOAPResponseHeaders;               
                 <soap:body use="literal"/>
             </wsdl:output>
 &bindingFaultDeclaration;
@@ -114,11 +115,12 @@
         <wsdl:operation name="HentHenstandsOrdninger">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentHenstandsOrdninger"
                             style="document"/>
-            <wsdl:input>
+            <wsdl:input name="HentHenstandsOrdningerRequest">
+&ctrStandardSOAPRequestHeaders;
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output>
-                <soap:header use="literal" part="Header" message="tns:CTRResponseHeader"/>
+            <wsdl:output name="HentHenstandsOrdningerResponse">
+&ctrStandardSOAPResponseHeaders;
                 <soap:body use="literal"/>
             </wsdl:output>
 &bindingFaultDeclaration;
