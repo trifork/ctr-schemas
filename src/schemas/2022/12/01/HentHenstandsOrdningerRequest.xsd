@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="PersonIdentifier.xsd"/>
+	<include schemaLocation="MaxResultSize.xsd"/>
+
+	<element name="HentHenstandsOrdningerRequest" type="ctr:HentHenstandsOrdningerRequestType">
+		<annotation>
+			<documentation xml:lang="en-GB">Element for a request for henstandsordninger</documentation>
+			<documentation xml:lang="da-DK">Element for en forespørgsel efter henstandsordninger</documentation>
+		</annotation>
+	</element>
+	<complexType name="HentHenstandsOrdningerRequestType">
+		<sequence>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
+			<element name="MaxResultSize" type="ctr:MaxResultSizeType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>

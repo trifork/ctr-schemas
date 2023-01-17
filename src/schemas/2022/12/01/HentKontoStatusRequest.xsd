@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="PersonIdentifier.xsd"/>
+    <include schemaLocation="RequestedPeriode.xsd"/>
+	<include schemaLocation="KontoNavn.xsd"/>
+
+	<element name="HentKontoStatusRequest" type="ctr:HentKontoStatusRequestType">
+		<annotation>
+			<documentation xml:lang="en-GB">Element for a request for account status</documentation>
+			<documentation xml:lang="da-DK">Element for en forespørgsel efter kontostatus</documentation>
+		</annotation>
+	</element>
+	<complexType name="HentKontoStatusRequestType">
+		<sequence>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
+            <element name="KontoNavn" type="ctr:KontoNavnType" maxOccurs="unbounded"/>
+            <element name="Periode" type="ctr:RequestedPeriodeType"/>
+		</sequence>
+	</complexType>
+</schema>

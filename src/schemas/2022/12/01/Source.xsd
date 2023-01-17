@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<element name="Source" type="ctr:SourceType">
+		<annotation>
+			<documentation xml:lang="en-GB">An identification of the source which defines the content</documentation>
+			<documentation xml:lang="da-DK">En identifikation af kilden hvor indholdet er defineret</documentation>
+		</annotation>
+	</element>
+	<simpleType name="SourceType">
+		<union memberTypes="ctr:PredefinedSourceType ctr:UndefinedSourceType"/>
+	</simpleType>
+	<simpleType name="PredefinedSourceType">
+		<restriction base="ctr:UndefinedSourceType">
+        </restriction>
+	</simpleType>
+	<simpleType name="UndefinedSourceType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="200"/>
+		</restriction>
+	</simpleType>
+</schema>

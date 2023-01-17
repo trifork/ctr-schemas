@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" 
+        attributeFormDefault="unqualified">
+
+	<include schemaLocation="CurrencyCode.xsd"/>	
+	
+	<element name="Money" type="ctr:MoneyType">
+		<annotation>
+			<documentation xml:lang="en-GB">Money</documentation>
+			<documentation xml:lang="da-DK">Beløb</documentation>
+		</annotation>
+	</element>
+	<complexType name="MoneyType">
+		<sequence>
+            <element name="CurrencyCode" type="ctr:CurrencyCodeType"/>
+            <element name="Units" type="integer"/> 
+            <element name="SubUnits" type="integer"/> 
+		</sequence>
+	</complexType>
+</schema>

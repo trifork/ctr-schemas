@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+        xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+        elementFormDefault="qualified" 
+        attributeFormDefault="unqualified">
+
+    <include schemaLocation="Key.xsd"/>
+    <include schemaLocation="Value.xsd"/>
+    
+    <element name="KeyValueSet" type="ctr:KeyValueSetType">
+        <annotation>
+            <documentation xml:lang="en-GB">Set of keys and values</documentation>
+            <documentation xml:lang="da-DK">Mængde af keys og values</documentation>
+        </annotation>
+    </element>
+    <complexType name="KeyValueSetType">
+        <sequence>
+            <element name="Key" type="ctr:KeyType"/>
+            <element name="Value" type="ctr:ValueType"/>
+        </sequence>
+    </complexType>
+</schema>
