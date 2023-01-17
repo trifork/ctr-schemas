@@ -15,13 +15,13 @@
     
 	<element name="Bevilling" type="ctr:BevillingType">
 		<annotation>
-			<documentation xml:lang="en-GB">Bevilling</documentation>
-			<documentation xml:lang="da-DK">Bevilling</documentation>
+			<documentation xml:lang="en-GB">Description of a CTR grant</documentation>
+			<documentation xml:lang="da-DK">Beskrivelse af en CTR bevilling</documentation>
 		</annotation>
 	</element>
 	<complexType name="BevillingType">
 		<sequence>
-            <element name="Type" type="ctr:BevillingsTypeType"/>
+            <element name="Type" type="ctr:BevillingsTypeType" />
             <element name="GaeldendeFra" type="ctr:GaeldendeFraType"/>
             <element name="GaeldendeTil" type="ctr:GaeldendeTilType"/>
             <element name="ATCKode" type="ctr:ATCKodeType"/>

@@ -12,8 +12,8 @@
 	
 	<element name="HenstandsOrdning" type="ctr:HenstandsOrdningType">
 		<annotation>
-			<documentation xml:lang="en-GB">TBD</documentation>
-			<documentation xml:lang="da-DK">Henstandsordning</documentation>
+			<documentation xml:lang="en-GB">Description of a CTR henstandsordning</documentation>
+			<documentation xml:lang="da-DK">Beskrivelse af en CTR henstandsordning</documentation>
 		</annotation>
 	</element>
 	<complexType name="HenstandsOrdningType">

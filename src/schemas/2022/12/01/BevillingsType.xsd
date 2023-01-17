@@ -23,7 +23,7 @@
 	<simpleType name="UndefinedBevillingsTypeType">
 		<restriction base="string">
 			<minLength value="1"/>
-			<maxLength value="200"/>
+			<maxLength value="10"/>
 		</restriction>
 	</simpleType>
 </schema>

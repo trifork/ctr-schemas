@@ -13,7 +13,7 @@
 	<simpleType name="OphoersAarsagType">
 		<restriction base="string">
 			<minLength value="1"/>
-			<maxLength value="100"/>
+			<maxLength value="10"/>
 		</restriction>
 	</simpleType>
 </schema>
