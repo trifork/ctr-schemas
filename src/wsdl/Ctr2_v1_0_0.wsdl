@@ -8,6 +8,14 @@
 <!ENTITY ctrStandardSOAPResponseHeaders "
                 <soap:header use='literal' part='ResponseHeader' message='tns:ResponseHeader'/>
 ">
+<!ENTITY operationFaultDeclaration "
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+">
+<!ENTITY bindingFaultDeclaration "
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+">
 ]>
 <wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"                 
@@ -64,22 +72,9 @@
         <wsdl:part name="HentHenstandsOrdningerResponse" element="ctr100:HentHenstandsOrdningerResponse"/>
     </wsdl:message>
 
-    <wsdl:message name="CTRFault">
-        <wsdl:part name="fault" element="tns:CTRFaultDetail"/>
+    <wsdl:message name="CTRDetail">
+        <wsdl:part name="fault" element="ctr100:CTRDetail"/>
     </wsdl:message>
-
-    TODO 
-    specifikationen af faultDetail flyttes til en xsd fil og navngives, så den kan anvendes både til faults og warnings. evt. blot CTRDetail
-
-    <element name="CTRFaultDetail">
-        <complexType>
-            <sequence>
-                <element name="FaultCode" type="string" />
-                <element name="FaultText" type="string" />
-                <element name="FaultDetails" type="FaultDetailsType" />
-            </sequence>
-        </complexType>
-    </element>
 
     <wsdl:portType name="CtrPortType">
         <wsdl:operation name="HentKontoStatus">
@@ -88,7 +83,7 @@
                         message="tns:HentKontoStatusRequest"/>
             <wsdl:output name="HentKontoStatusResponse"
                          message="tns:HentKontoStatusResponse"/>
-            <wsdl:fault name="CTRFault" message="tns:CTRFaultDetail"/>
+&operationFaultDeclaration;
         </wsdl:operation>
         <wsdl:operation name="HentHenstandsOrdninger">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentHenstandsOrdninger" style="document"/>
@@ -96,7 +91,7 @@
                         message="tns:HentHenstandsOrdningerRequest"/>
             <wsdl:output name="HentHenstandsOrdningerResponse"
                          message="tns:HentHenstandsOrdningerResponse"/>
-            <wsdl:fault name="CTRFault" message="tns:CTRFaultDetail"/>
+&operationFaultDeclaration;           
         </wsdl:operation>
     </wsdl:portType>
 
@@ -113,9 +108,7 @@
                 <soap:header use="literal" part="Header" message="tns:CTRResponseHeader"/>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name="CTRFault">
-                <soap:fault name="CTRFault" use="literal"/>
-            </wsdl:fault>
+&bindingFaultDeclaration;
         </wsdl:operation>
 
         <wsdl:operation name="HentHenstandsOrdninger">
@@ -128,9 +121,7 @@
                 <soap:header use="literal" part="Header" message="tns:CTRResponseHeader"/>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name="CTRFault">
-                <soap:fault name="CTRFault" use="literal"/>
-            </wsdl:fault>
+&bindingFaultDeclaration;
         </wsdl:operation>
     </wsdl:binding>
 

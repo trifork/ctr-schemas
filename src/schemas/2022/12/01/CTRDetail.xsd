@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+        xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+        elementFormDefault="qualified" 
+        attributeFormDefault="unqualified">
+
+	<include schemaLocation="CTRFaultDetail.xsd"/>
+    <include schemaLocation="CTRWarningDetail.xsd"/>
+	
+	<element name="CTRDetail" type="ctr:CTRDetailType" />
+	
+	<complexType name="CTRDetailType">
+		<annotation>
+			<documentation xml:lang="en-GB">CTR details for faults and warnings</documentation>
+			<documentation xml:lang="da-DK">CTR detaljer for fejl og advarsler</documentation>
+		</annotation>
+		<sequence>
+			<element name="CTRFaultDetail" type="ctr:CTRFaultDetailType" minOccurs="0" maxOccurs="unbounded"/>
+            <element name="CTRWarningDetail" type="ctr:CTRFaultDetailType" minOccurs="0" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+</schema>
+
+<element name="CTRFaultDetail">
+        <complexType>
+            <sequence>
+                <element name="FaultCode" type="string" />
+                <element name="FaultText" type="string" />
+                <element name="FaultDetails" type="FaultDetailsType" />
+            </sequence>
+        </complexType>
+    </element>
