@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified"> 
+    
+	<element name="BevillingsType" type="ctr:BevillingsTypeType">
+		<annotation>
+			<documentation xml:lang="en-GB">Bevillingstype</documentation>
+			<documentation xml:lang="da-DK">Bevillingstype</documentation>
+		</annotation>
+	</element>
+	
+	<simpleType name="BevillingsTypeType">
+		<union memberTypes="ctr:PredefinedBevillingsTypeType ctr:UndefinedBevillingsTypeType"/>
+	</simpleType>
+	<simpleType name="PredefinedBevillingsTypeType">
+		<restriction base="ctr:UndefinedBevillingsTypeType">
+			<enumeration value="enkelt"/>
+			<enumeration value="forhoejet"/>
+        </restriction>
+	</simpleType>
+	<simpleType name="UndefinedBevillingsTypeType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="10"/>
+		</restriction>
+	</simpleType>
+</schema>
