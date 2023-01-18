@@ -9,6 +9,7 @@
 	<include schemaLocation="EkspeditionsIdentifier.xsd"/>
 	<include schemaLocation="OprettetTidspunkt.xsd"/>
 	<include schemaLocation="Money.xsd"/>
+	<include schemaLocation="Birthdate.xsd"/>
 
 	<element name="OpretTransaktionRequest" type="ctr:OpretTransaktionRequestType">
 		<annotation>
@@ -20,8 +21,8 @@
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
-            <element name="KontoNavn" type="ctr:KontoNavnType" maxOccurs="unbounded"/> // Refererer til en Tilskudsgruppe. Eks. CTR-A eller CTR-B
-            // TODO
+            <element name="KontoNavn" type="ctr:KontoNavnType" maxOccurs="unbounded"/> // TODO Refererer til en Tilskudsgruppe. Eks. CTR-A eller CTR-B
+			<element name="Birthdate" type="ctr:Birthdate"/>
 			<element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
             <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
 			<element name="EkspeditionsIdentifier" type="ctr:EkspeditionsIdentifierType"/>
