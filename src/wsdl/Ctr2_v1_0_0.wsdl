@@ -41,6 +41,12 @@
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerResponse.xsd"/>           
         </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/OpretTransaktionRequest.xsd"/>           
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/OpretTransaktionResponse.xsd"/>           
+        </xs:schema>
     </wsdl:types>
      
     <wsdl:message name="CTRResponseHeader">
@@ -71,6 +77,12 @@
     <wsdl:message name="HentHenstandsOrdningerResponse">
         <wsdl:part name="HentHenstandsOrdningerResponse" element="ctr100:HentHenstandsOrdningerResponse"/>
     </wsdl:message>
+    <wsdl:message name="OpretTransaktionRequest">
+        <wsdl:part name="OpretTransaktionRequest" element="ctr100:OpretTransaktionRequest"/>
+    </wsdl:message>
+    <wsdl:message name="OpretTransaktionResponse">
+        <wsdl:part name="OpretTransaktionResponse" element="ctr100:OpretTransaktionResponse"/>
+    </wsdl:message>
 
     <wsdl:message name="CTRDetail">
         <wsdl:part name="fault" element="ctr100:CTRDetail"/>
@@ -92,6 +104,14 @@
             <wsdl:output name="HentHenstandsOrdningerResponse"
                          message="tns:HentHenstandsOrdningerResponse"/>
 &operationFaultDeclaration;           
+        </wsdl:operation>
+        <wsdl:operation name="OpretTransaktion">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretTransaktion" style="document"/>
+            <wsdl:input name="OpretTransaktionRequest"
+                        message="tns:OpretTransaktionRequest"/>
+            <wsdl:output name="OpretTransaktionResponse"
+                         message="tns:OpretTransaktionResponse"/>
+&operationFaultDeclaration;
         </wsdl:operation>
     </wsdl:portType>
 
@@ -121,6 +141,20 @@
             </wsdl:input>
             <wsdl:output name="HentHenstandsOrdningerResponse">
 &ctrStandardSOAPResponseHeaders;
+                <soap:body use="literal"/>
+            </wsdl:output>
+&bindingFaultDeclaration;
+        </wsdl:operation>
+
+        <wsdl:operation name="OpretTransaktion">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretTransaktion"
+                            style="document"/>
+            <wsdl:input name="OpretTransaktionRequest">
+&ctrStandardSOAPRequestHeaders;                     
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="OpretTransaktionResponse">
+&ctrStandardSOAPResponseHeaders;               
                 <soap:body use="literal"/>
             </wsdl:output>
 &bindingFaultDeclaration;

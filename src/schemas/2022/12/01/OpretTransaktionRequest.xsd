@@ -21,7 +21,7 @@
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
-            <element name="KontoNavn" type="ctr:KontoNavnType" maxOccurs="unbounded"/> // TODO Refererer til en Tilskudsgruppe. Eks. CTR-A eller CTR-B
+            <element name="KontoNavn" type="ctr:KontoNavnType" maxOccurs="unbounded"/>
 			<element name="Birthdate" type="ctr:Birthdate"/>
 			<element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
             <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
