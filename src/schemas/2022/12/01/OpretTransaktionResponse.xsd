@@ -19,7 +19,6 @@
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
             <element name="UdligningsBeloeb" type="ctr:Money"/>
             <element name="Saldo" type="ctr:Money"/>
-			TODO add warnings ??
 		</sequence>
 	</complexType>
 </schema>
