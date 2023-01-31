@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <include schemaLocation="PersonIdentifier.xsd"/>
+	<include schemaLocation="HenstandsOrdning.xsd"/>
+   
+	<element name="OpretHenstandsOrdningResponse" type="ctr:OpretHenstandsOrdningResponseType">
+		<annotation>
+			<documentation xml:lang="en-GB">Outer container element for a response with the created henstandsordning</documentation>
+			<documentation xml:lang="da-DK">Ydre container-element for et svar med den oprettede henstandsordning</documentation>
+		</annotation>
+	</element>
+	<complexType name="OpretHenstandsOrdningResponseType">
+		<sequence>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>           
+            <element name="HenstandsOrdning" type="ctr:HenstandsOrdningType"/>
+		</sequence>
+	</complexType>
+</schema>

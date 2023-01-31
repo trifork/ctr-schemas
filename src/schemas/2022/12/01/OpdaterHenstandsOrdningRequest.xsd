@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="PersonIdentifier.xsd"/>
+	<include schemaLocation="GaeldendeFra.xsd"/>
+	<include schemaLocation="GaeldendeTil.xsd"/>
+	<include schemaLocation="IsActive.xsd"/>
+	<include schemaLocation="OrganisationIdentifier.xsd"/>
+	<include schemaLocation="OphoersAarsag.xsd"/>
+
+	<element name="OpdaterHenstandsOrdningRequest" type="ctr:OpdaterHenstandsOrdningRequestType">
+		<annotation>
+			<documentation xml:lang="en-GB">Element for updating a henstandsordning</documentation>
+			<documentation xml:lang="da-DK">Element for at opdatere en henstandsordning</documentation>
+		</annotation>
+	</element>
+	<complexType name="OpdaterHenstandsOrdningRequestType">
+		<sequence>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
+			<element name="GaeldendeFra" type="ctr:GaeldendeFra"/>
+            <element name="GaeldendeTil" type="ctr:GaeldendeTil"/>
+			<element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
+            <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
+			<element name="Active" type="ctr:IsActive"/>
+			<element name="OphoersAarsag" type="ctr:OphoersAarsagType" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>
