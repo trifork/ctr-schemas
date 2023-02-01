@@ -5,7 +5,7 @@
         elementFormDefault="qualified"
         attributeFormDefault="unqualified">
 
-	<include schemaLocation="Header.xsd"/>
+	<include schemaLocation="CTRDetail.xsd"/>
 	
 	<element name="ResponseHeader" type="ctr:ResponseHeaderType" />
 	
@@ -15,7 +15,7 @@
 			<documentation xml:lang="da-DK">Response header</documentation>
 		</annotation>
 		<sequence>
-			<element name="Header" type="ctr:HeaderType" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="CTRDetail" type="ctr:CTRDetailType" minOccurs="1" maxOccurs="unbounded"/>
 		</sequence>
 	</complexType>
 	
