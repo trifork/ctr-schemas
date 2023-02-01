@@ -51,7 +51,19 @@
             <xs:include schemaLocation="../schemas/2022/12/01/OpdaterHenstandsOrdningRequest.xsd"/>          
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/OpdaterHenstandsOrdningResponse.xsd"/>    
+            <xs:include schemaLocation="../schemas/2022/12/01/OpdaterHenstandsOrdningResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/OpretTransaktionRequest.xsd"/>           
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/OpretTransaktionResponse.xsd"/>      
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/SkiftPersonIdentifierRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/SkiftPersonIdentifierResponse.xsd"/>           
         </xs:schema>
     </wsdl:types>
      
@@ -94,6 +106,18 @@
     </wsdl:message>
     <wsdl:message name="OpdaterHenstandsOrdningResponse">
         <wsdl:part name="OpdaterHenstandsOrdningResponse" element="ctr100:OpdaterHenstandsOrdningResponse"/>
+    </wsdl:message>    
+    <wsdl:message name="OpretTransaktionRequest">
+        <wsdl:part name="OpretTransaktionRequest" element="ctr100:OpretTransaktionRequest"/>
+    </wsdl:message>
+    <wsdl:message name="OpretTransaktionResponse">
+        <wsdl:part name="OpretTransaktionResponse" element="ctr100:OpretTransaktionResponse"/>
+    </wsdl:message>    
+    <wsdl:message name="SkiftPersonIdentifierRequest">
+        <wsdl:part name="SkiftPersonIdentifierRequest" element="ctr100:SkiftPersonIdentifierRequest"/>
+    </wsdl:message>
+    <wsdl:message name="SkiftPersonIdentifierResponse">
+        <wsdl:part name="SkiftPersonIdentifierResponse" element="ctr100:SkiftPersonIdentifierResponse"/>
     </wsdl:message>
 
     <wsdl:message name="CTRDetail">
@@ -131,6 +155,22 @@
                         message="tns:OpdaterHenstandsOrdningRequest"/>
             <wsdl:output name="OpdaterHenstandsOrdningResponse"
                          message="tns:OpdaterHenstandsOrdningResponse"/>
+&operationFaultDeclaration;
+        </wsdl:operation>
+        <wsdl:operation name="OpretTransaktion">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretTransaktion" style="document"/>
+            <wsdl:input name="OpretTransaktionRequest"
+                        message="tns:OpretTransaktionRequest"/>
+            <wsdl:output name="OpretTransaktionResponse"
+                         message="tns:OpretTransaktionResponse"/>
+&operationFaultDeclaration;
+        </wsdl:operation>                       
+        <wsdl:operation name="SkiftPersonIdentifier">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#SkiftPersonIdentifier" style="document"/>
+            <wsdl:input name="SkiftPersonIdentifierRequest"
+                        message="tns:SkiftPersonIdentifierRequest"/>
+            <wsdl:output name="SkiftPersonIdentifierResponse"
+                         message="tns:SkiftPersonIdentifierResponse"/>
 &operationFaultDeclaration;
         </wsdl:operation>
     </wsdl:portType>
@@ -189,11 +229,39 @@
             </wsdl:input>
             <wsdl:output name="OpdaterHenstandsOrdningResponse">
 &ctrStandardSOAPResponseHeaders;
+            <soap:body use="literal"/>
+        </wsdl:output>
+&bindingFaultDeclaration;
+        </wsdl:operation>
+
+        <wsdl:operation name="OpretTransaktion">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretTransaktion"
+                            style="document"/>
+            <wsdl:input name="OpretTransaktionRequest">
+&ctrStandardSOAPRequestHeaders;                     
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="OpretTransaktionResponse">
+&ctrStandardSOAPResponseHeaders;               
                 <soap:body use="literal"/>
             </wsdl:output>
 &bindingFaultDeclaration;
         </wsdl:operation>
     </wsdl:binding>
+
+    <wsdl:operation name="SkiftPersonIdentifier">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#SkiftPersonIdentifier"
+                            style="document"/>
+            <wsdl:input name="SkiftPersonIdentifierRequest">
+&ctrStandardSOAPRequestHeaders;                     
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="SkiftPersonIdentifierResponse">
+&ctrStandardSOAPResponseHeaders;               
+                <soap:body use="literal"/>
+            </wsdl:output>
+&bindingFaultDeclaration;
+        </wsdl:operation>
 
     <wsdl:service name="Ctr">
         <wsdl:port name="CtrPort" binding="tns:CtrBinding">
@@ -202,4 +270,3 @@
     </wsdl:service>
 
 </wsdl:definitions>
-

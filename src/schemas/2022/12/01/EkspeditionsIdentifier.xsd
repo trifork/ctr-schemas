@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="Source.xsd"/>
+	<element name="EkspeditionsIdentifier" type="ctr:EkspeditionsIdentifierType">
+		<annotation>
+			<documentation xml:lang="en-GB">Number or code identifying an expedition</documentation>
+			<documentation xml:lang="da-DK">Nummer eller kode der identificerer en ekspedition</documentation>
+		</annotation>
+	</element>
+	<complexType name="EkspeditionsIdentifierType">
+		<simpleContent>
+			<extension base="ctr:EkspeditionsIdentifierValueType">
+				<attribute name="source" type="ctr:EkspeditionsIdentifierSourceType" use="required"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<simpleType name="EkspeditionsIdentifierValueType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="50"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="EkspeditionsIdentifierSourceType">
+		<union memberTypes="ctr:EkspeditionsIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
+	</simpleType>
+	<simpleType name="EkspeditionsIdentifierPredefinedSourceType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="200"/>
+		</restriction>
+	</simpleType>
+</schema>
