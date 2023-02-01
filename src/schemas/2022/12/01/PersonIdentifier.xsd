@@ -9,7 +9,7 @@
 	<element name="PersonIdentifier" type="ctr:PersonIdentifierType">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for uniquely identifying a person (in Denmark) i.e. CPR, e-CPR, Fiktiv CPR.</documentation>
-			<documentation xml:lang="da-DK">Element for entydig identifikation af en person (i Denmark) dvs. CPR, e-CPR, Fiktiv CPR.</documentation>
+			<documentation xml:lang="da-DK">Element for entydig identifikation af en person (i Danmark) dvs. CPR, e-CPR, Fiktiv CPR.</documentation>
 		</annotation>
 	</element>
 	<complexType name="PersonIdentifierType">

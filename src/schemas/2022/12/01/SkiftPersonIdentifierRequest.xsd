@@ -6,13 +6,13 @@
 
 	<include schemaLocation="PersonIdentifier.xsd"/>   
 
-	<element name="SkiftCprNrRequest" type="ctr:SkiftCprNrRequestType">
+	<element name="SkiftPersonIdentifierRequest" type="ctr:SkiftPersonIdentifierRequestType">
 		<annotation>
-			<documentation xml:lang="en-GB">Element for a request for changing the official danish CPR number</documentation>
-			<documentation xml:lang="da-DK">Element for en forespørgsel efter at skifte CPR-nummer</documentation>
+			<documentation xml:lang="en-GB">Element for a request for changing the official danish person identifier</documentation>
+			<documentation xml:lang="da-DK">Element for en forespørgsel efter at skifte person identifikation</documentation>
 		</annotation>
 	</element>
-	<complexType name="SkiftCprNrRequestType">
+	<complexType name="SkiftPersonIdentifierRequestType">
 		<sequence>
             <element name="OldPersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="OldPersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>

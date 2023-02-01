@@ -6,13 +6,13 @@
 
 	<include schemaLocation="PersonIdentifier.xsd"/>   
 
-	<element name="SkiftCprNrResponse" type="ctr:SkiftCprNrResponseType">
+	<element name="SkiftPersonIdentifierResponse" type="ctr:SkiftPersonIdentifierResponseType">
 		<annotation>
-			<documentation xml:lang="en-GB">Outer container element for a response after changing the danish CPR number </documentation>
-			<documentation xml:lang="da-DK">Ydre container-element for et svar efter at have skiftet CPR-nummer</documentation>
+			<documentation xml:lang="en-GB">Outer container element for a response after changing the official danish person identifier</documentation>
+			<documentation xml:lang="da-DK">Ydre container-element for et svar efter at have skiftet person identifikation</documentation>
 		</annotation>
 	</element>
-	<complexType name="SkiftCprNrResponseType">
+	<complexType name="SkiftPersonIdentifierResponseType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>           

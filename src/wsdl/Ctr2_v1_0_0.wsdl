@@ -42,10 +42,10 @@
             <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerResponse.xsd"/>           
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/SkiftCprNrRequest.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/SkiftPersonIdentifierRequest.xsd"/>           
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/SkiftCprNrResponse.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/SkiftPersonIdentifierResponse.xsd"/>           
         </xs:schema>
     </wsdl:types>
      
@@ -77,11 +77,11 @@
     <wsdl:message name="HentHenstandsOrdningerResponse">
         <wsdl:part name="HentHenstandsOrdningerResponse" element="ctr100:HentHenstandsOrdningerResponse"/>
     </wsdl:message>
-    <wsdl:message name="SkiftCprNrRequest">
-        <wsdl:part name="SkiftCprNrRequest" element="ctr100:SkiftCprNrRequest"/>
+    <wsdl:message name="SkiftPersonIdentifierRequest">
+        <wsdl:part name="SkiftPersonIdentifierRequest" element="ctr100:SkiftPersonIdentifierRequest"/>
     </wsdl:message>
-    <wsdl:message name="SkiftCprNrResponse">
-        <wsdl:part name="SkiftCprNrResponse" element="ctr100:SkiftCprNrResponse"/>
+    <wsdl:message name="SkiftPersonIdentifierResponse">
+        <wsdl:part name="SkiftPersonIdentifierResponse" element="ctr100:SkiftPersonIdentifierResponse"/>
     </wsdl:message>
 
     <wsdl:message name="CTRDetail">
@@ -105,12 +105,12 @@
                          message="tns:HentHenstandsOrdningerResponse"/>
 &operationFaultDeclaration;           
         </wsdl:operation>
-        <wsdl:operation name="SkiftCprNr">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#SkiftCprNr" style="document"/>
-            <wsdl:input name="SkiftCprNrRequest"
-                        message="tns:SkiftCprNrRequest"/>
-            <wsdl:output name="SkiftCprNrResponse"
-                         message="tns:SkiftCprNrResponse"/>
+        <wsdl:operation name="SkiftPersonIdentifier">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#SkiftPersonIdentifier" style="document"/>
+            <wsdl:input name="SkiftPersonIdentifierRequest"
+                        message="tns:SkiftPersonIdentifierRequest"/>
+            <wsdl:output name="SkiftPersonIdentifierResponse"
+                         message="tns:SkiftPersonIdentifierResponse"/>
 &operationFaultDeclaration;
         </wsdl:operation>
     </wsdl:portType>
@@ -147,14 +147,14 @@
         </wsdl:operation>
     </wsdl:binding>
 
-    <wsdl:operation name="SkiftCprNr">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#SkiftCprNr"
+    <wsdl:operation name="SkiftPersonIdentifier">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#SkiftPersonIdentifier"
                             style="document"/>
-            <wsdl:input name="SkiftCprNrRequest">
+            <wsdl:input name="SkiftPersonIdentifierRequest">
 &ctrStandardSOAPRequestHeaders;                     
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="SkiftCprNrResponse">
+            <wsdl:output name="SkiftPersonIdentifierResponse">
 &ctrStandardSOAPResponseHeaders;               
                 <soap:body use="literal"/>
             </wsdl:output>
@@ -168,4 +168,3 @@
     </wsdl:service>
 
 </wsdl:definitions>
-
