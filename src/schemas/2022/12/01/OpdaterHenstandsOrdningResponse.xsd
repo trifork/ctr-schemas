@@ -6,6 +6,7 @@
 
     <include schemaLocation="PersonIdentifier.xsd"/>
 	<include schemaLocation="HenstandsOrdning.xsd"/>
+	<include schemaLocation="HenstandsordningIdentifier.xsd"/>
    
 	<element name="OpdaterHenstandsOrdningResponse" type="ctr:OpdaterHenstandsOrdningResponseType">
 		<annotation>
@@ -16,7 +17,9 @@
 	<complexType name="OpdaterHenstandsOrdningResponseType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>           
+            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
+			<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType" minOccurs="0"/>
+			<element name="HenstandsordningIdentifierSource" type="ctr:HenstandsordningIdentifierSourceType" minOccurs="0"/>    
             <element name="HenstandsOrdning" type="ctr:HenstandsOrdningType"/>
 		</sequence>
 	</complexType>

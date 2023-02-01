@@ -5,6 +5,7 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	<include schemaLocation="PersonIdentifier.xsd"/>
+	<include schemaLocation="HenstandsordningIdentifier.xsd"/>
 	<include schemaLocation="GaeldendeFra.xsd"/>
 	<include schemaLocation="GaeldendeTil.xsd"/>
 	<include schemaLocation="IsActive.xsd"/>
@@ -21,6 +22,8 @@
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
+			<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType" minOccurs="0"/>
+			<element name="HenstandsordningIdentifierSource" type="ctr:HenstandsordningIdentifierSourceType" minOccurs="0"/>
 			<element name="GaeldendeFra" type="ctr:GaeldendeFra"/>
             <element name="GaeldendeTil" type="ctr:GaeldendeTil"/>
 			<element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
