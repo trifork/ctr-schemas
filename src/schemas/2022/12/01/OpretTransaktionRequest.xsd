@@ -8,8 +8,7 @@
 	<include schemaLocation="OrganisationIdentifier.xsd"/>
 	<include schemaLocation="EkspeditionsIdentifier.xsd"/>
 	<include schemaLocation="OprettetTidspunkt.xsd"/>
-	<include schemaLocation="Money.xsd"/>
-	<include schemaLocation="Birthdate.xsd"/>
+	<include schemaLocation="Beloeb.xsd"/>
 
 	<element name="OpretTransaktionRequest" type="ctr:OpretTransaktionRequestType">
 		<annotation>
@@ -22,14 +21,13 @@
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
             <element name="KontoNavn" type="ctr:KontoNavnType" maxOccurs="unbounded"/>
-			<element name="Birthdate" type="ctr:Birthdate"/>
 			<element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
             <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
 			<element name="EkspeditionsIdentifier" type="ctr:EkspeditionsIdentifierType"/>
             <element name="EkspeditionsIdentifierSource" type="ctr:EkspeditionsIdentifierType"/>
 			<element name="OprettetTidspunkt" type="ctr:OprettetTidspunktType"/>
-			<element name="BeregningsGrundlagsPris" type="ctr:MoneyType"/>
-			<element name="IndberettetTilskud" type="ctr:MoneyType"/>
+			<element name="BeregningsGrundlagsPris" type="ctr:BeloebType"/>
+			<element name="IndberettetTilskud" type="ctr:BeloebType"/>
 		</sequence>
 	</complexType>
 </schema>

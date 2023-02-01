@@ -4,7 +4,7 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
-	<include schemaLocation="Money.xsd"/>
+	<include schemaLocation="Beloeb.xsd"/>
 	<include schemaLocation="StartDato.xsd"/>
 	<include schemaLocation="SlutDato.xsd"/>
 	
@@ -18,10 +18,10 @@
 		<sequence>            		
             <element name="StartDato" type="ctr:StartDatoType"/> 
             <element name="SlutDato" type="ctr:SlutDatoType"/>
-            <element name="Saldo" type="ctr:MoneyType"/>
-			<element name="UdligningsBeloeb" type="ctr:MoneyType"/>        
-            <element name="UdbetaltTilskud" type="ctr:MoneyType"/>
-            <element name="BerettigetTilskud" type="ctr:MoneyType"/>            
+            <element name="Saldo" type="ctr:BeloebType"/>
+			<element name="UdligningsBeloeb" type="ctr:BeloebType"/>        
+            <element name="UdbetaltTilskud" type="ctr:BeloebType"/>
+            <element name="BerettigetTilskud" type="ctr:BeloebType"/>            
 		</sequence>
 	</complexType>
 </schema>
