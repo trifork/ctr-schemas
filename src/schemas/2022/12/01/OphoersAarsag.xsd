@@ -11,9 +11,18 @@
 		</annotation>
 	</element>
 	<simpleType name="OphoersAarsagType">
+		<union memberTypes="ctr:PredefinedOphoersAarsagType ctr:UndefinedOphoersAarsagType"/>
+	</simpleType>
+	<simpleType name="PredefinedOphoersAarsagType">
+		<restriction base="ctr:UndefinedOphoersAarsagType">
+			<enumeration value="ukendt"/>
+			<enumeration value="mislighold"/>
+        </restriction>
+	</simpleType>
+	<simpleType name="UndefinedOphoersAarsagType">
 		<restriction base="string">
 			<minLength value="1"/>
 			<maxLength value="10"/>
 		</restriction>
-	</simpleType>
+	</simpleType>	
 </schema>
