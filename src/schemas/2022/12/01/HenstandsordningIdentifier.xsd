@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="Source.xsd"/>
+
+	<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType">
+		<annotation>
+			<documentation xml:lang="en-GB">Element for uniquely identifying a henstandsordning</documentation>
+			<documentation xml:lang="da-DK">Element for entydig identifikation af en henstandsordning</documentation>
+		</annotation>
+	</element>
+	<complexType name="HenstandsordningIdentifierType">
+		<simpleContent>
+			<extension base="ctr:HenstandsordningIdentifierValueType">
+				<attribute name="source" type="ctr:HenstandsordningIdentifierSourceType" use="required"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<simpleType name="HenstandsordningIdentifierValueType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="50"/>
+		</restriction>
+	</simpleType>
+
+	<simpleType name="HenstandsordningIdentifierSourceType">
+		<union memberTypes="ctr:HenstandsordningIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
+	</simpleType>
+
+	<simpleType name="HenstandsordningIdentifierPredefinedSourceType">
+		<restriction base="ctr:UndefinedSourceType">
+			<enumeration value="HenstandsordningId"/>
+		</restriction>
+	</simpleType>
+</schema>

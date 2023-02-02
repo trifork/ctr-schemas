@@ -42,6 +42,18 @@
             <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerResponse.xsd"/>           
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/OpretHenstandsOrdningRequest.xsd"/>          
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/OpretHenstandsOrdningResponse.xsd"/>    
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/OpdaterHenstandsOrdningRequest.xsd"/>          
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/OpdaterHenstandsOrdningResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/OpretTransaktionRequest.xsd"/>           
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
@@ -83,6 +95,18 @@
     <wsdl:message name="HentHenstandsOrdningerResponse">
         <wsdl:part name="HentHenstandsOrdningerResponse" element="ctr100:HentHenstandsOrdningerResponse"/>
     </wsdl:message>
+    <wsdl:message name="OpretHenstandsOrdningRequest">
+        <wsdl:part name="OpretHenstandsOrdningRequest" element="ctr100:OpretHenstandsOrdningRequest"/>
+    </wsdl:message>
+    <wsdl:message name="OpretHenstandsOrdningResponse">
+        <wsdl:part name="OpretHenstandsOrdningResponse" element="ctr100:OpretHenstandsOrdningResponse"/>
+    </wsdl:message>
+    <wsdl:message name="OpdaterHenstandsOrdningRequest">
+        <wsdl:part name="OpdaterHenstandsOrdningRequest" element="ctr100:OpdaterHenstandsOrdningRequest"/>
+    </wsdl:message>
+    <wsdl:message name="OpdaterHenstandsOrdningResponse">
+        <wsdl:part name="OpdaterHenstandsOrdningResponse" element="ctr100:OpdaterHenstandsOrdningResponse"/>
+    </wsdl:message>    
     <wsdl:message name="OpretTransaktionRequest">
         <wsdl:part name="OpretTransaktionRequest" element="ctr100:OpretTransaktionRequest"/>
     </wsdl:message>
@@ -115,7 +139,23 @@
                         message="tns:HentHenstandsOrdningerRequest"/>
             <wsdl:output name="HentHenstandsOrdningerResponse"
                          message="tns:HentHenstandsOrdningerResponse"/>
-&operationFaultDeclaration;           
+&operationFaultDeclaration;
+        </wsdl:operation>
+        <wsdl:operation name="OpretHenstandsOrdning">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretHenstandsOrdning" style="document"/>
+            <wsdl:input name="OpretHenstandsOrdningRequest"
+                        message="tns:OpretHenstandsOrdningRequest"/>
+            <wsdl:output name="OpretHenstandsOrdningResponse"
+                         message="tns:OpretHenstandsOrdningResponse"/>
+&operationFaultDeclaration;
+        </wsdl:operation>
+        <wsdl:operation name="OpdaterHenstandsOrdning">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpdaterHenstandsOrdning" style="document"/>
+            <wsdl:input name="OpdaterHenstandsOrdningRequest"
+                        message="tns:OpdaterHenstandsOrdningRequest"/>
+            <wsdl:output name="OpdaterHenstandsOrdningResponse"
+                         message="tns:OpdaterHenstandsOrdningResponse"/>
+&operationFaultDeclaration;
         </wsdl:operation>
         <wsdl:operation name="OpretTransaktion">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretTransaktion" style="document"/>
@@ -163,6 +203,34 @@
 &ctrStandardSOAPResponseHeaders;
                 <soap:body use="literal"/>
             </wsdl:output>
+&bindingFaultDeclaration;
+        </wsdl:operation>
+
+        <wsdl:operation name="OpretHenstandsOrdning">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretHenstandsOrdning"
+                            style="document"/>
+            <wsdl:input name="OpretHenstandsOrdningRequest">
+&ctrStandardSOAPRequestHeaders;
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="OpretHenstandsOrdningResponse">
+&ctrStandardSOAPResponseHeaders;
+                <soap:body use="literal"/>
+            </wsdl:output>
+&bindingFaultDeclaration;
+        </wsdl:operation>
+
+        <wsdl:operation name="OpdaterHenstandsOrdning">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpdaterHenstandsOrdning"
+                            style="document"/>
+            <wsdl:input name="OpdaterHenstandsOrdningRequest">
+&ctrStandardSOAPRequestHeaders;
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="OpdaterHenstandsOrdningResponse">
+&ctrStandardSOAPResponseHeaders;
+            <soap:body use="literal"/>
+        </wsdl:output>
 &bindingFaultDeclaration;
         </wsdl:operation>
 
