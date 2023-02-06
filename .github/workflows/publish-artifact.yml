@@ -16,8 +16,8 @@ jobs:
         
       - name: step 2 - Add artifacts to publish to the temp folder
         run: |
+          cp -r ./src/ temp
           cd temp
-          cp -r ../src/ .
           zip -r artifact.zip .
           cd ..
     
