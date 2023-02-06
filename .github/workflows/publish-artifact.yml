@@ -4,15 +4,19 @@ name: Publish Artifact
 on:
   push:
     branches: [ main ]
+  pull_request:
+    branches: [ "main" ]  
 
 jobs:
        
   archive-build-artifacts:
     runs-on: ubuntu-latest
-    steps:
+    steps:     
+      - name: Checkout main repository
+        uses: actions/checkout@v3
 
       - name: Step 1 - Create a temporary artifact temp folder
-        run: mkdir temp
+        run: mkdir -p temp
         
       - name: step 2 - Add artifacts to publish to the temp folder
         run: |
