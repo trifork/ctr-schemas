@@ -1,0 +1,26 @@
+# This workflow will build a Java project with Maven
+name: Build and publish schemas with Maven
+
+on:
+  release:
+    types: [ created ]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+  SSH_KEY: ${{secrets.SUBMODULE_CONTENT_PULL_KEY}}
+
+jobs:
+  build-and-publish:
+    name: Build and publish code
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v3
+
+      - name: Clean with Maven
+        run: mvn clean
+      - name: Compile with Maven
+        run: mvn compile
+      - name: Run publish with Maven
+        run: mvn deploy
