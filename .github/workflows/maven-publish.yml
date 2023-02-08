@@ -5,11 +5,6 @@ on:
   release:
     types: [ created ]
 
-env:
-  REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
-  SSH_KEY: ${{secrets.SUBMODULE_CONTENT_PULL_KEY}}
-
 jobs:
   build-and-publish:
     name: Build and publish code
@@ -20,7 +15,9 @@ jobs:
 
       - name: Clean with Maven
         run: mvn clean
-      - name: Compile with Maven
-        run: mvn compile
       - name: Run publish with Maven
-        run: mvn deploy
+        env:
+          GITHUB_USERNAME: x-access-token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run:
+            mvn --settings deploy-settings.xml deploy
