@@ -15,8 +15,8 @@
 	</simpleType>
 	<simpleType name="PredefinedPatientStatusVaerdiType">
 		<restriction base="ctr:UndefinedPatientStatusVaerdiType">
-			<enumeration value="almen"/>
-			<enumeration value="terminal"/>
+			<enumeration value="Almen"/>
+			<enumeration value="Terminal"/>
         </restriction>
 	</simpleType>
 	<simpleType name="UndefinedPatientStatusVaerdiType">
@@ -24,5 +24,5 @@
 			<minLength value="1"/>
 			<maxLength value="200"/>
 		</restriction>
-	</simpleType
+	</simpleType>
 </schema>

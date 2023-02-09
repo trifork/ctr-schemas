@@ -4,15 +4,15 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<element name="Administrationsvej" type="ctr:AdministrationsvejType">
+	<element name="JournalNumber" type="ctr:JournalNumberType">
 		<annotation>
-			<documentation xml:lang="en-GB">The way in which to obtain a drug</documentation>
-			<documentation xml:lang="da-DK">Administrationsvej for lægemidlet</documentation>
+			<documentation xml:lang="en-GB">Journal number</documentation>
+			<documentation xml:lang="da-DK">Journalnummer</documentation>
 		</annotation>
 	</element>
-	<simpleType name="AdministrationsvejType">
+	<simpleType name="JournalNumberType">
 		<restriction base="string">
-			<maxLength value="15"/>
+			<maxLength value="20"/>
 		</restriction>
 	</simpleType>
 </schema>

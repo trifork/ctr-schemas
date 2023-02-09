@@ -4,16 +4,16 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<element name="OprettetTidspunkt" type="ctr:OprettetTidspunktType">
+	<element name="CreatedDateTime" type="ctr:CreatedDateTimeType">
 		<annotation>
-			<documentation xml:lang="en-GB">Date for creating the bevilling</documentation>
+			<documentation xml:lang="en-GB">Date for creating the reimbursement</documentation>
 			<documentation xml:lang="da-DK">Dato for hvornår bevillingen er oprettet</documentation>
 		</annotation>
 	</element>
-	<simpleType name="OprettetTidspunktType">
-        <restriction base="date">
-            <minInclusive value="2000-01-01"/>
-            <maxInclusive value="2900-01-01"/>
+	<simpleType name="CreatedDateTimeType">
+        <restriction base="dateTime">
+            <minInclusive value="2000-01-01T00:00:00Z"/>
+            <maxInclusive value="2900-01-01T00:00:00Z"/>
 		</restriction>
 	</simpleType>
 </schema>

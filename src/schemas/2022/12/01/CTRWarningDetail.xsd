@@ -14,7 +14,7 @@
 			<documentation xml:lang="en-GB">CTR details for a warning</documentation>
 			<documentation xml:lang="da-DK">CTR detaljer for en advarsel</documentation>
 		</annotation>
-		<<sequence>
+		<sequence>
             <element name="WarningCode" type="string" />
             <element name="WarningText" type="string" />
             <element name="WarningDetails" type="ctr:FaultDetailsType" />

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <include schemaLocation="GaeldendeFra.xsd"/>
+	<include schemaLocation="GaeldendeTil.xsd"/>
+    <include schemaLocation="ReimbursementsType.xsd"/>
+    <include schemaLocation="ATCCode.xsd"/>
+    <include schemaLocation="JournalNumber.xsd"/>
+    <include schemaLocation="PackageNumber.xsd"/>
+    <include schemaLocation="RouteOfAdministration.xsd"/>
+    <include schemaLocation="CreatedDateTime.xsd"/>
+    <include schemaLocation="DrugName.xsd"/>
+    
+	<element name="Reimbursement" type="ctr:ReimbursementType">
+		<annotation>
+			<documentation xml:lang="en-GB">Description of a CTR reimbursement</documentation>
+			<documentation xml:lang="da-DK">Beskrivelse af en CTR bevilling</documentation>
+		</annotation>
+	</element>
+	<complexType name="ReimbursementType">
+		<sequence>
+            <element name="Type" type="ctr:ReimbursementsTypeType" />
+            <element name="GaeldendeFra" type="ctr:GaeldendeFraType"/>
+            <element name="GaeldendeTil" type="ctr:GaeldendeTilType" minOccurs="0"/>
+            <element name="ATCCode" type="ctr:ATCCodeType"/>
+            <element name="RouteOfAdministration" type="ctr:RouteOfAdministrationType"/>
+            <element name="PackageNumber" type="ctr:PackageNumberType"/>
+            <element name="DrugName" type="ctr:DrugNameType"/>
+            <element name="JournalNumber" type="ctr:JournalNumberType"/>
+            <element name="CreatedDateTime" type="ctr:CreatedDateTimeType"/>
+		</sequence>
+	</complexType>
+</schema>

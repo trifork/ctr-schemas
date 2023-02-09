@@ -5,7 +5,7 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
     <include schemaLocation="OrganisationIdentifier.xsd"/>
-	<include schemaLocation="OphoersAarsag.xsd"/>
+	<include schemaLocation="DiscontinuanceReason.xsd"/>
 	<include schemaLocation="IsActive.xsd"/>
 	<include schemaLocation="GaeldendeFra.xsd"/>
 	<include schemaLocation="GaeldendeTil.xsd"/>
@@ -19,10 +19,9 @@
 	<complexType name="HenstandsOrdningType">
 		<sequence>
             <element name="GaeldendeFra" type="ctr:GaeldendeFra"/>
-            <element name="GaeldendeTil" type="ctr:GaeldendeTil"/>      
-            <element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
-            <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
-            <element name="OphoersAarsag" type="ctr:OphoersAarsagType" minOccurs="0"/>
+            <element name="GaeldendeTil" type="ctr:GaeldendeTil" minOccurs="0"/>      
+            <element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           
+            <element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0"/>
             <element name="Active" type="ctr:IsActive"/>
 		</sequence>
 	</complexType>

@@ -10,7 +10,7 @@
 	<include schemaLocation="GaeldendeTil.xsd"/>
 	<include schemaLocation="IsActive.xsd"/>
 	<include schemaLocation="OrganisationIdentifier.xsd"/>
-	<include schemaLocation="OphoersAarsag.xsd"/>
+	<include schemaLocation="DiscontinuanceReason.xsd"/>
 
 	<element name="OpdaterHenstandsOrdningRequest" type="ctr:OpdaterHenstandsOrdningRequestType">
 		<annotation>
@@ -25,11 +25,11 @@
 			<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType" minOccurs="0"/>
 			<element name="HenstandsordningIdentifierSource" type="ctr:HenstandsordningIdentifierSourceType" minOccurs="0"/>
 			<element name="GaeldendeFra" type="ctr:GaeldendeFra"/>
-            <element name="GaeldendeTil" type="ctr:GaeldendeTil"/>
+            <element name="GaeldendeTil" type="ctr:GaeldendeTil" minOccurs="0"/>
 			<element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
             <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
 			<element name="Active" type="ctr:IsActive"/>
-			<element name="OphoersAarsag" type="ctr:OphoersAarsagType" minOccurs="0"/>
+			<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 </schema>

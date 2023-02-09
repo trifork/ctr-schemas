@@ -4,23 +4,23 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified"> 
     
-	<element name="BevillingsType" type="ctr:BevillingsTypeType">
+	<element name="ReimbursementType" type="ctr:ReimbursementTypeType">
 		<annotation>
-			<documentation xml:lang="en-GB">Bevillingstype</documentation>
+			<documentation xml:lang="en-GB">Reimbursement type</documentation>
 			<documentation xml:lang="da-DK">Bevillingstype</documentation>
 		</annotation>
 	</element>
 	
-	<simpleType name="BevillingsTypeType">
-		<union memberTypes="ctr:PredefinedBevillingsTypeType ctr:UndefinedBevillingsTypeType"/>
+	<simpleType name="ReimbursementTypeType">
+		<union memberTypes="ctr:PredefinedReimbursementTypeType ctr:UndefinedReimbursementTypeType"/>
 	</simpleType>
-	<simpleType name="PredefinedBevillingsTypeType">
-		<restriction base="ctr:UndefinedBevillingsTypeType">
-			<enumeration value="enkelt"/>
-			<enumeration value="forhoejet"/>
+	<simpleType name="PredefinedReimbursementTypeType">
+		<restriction base="ctr:UndefinedReimbursementTypeType">
+			<enumeration value="Enkelt"/>
+			<enumeration value="Forhoejet"/>
         </restriction>
 	</simpleType>
-	<simpleType name="UndefinedBevillingsTypeType">
+	<simpleType name="UndefinedReimbursementTypeType">
 		<restriction base="string">
 			<minLength value="1"/>
 			<maxLength value="10"/>

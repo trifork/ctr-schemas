@@ -7,21 +7,21 @@
 	<include schemaLocation="PatientStatus.xsd"/>
     <include schemaLocation="PersonIdentifier.xsd"/>
     <include schemaLocation="IsChild.xsd"/>
-    <include schemaLocation="KontoStatus.xsd"/>
+    <include schemaLocation="AccountStatus.xsd"/>
 
-	<element name="HentKontoStatusResponse" type="ctr:HentKontoStatusResponseType">
+	<element name="GetAccountStatusResponse" type="ctr:GetAccountStatusResponseType">
 		<annotation>
-			<documentation xml:lang="en-GB">Outer container element for a response with one or more konto status</documentation>
-			<documentation xml:lang="da-DK">Ydre container-element for et svar med en eller flere konto status</documentation>
+			<documentation xml:lang="en-GB">Outer container element for a response with one or more account status</documentation>
+			<documentation xml:lang="da-DK">Ydre container-element for et svar med en eller flere kontostatus</documentation>
 		</annotation>
 	</element>
-	<complexType name="HentKontoStatusResponseType">
+	<complexType name="GetAccountStatusResponseType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
             <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
             <element name="IsChild" type="ctr:IsChildType"/>
             <element name="PatientStatus" type="ctr:PatientStatusType"/>
-            <element name="KontoStatus" type="ctr:KontoStatusType" maxOccurs="unbounded"/>
+            <element name="AccountStatus" type="ctr:AccountStatusType" maxOccurs="unbounded"/>
 		</sequence>
 	</complexType>
 </schema>

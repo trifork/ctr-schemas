@@ -4,15 +4,15 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<element name="JournalNummer" type="ctr:JournalNummerType">
+	<element name="ATCCode" type="ctr:ATCCodeType">
 		<annotation>
-			<documentation xml:lang="en-GB">Journalnummer</documentation>
-			<documentation xml:lang="da-DK">Journalnummer</documentation>
+			<documentation xml:lang="en-GB">The ATC code for the drug</documentation>
+			<documentation xml:lang="da-DK">ATC-kode for lægemidlet</documentation>
 		</annotation>
 	</element>
-	<simpleType name="JournalNummerType">
+	<simpleType name="ATCCodeType">
 		<restriction base="string">
-			<maxLength value="20"/>
+			<maxLength value="8"/>
 		</restriction>
 	</simpleType>
 </schema>

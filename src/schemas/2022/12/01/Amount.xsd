@@ -7,13 +7,13 @@
 
 	<include schemaLocation="CurrencyCode.xsd"/>	
 	
-	<element name="Beloeb" type="ctr:BeloebType">
+	<element name="Amount" type="ctr:AmountType">
 		<annotation>
-			<documentation xml:lang="en-GB">Money</documentation>
+			<documentation xml:lang="en-GB">Amount</documentation>
 			<documentation xml:lang="da-DK">Beløb</documentation>
 		</annotation>
 	</element>
-	<complexType name="BeloebType">
+	<complexType name="AmountType">
 		<sequence>
             <element name="CurrencyCode" type="ctr:CurrencyCodeType"/>
             <element name="Units" type="integer"/> 

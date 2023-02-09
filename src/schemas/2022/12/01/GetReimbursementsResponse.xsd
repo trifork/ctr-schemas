@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <include schemaLocation="PersonIdentifier.xsd"/>
+	<include schemaLocation="Reimbursement.xsd"/>
+
+	<element name="GetReimbursementsResponse" type="ctr:GetReimbursementsResponseType">
+		<annotation>
+			<documentation xml:lang="en-GB">Outer container element for a response with CTR reimbursements</documentation>
+			<documentation xml:lang="da-DK">Ydre container-element for et svar med CTR bevillinger</documentation>
+		</annotation>
+	</element>
+	<complexType name="GetReimbursementsResponseType">
+		<sequence>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>              
+            <element name="Reimbursements" type="ctr:ReimbursementType" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+</schema>
