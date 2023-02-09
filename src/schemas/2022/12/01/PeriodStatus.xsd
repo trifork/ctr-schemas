@@ -5,8 +5,8 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
 	<include schemaLocation="Amount.xsd"/>
-	<include schemaLocation="StartDato.xsd"/>
-	<include schemaLocation="SlutDato.xsd"/>
+	<include schemaLocation="StartDate.xsd"/>
+	<include schemaLocation="EndDate.xsd"/>
 	
 	<element name="PeriodStatus" type="ctr:PeriodStatusType">
 		<annotation>
@@ -16,8 +16,8 @@
 	</element>
 	<complexType name="PeriodStatusType">
 		<sequence>            		
-            <element name="StartDato" type="ctr:StartDatoType"/> 
-            <element name="SlutDato" type="ctr:SlutDatoType"/>
+            <element name="StartDate" type="ctr:StartDateType"/> 
+            <element name="EndDate" type="ctr:EndDateType"/>
             <element name="Balance" type="ctr:AmountType"/>
 			<element name="UdligningsBeloeb" type="ctr:AmountType" minOccurs="0"/>        
             <element name="UdbetaltTilskud" type="ctr:AmountType" minOccurs="0"/>

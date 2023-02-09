@@ -7,7 +7,7 @@
 	<element name="RequestedPeriod" type="ctr:RequestedPeriodType">
 		<annotation>
 			<documentation xml:lang="en-GB">Requested CTR period</documentation>
-			<documentation xml:lang="da-DK">Forespurgt CTR period</documentation>
+			<documentation xml:lang="da-DK">Forespurgt CTR periode</documentation>
 		</annotation>
 	</element>
 	<simpleType name="RequestedPeriodType">

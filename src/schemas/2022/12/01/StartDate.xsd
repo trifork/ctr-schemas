@@ -5,13 +5,13 @@
 		elementFormDefault="qualified" 
         attributeFormDefault="unqualified">
 	
-	<element name="StartDato" type="ctr:StartDatoType">
+	<element name="StartDate" type="ctr:StartDateType">
 		<annotation>
 			<documentation xml:lang="en-GB">Date type that defines the start date of the CTR period. </documentation>
 			<documentation xml:lang="da-DK">Dato type der definerer CTR periodens start dato.</documentation>
 		</annotation>
 	</element>
-	<simpleType name="StartDatoType">
+	<simpleType name="StartDateType">
         <restriction base="date">
             <minInclusive value="2020-01-01"/>
             <maxInclusive value="2900-01-01"/>
