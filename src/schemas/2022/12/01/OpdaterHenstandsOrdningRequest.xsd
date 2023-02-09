@@ -26,8 +26,7 @@
 			<element name="HenstandsordningIdentifierSource" type="ctr:HenstandsordningIdentifierSourceType" minOccurs="0"/>
 			<element name="GaeldendeFra" type="ctr:GaeldendeFra"/>
             <element name="GaeldendeTil" type="ctr:GaeldendeTil" minOccurs="0"/>
-			<element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
-            <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
+			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           
 			<element name="Active" type="ctr:IsActive"/>
 			<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0"/>
 		</sequence>
