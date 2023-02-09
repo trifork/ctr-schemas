@@ -19,7 +19,7 @@
             <element name="StartDate" type="ctr:StartDateType"/> 
             <element name="EndDate" type="ctr:EndDateType"/>
             <element name="Balance" type="ctr:AmountType"/>
-			<element name="UdligningsBeloeb" type="ctr:AmountType" minOccurs="0"/>        
+			<element name="EqualisationAmount" type="ctr:AmountType" minOccurs="0"/>        
             <element name="UdbetaltTilskud" type="ctr:AmountType" minOccurs="0"/>
             <element name="BerettigetTilskud" type="ctr:AmountType" minOccurs="0"/>            
 		</sequence>

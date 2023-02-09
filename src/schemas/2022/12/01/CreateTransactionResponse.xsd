@@ -16,7 +16,7 @@
 	<complexType name="CreateTransactionResponseType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>           
-            <element name="UdligningsBeloeb" type="ctr:AmountType"/>
+            <element name="EqualisationAmount" type="ctr:AmountType"/>
             <element name="Balance" type="ctr:AmountType"/>
 		</sequence>
 	</complexType>

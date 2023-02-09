@@ -5,13 +5,13 @@
 		elementFormDefault="qualified" 
         attributeFormDefault="unqualified">
 	
-	<element name="GaeldendeFraDate" type="ctr:GaeldendeFraDateType">
+	<element name="ValidFromDate" type="ctr:ValidFromDateType">
 		<annotation>
 			<documentation xml:lang="en-GB">Date for when CTR data is valid from. Used in Reimbursements, HenstandsOrdning, Transactions</documentation>
 			<documentation xml:lang="da-DK">Dato for hvornår CTR data er gældende fra. Brugt i.f.m. Bevillinger, HenstandsOrdning, Transaktioner</documentation>
 		</annotation>
 	</element>
-	<simpleType name="GaeldendeFraDateType">
+	<simpleType name="ValidFromDateType">
         <restriction base="date">
             <minInclusive value="2000-01-01"/>
             <maxInclusive value="2900-01-01"/>

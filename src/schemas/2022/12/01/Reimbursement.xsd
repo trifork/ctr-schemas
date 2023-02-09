@@ -4,8 +4,8 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-    <include schemaLocation="GaeldendeFra.xsd"/>
-	<include schemaLocation="GaeldendeTil.xsd"/>
+    <include schemaLocation="ValidFromDate.xsd"/>
+	<include schemaLocation="ValidToDate.xsd"/>
     <include schemaLocation="ReimbursementsType.xsd"/>
     <include schemaLocation="ATCCode.xsd"/>
     <include schemaLocation="JournalNumber.xsd"/>
@@ -23,8 +23,8 @@
 	<complexType name="ReimbursementType">
 		<sequence>
             <element name="Type" type="ctr:ReimbursementsTypeType" />
-            <element name="GaeldendeFra" type="ctr:GaeldendeFraType"/>
-            <element name="GaeldendeTil" type="ctr:GaeldendeTilType" minOccurs="0"/>
+            <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
+            <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
             <element name="ATCCode" type="ctr:ATCCodeType"/>
             <element name="RouteOfAdministration" type="ctr:RouteOfAdministrationType"/>
             <element name="PackageNumber" type="ctr:PackageNumberType"/>

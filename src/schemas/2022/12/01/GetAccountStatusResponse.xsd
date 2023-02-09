@@ -17,8 +17,7 @@
 	</element>
 	<complexType name="GetAccountStatusResponseType">
 		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>           
             <element name="IsChild" type="ctr:IsChildType"/>
             <element name="PatientStatus" type="ctr:PatientStatusType"/>
             <element name="AccountStatus" type="ctr:AccountStatusType" maxOccurs="unbounded"/>

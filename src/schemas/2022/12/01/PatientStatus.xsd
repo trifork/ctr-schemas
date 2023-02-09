@@ -5,8 +5,8 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
 	<include schemaLocation="PatientStatusValue.xsd"/>
-	<include schemaLocation="GaeldendeFra.xsd"/>
-	<include schemaLocation="GaeldendeTil.xsd"/>
+	<include schemaLocation="ValidFromDate.xsd"/>
+	<include schemaLocation="ValidToDate.xsd"/>
 	
 	<element name="PatientStatus" type="ctr:PatientStatusType">
 		<annotation>
@@ -17,8 +17,8 @@
 	<complexType name="PatientStatusType">
 		<sequence>
             <element name="Status" type="ctr:PatientStatusValueType"/>
-            <element name="GaeldendeFra" type="ctr:GaeldendeFraType"/> 
-            <element name="GaeldendeTil" type="ctr:GaeldendeTilType" minOccurs="0"/>
+            <element name="ValidFromDate" type="ctr:ValidFromDateType"/> 
+            <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 </schema>

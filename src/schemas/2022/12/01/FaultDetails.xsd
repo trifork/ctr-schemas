@@ -10,7 +10,7 @@
     <element name="FaultDetails" type="ctr:FaultDetailsType">
         <annotation>
             <documentation xml:lang="en-GB">Set of keys and values that describe details for the error</documentation>
-            <documentation xml:lang="da-DK">Liste af key value par som beskriver detaljer for fejlen</documentation>
+            <documentation xml:lang="da-DK">Liste af key og value par som beskriver detaljer for fejlen</documentation>
         </annotation>
     </element>
     <complexType name="FaultDetailsType">
