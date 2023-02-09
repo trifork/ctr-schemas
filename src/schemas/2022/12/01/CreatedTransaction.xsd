@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="Amount.xsd"/>
+
+	<element name="CreatedTransaction" type="ctr:CreatedTransactionType">
+		<annotation>
+			<documentation xml:lang="en-GB">Type for the transaction that have been created</documentation>
+			<documentation xml:lang="da-DK">Type for transaktionen, der er blevet oprettet</documentation>
+		</annotation>
+	</element>
+    <complexType name="CreatedTransactionType">
+	    <sequence>
+            <element name="EqualisationAmount" type="ctr:AmountType"/>
+            <element name="Balance" type="ctr:AmountType"/>
+        </sequence>
+	</complexType>
+</schema>
