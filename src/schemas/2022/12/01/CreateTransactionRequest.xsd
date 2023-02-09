@@ -5,11 +5,7 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	<include schemaLocation="PersonIdentifier.xsd"/>
-	<include schemaLocation="OrganisationIdentifier.xsd"/>
-	<include schemaLocation="AdministrationIdentifier.xsd"/>
-	<include schemaLocation="CreatedDateTime.xsd"/>
-	<include schemaLocation="Amount.xsd"/>
-	<include schemaLocation="AccountName.xsd"/>
+	<include schemaLocation="CreateTransaction.xsd"/>
 
 	<element name="CreateTransactionRequest" type="ctr:CreateTransaktionRequestType">
 		<annotation>
@@ -19,13 +15,8 @@
 	</element>
 	<complexType name="CreateTransactionRequestType">
 		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>          
-            <element name="AccountName" type="ctr:AccountNameType" maxOccurs="unbounded"/>
-			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           
-			<element name="AdministrationIdentifier" type="ctr:AdministrationIdentifierType"/>           
-			<element name="CreatedDateTime" type="ctr:CreatedDateTimeType"/>
-			<element name="ReimbursementBasePrice" type="ctr:AmountType"/>
-			<element name="ReportedReimbursement" type="ctr:AmountType"/>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+			<element name="CreateTransaction" type="ctr:CreateTransactionType" maxOccurs="unbounded"/>         
 		</sequence>
 	</complexType>
 </schema>
