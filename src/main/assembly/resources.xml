@@ -1,0 +1,13 @@
+<assembly>
+    <id>resources</id>
+    <formats>
+      <format>zip</format>
+    </formats>
+  
+    <fileSets>
+      <fileSet>
+        <directory>src/schemas</directory>
+        <directory>src/wsdl</directory>
+      </fileSet>
+    </fileSets>
+  </assembly>

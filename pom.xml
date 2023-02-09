@@ -7,6 +7,9 @@
     <groupId>dk.lmst.ctr</groupId>
     <artifactId>ctr-schemas</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>ctr-schemas</name>
+    <description>CTR schemas</description>
+    <packaging>pom</packaging>
 
     <distributionManagement>
         <repository>
@@ -15,5 +18,28 @@
             <url>https://maven.pkg.github.com/trifork/ctr-schemas</url>
         </repository>
     </distributionManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>resources</id>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                        <phase>package</phase>
+                        <configuration>
+                            <descriptors>
+                                <descriptor>/src/main/assembly/resources.xml</descriptor>
+                            </descriptors>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
     
 </project>
