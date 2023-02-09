@@ -42,10 +42,10 @@
             <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerResponse.xsd"/>           
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionsListRequest.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionListRequest.xsd"/>           
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionsListResponse.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionListResponse.xsd"/>           
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/OpretHenstandsOrdningRequest.xsd"/>          
@@ -119,11 +119,11 @@
     <wsdl:message name="CreateTransactionResponse">
         <wsdl:part name="CreateTransactionResponse" element="ctr100:CreateTransactionResponse"/>
     </wsdl:message>
-    <wsdl:message name="GetTransactionsListRequest">
-        <wsdl:part name="GetTransactionsListRequest" element="ctr100:GetTransactionsListRequest"/>
+    <wsdl:message name="GetTransactionListRequest">
+        <wsdl:part name="GetTransactionListRequest" element="ctr100:GetTransactionListRequest"/>
     </wsdl:message>
-    <wsdl:message name="GetTransactionsListResponse">
-        <wsdl:part name="GetTransactionsListResponse" element="ctr100:GetTransactionsListResponse"/>
+    <wsdl:message name="GetTransactionListResponse">
+        <wsdl:part name="GetTransactionListResponse" element="ctr100:GetTransactionListResponse"/>
     </wsdl:message> 
     <wsdl:message name="ChangePersonIdentifierRequest">
         <wsdl:part name="ChangePersonIdentifierRequest" element="ctr100:ChangePersonIdentifierRequest"/>
@@ -137,8 +137,8 @@
     </wsdl:message>
 
     <wsdl:portType name="CtrPortType">
-        <wsdl:operation name="HentKontoStatus">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentKontoStatus" style="document"/>
+        <wsdl:operation name="GetAccountStatus">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetAccountStatus" style="document"/>
             <wsdl:input name="GetAccountStatusRequest"
                         message="tns:GetAccountStatusRequest"/>
             <wsdl:output name="GetAccountStatusResponse"
@@ -177,16 +177,16 @@
                          message="tns:CreateTransactionResponse"/>
 &operationFaultDeclaration;
         </wsdl:operation>
-        <wsdl:operation name="HentTransaktionsListe">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentTransaktionsListe" style="document"/>
-            <wsdl:input name="GetTransactionsListRequest"
-                        message="tns:GetTransactionsListRequest"/>
-            <wsdl:output name="GetTransactionsListResponse"
-                         message="tns:GetTransactionsListResponse"/>
+        <wsdl:operation name="GetTransactionList">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetTransactionList" style="document"/>
+            <wsdl:input name="GetTransactionListRequest"
+                        message="tns:GetTransactionListRequest"/>
+            <wsdl:output name="GetTransactionListResponse"
+                         message="tns:GetTransactionListResponse"/>
 &operationFaultDeclaration;
         </wsdl:operation>                    
-        <wsdl:operation name="SkiftPersonIdentifier">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#SkiftPersonIdentifier" style="document"/>
+        <wsdl:operation name="ChangePersonIdentifier">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#ChangePersonIdentifier" style="document"/>
             <wsdl:input name="ChangePersonIdentifierRequest"
                         message="tns:ChangePersonIdentifierRequest"/>
             <wsdl:output name="ChangePersonIdentifierResponse"
@@ -198,8 +198,8 @@
     <wsdl:binding name="CtrBinding" type="tns:CtrPortType">
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
-        <wsdl:operation name="HentKontoStatus">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentKontoStatus"
+        <wsdl:operation name="GetAccountStatus">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetAccountStatus"
                             style="document"/>
             <wsdl:input name="GetAccountStatusRequest">
 &ctrStandardSOAPRequestHeaders;                     
@@ -254,8 +254,8 @@
 &bindingFaultDeclaration;
         </wsdl:operation>
 
-        <wsdl:operation name="OpretTransaktion">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretTransaktion"
+        <wsdl:operation name="CreateTransaction">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateTransaction"
                             style="document"/>
             <wsdl:input name="CreateTransactionRequest">
 &ctrStandardSOAPRequestHeaders;                     
@@ -269,14 +269,14 @@
         </wsdl:operation>
     </wsdl:binding>
 
-    <wsdl:operation name="HentTransaktionsListe">
-        <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentTransaktionsListe"
+    <wsdl:operation name="GetTransactionList">
+        <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetTransactionList"
                         style="document"/>
-        <wsdl:input name="GetTransactionsListRequest">
+        <wsdl:input name="GetTransactionListRequest">
 &ctrStandardSOAPRequestHeaders;                     
             <soap:body use="literal"/>
         </wsdl:input>
-        <wsdl:output name="GetTransactionsListResponse">
+        <wsdl:output name="GetTransactionListResponse">
 &ctrStandardSOAPResponseHeaders;               
             <soap:body use="literal"/>
         </wsdl:output>
@@ -284,8 +284,8 @@
     </wsdl:operation>
 </wsdl:binding>
 
-    <wsdl:operation name="SkiftPersonIdentifier">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#SkiftPersonIdentifier"
+    <wsdl:operation name="ChangePersonIdentifier">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#ChangePersonIdentifier"
                             style="document"/>
             <wsdl:input name="ChangePersonIdentifierRequest">
 &ctrStandardSOAPRequestHeaders;                     
