@@ -25,10 +25,10 @@
             <element name="Type" type="ctr:ReimbursementsTypeType" />
             <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
             <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
-            <element name="ATCCode" type="ctr:ATCCodeType"/>
-            <element name="RouteOfAdministration" type="ctr:RouteOfAdministrationType"/>
-            <element name="PackageNumber" type="ctr:PackageNumberType"/>
-            <element name="DrugName" type="ctr:DrugNameType"/>
+            <element name="ATCCode" type="ctr:ATCCodeType" minOccurs="0"/>
+            <element name="RouteOfAdministration" type="ctr:RouteOfAdministrationType" minOccurs="0"/>
+            <element name="PackageNumber" type="ctr:PackageNumberType" minOccurs="0"/>
+            <element name="DrugName" type="ctr:DrugNameType" minOccurs="0"/>
             <element name="JournalNumber" type="ctr:JournalNumberType"/>
             <element name="CreatedDateTime" type="ctr:CreatedDateTimeType"/>
 		</sequence>

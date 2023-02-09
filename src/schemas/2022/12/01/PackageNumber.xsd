@@ -12,7 +12,7 @@
 	</element>
 	<simpleType name="PackageNumberType">
 		<restriction base="string">
-			<maxLength value="100"/>
+			<maxLength value="20"/>
 		</restriction>
 	</simpleType>
 </schema>

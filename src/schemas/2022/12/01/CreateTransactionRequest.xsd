@@ -24,8 +24,8 @@
 			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           
 			<element name="AdministrationIdentifier" type="ctr:AdministrationIdentifierType"/>           
 			<element name="CreatedDateTime" type="ctr:CreatedDateTimeType"/>
-			<element name="BeregningsGrundlagsPris" type="ctr:AmountType"/>
-			<element name="IndberettetTilskud" type="ctr:AmountType"/>
+			<element name="ReimbursementBasePrice" type="ctr:AmountType"/>
+			<element name="ReportedReimbursement" type="ctr:AmountType"/>
 		</sequence>
 	</complexType>
 </schema>
