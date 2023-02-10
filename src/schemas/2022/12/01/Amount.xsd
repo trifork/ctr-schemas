@@ -15,6 +15,7 @@
 		<restriction base="decimal">
 			<fractionDigits value="2"/>
 			<totalDigits value="10"/>
+			<!-- TODO should we have minInclusive (a negative number) ? and maxInclusive on the AmountType ? And what about max digits set to 7 ? -->
 		</restriction>
 	</simpleType>
 </schema>
