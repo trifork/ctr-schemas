@@ -1,13 +1,20 @@
-<assembly>
-    <id>resources</id>
+<assembly xmlns="http://maven.apache.org/ASSEMBLY/2.1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/ASSEMBLY/2.1.1 https://maven.apache.org/xsd/assembly-2.1.1.xsd">
+
+    <id>src</id>
     <formats>
       <format>zip</format>
     </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
   
-    <fileSets>
+    <fileSets>     
       <fileSet>
-        <directory>src/schemas</directory>
-        <directory>src/wsdl</directory>
+        <directory>${project.basedir}/src</directory>
+        <excludes>
+          <exclude>**/main/assembly/*.xml</exclude>
+          <exclude>**/target/*</exclude>
+        </excludes>        
       </fileSet>
     </fileSets>
   </assembly>

@@ -1,5 +1,5 @@
 # This workflow will build a Java project with Maven
-name: Build and publish schemas with Maven
+name: Zip and publish schemas with Maven
 
 on:
   release:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-publish:
-    name: Build and publish code
+    name: Build and publish
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main repository
