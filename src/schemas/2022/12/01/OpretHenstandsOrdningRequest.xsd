@@ -24,7 +24,7 @@
             <element name="ValidToDate" type="ctr:ValidToDate" minOccurs="0"/>
 			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>
 			<element name="Active" type="ctr:IsActive"/>
-			<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0"/>
+			<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0" maxOccurs="1"/>
 		</sequence>
 	</complexType>
 </schema>

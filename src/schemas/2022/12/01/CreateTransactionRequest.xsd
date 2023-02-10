@@ -16,7 +16,7 @@
 	<complexType name="CreateTransactionRequestType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-			<element name="CreateTransaction" type="ctr:CreateTransactionType" maxOccurs="unbounded"/>         
+			<element name="CreateTransaction" type="ctr:CreateTransactionType" maxOccurs="100"/>         
 		</sequence>
 	</complexType>
 </schema>

@@ -12,6 +12,7 @@
 	</element>
 	<simpleType name="PackageNumberType">
 		<restriction base="string">
+			<minLength value="1"/>
 			<maxLength value="20"/>
 		</restriction>
 	</simpleType>

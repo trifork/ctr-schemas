@@ -18,7 +18,7 @@
 		<sequence>           
             <element name="AccountName" type="ctr:AccountNameType"/>
 			<element name="AccountDescription" type="ctr:AccountDescriptionType"/>
-            <element name="PeriodStatus" type="ctr:PeriodStatusType" maxOccurs="unbounded"/>            
+            <element name="PeriodStatus" type="ctr:PeriodStatusType" minOccurs="0" maxOccurs="100"/>            
 		</sequence>
 	</complexType>
 </schema>

@@ -12,6 +12,9 @@
         </annotation>
     </element>
     <simpleType name="ValueType">
-        <restriction base="string"/>
+        <restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="1000"/>
+		</restriction>
     </simpleType>
 </schema>

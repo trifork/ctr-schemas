@@ -16,7 +16,7 @@
 	<complexType name="HentHenstandsOrdningerResponseType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>       
-            <element name="HenstandsOrdning" type="ctr:HenstandsOrdningType" maxOccurs="unbounded"/>
+            <element name="HenstandsOrdning" type="ctr:HenstandsOrdningType" minOccurs="0" maxOccurs="100"/>
 		</sequence>
 	</complexType>
 </schema>

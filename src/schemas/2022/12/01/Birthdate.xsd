@@ -13,6 +13,7 @@
 	</element>
 	<simpleType name="BirthdateType">
         <restriction base="date">
+			<minInclusive value="1900-01-01"/>
             <maxInclusive value="2900-01-01"/>
 		</restriction>
 	</simpleType>

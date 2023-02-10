@@ -14,7 +14,7 @@
 			<documentation xml:lang="en-GB">CTR details for a fault</documentation>
 			<documentation xml:lang="da-DK">CTR detaljer for en fejl</documentation>
 		</annotation>
-		<<sequence>
+		<sequence>
             <element name="FaultCode" type="string" />
             <element name="FaultText" type="string" />
             <element name="FaultDetails" type="ctr:FaultDetailsType" />

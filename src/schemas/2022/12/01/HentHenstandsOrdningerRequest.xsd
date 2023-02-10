@@ -4,8 +4,7 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<include schemaLocation="PersonIdentifier.xsd"/>
-	<include schemaLocation="MaxResultSize.xsd"/>
+	<include schemaLocation="PersonIdentifier.xsd"/>	
 
 	<element name="HentHenstandsOrdningerRequest" type="ctr:HentHenstandsOrdningerRequestType">
 		<annotation>
@@ -15,8 +14,7 @@
 	</element>
 	<complexType name="HentHenstandsOrdningerRequestType">
 		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>           
-			<element name="MaxResultSize" type="ctr:MaxResultSizeType" minOccurs="0"/> <!-- TODO skal denne fjernes ??? -->
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>			
 		</sequence>
 	</complexType>
 </schema>

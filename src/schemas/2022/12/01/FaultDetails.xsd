@@ -15,7 +15,7 @@
     </element>
     <complexType name="FaultDetailsType">
         <sequence>
-            <element name="KeyValueSet" type="ctr:KeyValueSetType" maxOccurs="unbounded"/>
+            <element name="KeyValueSet" type="ctr:KeyValueSetType" maxOccurs="100"/>
         </sequence>
     </complexType>
 </schema>

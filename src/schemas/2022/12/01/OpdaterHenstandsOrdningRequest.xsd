@@ -21,7 +21,7 @@
 	<complexType name="OpdaterHenstandsOrdningRequestType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>           
-			<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType" minOccurs="0"/>			
+			<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType"/>			
 			<element name="ValidFromDate" type="ctr:ValidFromDate"/>
             <element name="ValidToDate" type="ctr:ValidToDate" minOccurs="0"/>
 			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           

@@ -14,8 +14,7 @@
 	</element>
 	<complexType name="GetReimbursementsRequestType">
 		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>            
-			<element name="Filter" type="ctr:ReimbursementsFilterType" minOccurs="0"/> <!-- TODO skal denne fjernes ? -->
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>			
 		</sequence>
 	</complexType>
 </schema>
