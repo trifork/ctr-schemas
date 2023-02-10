@@ -4,21 +4,21 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
-	<include schemaLocation="PatientStatusVaerdi.xsd"/>
-	<include schemaLocation="GaeldendeFra.xsd"/>
-	<include schemaLocation="GaeldendeTil.xsd"/>
+	<include schemaLocation="PatientStatusValue.xsd"/>
+	<include schemaLocation="ValidFromDate.xsd"/>
+	<include schemaLocation="ValidToDate.xsd"/>
 	
 	<element name="PatientStatus" type="ctr:PatientStatusType">
 		<annotation>
 			<documentation xml:lang="en-GB">Patient status</documentation>
-			<documentation xml:lang="da-DK">Patient status</documentation>
+			<documentation xml:lang="da-DK">Patientstatus</documentation>
 		</annotation>
 	</element>
 	<complexType name="PatientStatusType">
 		<sequence>
-            <element name="Status" type="ctr:PatientStatusVaerdiType"/>
-            <element name="GaeldendeFra" type="ctr:GaeldendeFraType"/> 
-            <element name="GaeldendeTil" type="ctr:GaeldendeTilType"/> 
+            <element name="Status" type="ctr:PatientStatusValueType"/>
+            <element name="ValidFromDate" type="ctr:ValidFromDateType"/> 
+            <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 </schema>

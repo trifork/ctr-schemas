@@ -15,7 +15,7 @@
 			<documentation xml:lang="da-DK">Response header</documentation>
 		</annotation>
 		<sequence>
-			<element name="CTRDetail" type="ctr:CTRDetailType" minOccurs="1" maxOccurs="unbounded"/>
+			<element name="CTRDetail" type="ctr:CTRDetailType" minOccurs="1" maxOccurs="100"/>
 		</sequence>
 	</complexType>
 	

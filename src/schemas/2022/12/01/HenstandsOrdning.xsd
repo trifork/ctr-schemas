@@ -5,10 +5,10 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
     <include schemaLocation="OrganisationIdentifier.xsd"/>
-	<include schemaLocation="OphoersAarsag.xsd"/>
+	<include schemaLocation="DiscontinuanceReason.xsd"/>
 	<include schemaLocation="IsActive.xsd"/>
-	<include schemaLocation="GaeldendeFra.xsd"/>
-	<include schemaLocation="GaeldendeTil.xsd"/>
+	<include schemaLocation="ValidFromDate.xsd"/>
+	<include schemaLocation="ValidToDate.xsd"/>
 	
 	<element name="HenstandsOrdning" type="ctr:HenstandsOrdningType">
 		<annotation>
@@ -18,11 +18,10 @@
 	</element>
 	<complexType name="HenstandsOrdningType">
 		<sequence>
-            <element name="GaeldendeFra" type="ctr:GaeldendeFra"/>
-            <element name="GaeldendeTil" type="ctr:GaeldendeTil"/>      
-            <element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
-            <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
-            <element name="OphoersAarsag" type="ctr:OphoersAarsagType" minOccurs="0"/>
+            <element name="ValidFromDate" type="ctr:ValidFromDate"/>
+            <element name="ValidToDate" type="ctr:ValidToDate" minOccurs="0"/>      
+            <element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           
+            <element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0"/>
             <element name="Active" type="ctr:IsActive"/>
 		</sequence>
 	</complexType>

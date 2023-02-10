@@ -5,13 +5,13 @@
         elementFormDefault="qualified" 
         attributeFormDefault="unqualified">
 
-	<element name="KontoNavn" type="ctr:KontoNavnType">
+	<element name="AccountDescription" type="ctr:AccountDescriptionType">
 		<annotation>
-			<documentation xml:lang="en-GB">The name on a CTR account</documentation>
-			<documentation xml:lang="da-DK">Navnet på en CTR-konto</documentation>
+			<documentation xml:lang="en-GB">Description of a CTR account</documentation>
+			<documentation xml:lang="da-DK">Beskrivelse af en CTR-konto</documentation>
 		</annotation>
 	</element>
-	<simpleType name="KontoNavnType">
+	<simpleType name="AccountDescriptionType">
 		<restriction base="string">
 			<minLength value="1"/>
 			<maxLength value="50"/>

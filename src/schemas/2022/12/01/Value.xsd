@@ -7,11 +7,14 @@
 
     <element name="Value" type="ctr:ValueType">
         <annotation>
-            <documentation xml:lang="en-GB">Value for fault key value set entry</documentation>
-            <documentation xml:lang="da-DK">Value i et key value par</documentation>
+            <documentation xml:lang="en-GB">Value for fault key-value set entry</documentation>
+            <documentation xml:lang="da-DK">Value for fejl key-value par</documentation>
         </annotation>
     </element>
     <simpleType name="ValueType">
-        <restriction base="string"/>
+        <restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="1000"/>
+		</restriction>
     </simpleType>
 </schema>

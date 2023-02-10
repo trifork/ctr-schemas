@@ -6,11 +6,11 @@
 
 	<include schemaLocation="PersonIdentifier.xsd"/>
 	<include schemaLocation="HenstandsordningIdentifier.xsd"/>
-	<include schemaLocation="GaeldendeFra.xsd"/>
-	<include schemaLocation="GaeldendeTil.xsd"/>
+	<include schemaLocation="ValidFromDate.xsd"/>
+	<include schemaLocation="ValidToDate.xsd"/>
 	<include schemaLocation="IsActive.xsd"/>
 	<include schemaLocation="OrganisationIdentifier.xsd"/>
-	<include schemaLocation="OphoersAarsag.xsd"/>
+	<include schemaLocation="DiscontinuanceReason.xsd"/>
 
 	<element name="OpdaterHenstandsOrdningRequest" type="ctr:OpdaterHenstandsOrdningRequestType">
 		<annotation>
@@ -20,16 +20,13 @@
 	</element>
 	<complexType name="OpdaterHenstandsOrdningRequestType">
 		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
-			<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType" minOccurs="0"/>
-			<element name="HenstandsordningIdentifierSource" type="ctr:HenstandsordningIdentifierSourceType" minOccurs="0"/>
-			<element name="GaeldendeFra" type="ctr:GaeldendeFra"/>
-            <element name="GaeldendeTil" type="ctr:GaeldendeTil"/>
-			<element name="ApoteksIdentifier" type="ctr:OrganisationIdentifierType"/>
-            <element name="ApoteksIdentifierSource" type="ctr:OrganisationIdentifierSourceType"/>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>           
+			<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType"/>			
+			<element name="ValidFromDate" type="ctr:ValidFromDate"/>
+            <element name="ValidToDate" type="ctr:ValidToDate" minOccurs="0"/>
+			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           
 			<element name="Active" type="ctr:IsActive"/>
-			<element name="OphoersAarsag" type="ctr:OphoersAarsagType" minOccurs="0"/>
+			<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0"/>
 		</sequence>
 	</complexType>
 </schema>

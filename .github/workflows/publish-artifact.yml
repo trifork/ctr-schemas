@@ -2,10 +2,7 @@
 name: Publish Artifact
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ "main" ]  
+  workflow_dispatch:   
 
 jobs:
        
@@ -21,12 +18,9 @@ jobs:
       - name: step 2 - Add artifacts to publish to the temp folder
         run: |
           cp -r ./src/ temp
-          cd temp
-          zip -r artifact.zip .
-          cd ..
     
       - name: Step 3 - Use the Upload Artifact GitHub Action
         uses: actions/upload-artifact@v3.1.2
         with: 
-          name: assets-for-upload-archive
+          name: ctr-schemas
           path: temp

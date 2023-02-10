@@ -4,15 +4,15 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
-	<element name="Varenummer" type="ctr:VarenummerType">
+	<element name="RouteOfAdministration" type="ctr:RouteOfAdministrationType">
 		<annotation>
-			<documentation xml:lang="en-GB">Varenummer</documentation>
-			<documentation xml:lang="da-DK">Varenummer</documentation>
+			<documentation xml:lang="en-GB">The route of administration in which to obtain a drug</documentation>
+			<documentation xml:lang="da-DK">Administrationsvej for lægemidlet</documentation>
 		</annotation>
 	</element>
-	<simpleType name="VarenummerType">
+	<simpleType name="RouteOfAdministrationType">
 		<restriction base="string">
-			<maxLength value="100"/>
+			<maxLength value="15"/>
 		</restriction>
 	</simpleType>
 </schema>

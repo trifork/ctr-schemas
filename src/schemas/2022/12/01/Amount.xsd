@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" 
+        attributeFormDefault="unqualified">
+	
+	<element name="Amount" type="ctr:AmountType">
+		<annotation>
+			<documentation xml:lang="en-GB">Amount</documentation>
+			<documentation xml:lang="da-DK">Beløb</documentation>
+		</annotation>
+	</element>
+	<simpleType name="AmountType">
+		<restriction base="decimal">
+			<fractionDigits value="2"/>
+			<totalDigits value="10"/>
+			<!-- TODO should we have minInclusive (a negative number) ? and maxInclusive on the AmountType ? And what about max digits set to 7 ? -->
+		</restriction>
+	</simpleType>
+</schema>

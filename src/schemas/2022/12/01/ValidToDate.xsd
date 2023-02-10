@@ -5,13 +5,13 @@
 		elementFormDefault="qualified" 
         attributeFormDefault="unqualified">
 	
-	<element name="GaeldendeTilDate" type="ctr:GaeldendeTilDateType">
+	<element name="ValidToDate" type="ctr:ValidToDateType">
 		<annotation>
-			<documentation xml:lang="en-GB">Date for when CTR data is valid to. Used in Bevillinger, HenstandsOrdning, Transkationer</documentation>
-			<documentation xml:lang="da-DK">Dato for hvornår CTR data er gældende til. Brugt i.f.m. Bevillinger, HenstandsOrdning, Transkationer</documentation>
+			<documentation xml:lang="en-GB">Date for when CTR data is valid to. Used in Reimbursements, HenstandsOrdning</documentation>
+			<documentation xml:lang="da-DK">Dato for hvornår CTR data er gældende til. Brugt i.f.m. Bevillinger, HenstandsOrdning</documentation>
 		</annotation>
 	</element>
-	<simpleType name="GaeldendeTilDateType">
+	<simpleType name="ValidToDateType">
         <restriction base="date">
             <minInclusive value="2000-01-01"/>
             <maxInclusive value="2900-01-01"/>

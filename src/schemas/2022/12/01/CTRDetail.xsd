@@ -16,8 +16,8 @@
 			<documentation xml:lang="da-DK">CTR detaljer for fejl og advarsler</documentation>
 		</annotation>
 		<sequence>
-			<element name="CTRFaultDetail" type="ctr:CTRFaultDetailType" minOccurs="0" maxOccurs="unbounded"/>
-            <element name="CTRWarningDetail" type="ctr:CTRFaultDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="CTRFaultDetail" type="ctr:CTRFaultDetailType" minOccurs="0" maxOccurs="100"/>
+            <element name="CTRWarningDetail" type="ctr:CTRFaultDetailType" minOccurs="0" maxOccurs="100"/>
 		</sequence>
 	</complexType>
 	
