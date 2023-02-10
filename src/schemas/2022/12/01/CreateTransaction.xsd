@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <include schemaLocation="OrganisationIdentifier.xsd"/>
+	<include schemaLocation="AdministrationIdentifier.xsd"/>
+	<include schemaLocation="CreatedDateTime.xsd"/>
+	<include schemaLocation="Amount.xsd"/>
+    <include schemaLocation="AccountName.xsd"/>
+
+	<element name="CreateTransaction" type="ctr:CreateTransactionType">
+		<annotation>
+			<documentation xml:lang="en-GB">Type for the transaction to be created</documentation>
+			<documentation xml:lang="da-DK">Type for transaktionen, der skal oprettes</documentation>
+		</annotation>
+	</element>
+    <complexType name="CreateTransactionType">
+	    <sequence>
+            <element name="AccountName" type="ctr:AccountNameType" maxOccurs="100"/>
+            <element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>
+            <element name="AdministrationIdentifier" type="ctr:AdministrationIdentifierType"/>     
+            <element name="AdministeredDateTime" type="ctr:CreatedDateTimeType"/>
+            <element name="ReimbursementBasePrice" type="ctr:AmountType"/>
+            <element name="ReportedReimbursement" type="ctr:AmountType"/>
+        </sequence>
+	</complexType>
+</schema>

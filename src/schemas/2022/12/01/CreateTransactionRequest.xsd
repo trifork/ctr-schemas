@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="PersonIdentifier.xsd"/>
+	<include schemaLocation="CreateTransaction.xsd"/>
+
+	<element name="CreateTransactionRequest" type="ctr:CreateTransaktionRequestType">
+		<annotation>
+			<documentation xml:lang="en-GB">Element for creating a CTR transaction request</documentation>
+			<documentation xml:lang="da-DK">Element for at oprette en CTR transaktion</documentation>
+		</annotation>
+	</element>
+	<complexType name="CreateTransactionRequestType">
+		<sequence>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+			<element name="CreateTransaction" type="ctr:CreateTransactionType" maxOccurs="100"/>         
+		</sequence>
+	</complexType>
+</schema>

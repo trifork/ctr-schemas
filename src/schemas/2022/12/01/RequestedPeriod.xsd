@@ -4,23 +4,23 @@
 		targetNamespace="http://lmst.dk/Ctr/100"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
-	<element name="RequestedPeriode" type="ctr:RequestedPeriodeType">
+	<element name="RequestedPeriod" type="ctr:RequestedPeriodType">
 		<annotation>
 			<documentation xml:lang="en-GB">Requested CTR period</documentation>
 			<documentation xml:lang="da-DK">Forespurgt CTR periode</documentation>
 		</annotation>
 	</element>
-	<simpleType name="RequestedPeriodeType">
-		<union memberTypes="ctr:PredefinedRequestedPeriodeType ctr:UndefinedRequestedPeriodeType"/>
+	<simpleType name="RequestedPeriodType">
+		<union memberTypes="ctr:PredefinedRequestedPeriodType ctr:UndefinedRequestedPeriodType"/>
 	</simpleType>
-	<simpleType name="PredefinedRequestedPeriodeType">
-		<restriction base="ctr:UndefinedRequestedPeriodeType">
-			<enumeration value="aktuel"/>
-			<enumeration value="forrige"/>
-            <enumeration value="alle"/>
+	<simpleType name="PredefinedRequestedPeriodType">
+		<restriction base="ctr:UndefinedRequestedPeriodType">
+			<enumeration value="Aktuel"/>
+			<enumeration value="Forrige"/>
+            <enumeration value="Alle"/>
         </restriction>
 	</simpleType>
-	<simpleType name="UndefinedRequestedPeriodeType">
+	<simpleType name="UndefinedRequestedPeriodType">
 		<restriction base="string">
 			<minLength value="1"/>
 			<maxLength value="200"/>

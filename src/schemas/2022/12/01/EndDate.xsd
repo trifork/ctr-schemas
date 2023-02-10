@@ -5,13 +5,13 @@
 		elementFormDefault="qualified" 
         attributeFormDefault="unqualified">
 	
-	<element name="SlutDato" type="ctr:SlutDatoType">
+	<element name="EndDate" type="ctr:EndDateType">
 		<annotation>
 			<documentation xml:lang="en-GB">Date type that defines the end date of the CTR period. </documentation>
 			<documentation xml:lang="da-DK">Dato type der definerer CTR periodens slut dato.</documentation>
 		</annotation>
 	</element>
-	<simpleType name="SlutDatoType">
+	<simpleType name="EndDateType">
         <restriction base="date">
             <minInclusive value="2020-01-01"/>
             <maxInclusive value="2900-01-01"/>

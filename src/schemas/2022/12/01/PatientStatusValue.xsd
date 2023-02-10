@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<element name="PatientStatusValue" type="ctr:PatientStatusValueType">
+		<annotation>
+			<documentation xml:lang="en-GB">Patient status value type (e.g. Terminal status)</documentation>
+			<documentation xml:lang="da-DK">Patient status værdi type (eksempelvis Terminal status)</documentation>
+		</annotation>
+	</element>
+	<simpleType name="PatientStatusValueType">
+		<union memberTypes="ctr:PredefinedPatientStatusValueType ctr:UndefinedPatientStatusValueType"/>
+	</simpleType>
+	<simpleType name="PredefinedPatientStatusValueType">
+		<restriction base="ctr:UndefinedPatientStatusValueType">
+			<enumeration value="Almen"/>
+			<enumeration value="Terminal"/>
+        </restriction>
+	</simpleType>
+	<simpleType name="UndefinedPatientStatusValueType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="200"/>
+		</restriction>
+	</simpleType>
+</schema>

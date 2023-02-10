@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/100"
+		targetNamespace="http://lmst.dk/Ctr/100"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="PatientStatus.xsd"/>
+    <include schemaLocation="PersonIdentifier.xsd"/>
+    <include schemaLocation="IsChild.xsd"/>
+    <include schemaLocation="AccountStatus.xsd"/>
+
+	<element name="GetAccountStatusResponse" type="ctr:GetAccountStatusResponseType">
+		<annotation>
+			<documentation xml:lang="en-GB">Outer container element for a response with one or more account status</documentation>
+			<documentation xml:lang="da-DK">Ydre container-element for et svar med en eller flere kontostatus</documentation>
+		</annotation>
+	</element>
+	<complexType name="GetAccountStatusResponseType">
+		<sequence>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>           
+            <element name="IsChild" type="ctr:IsChildType"/>
+            <element name="PatientStatus" type="ctr:PatientStatusType"/>
+            <element name="AccountStatus" type="ctr:AccountStatusType" minOccurs="0" maxOccurs="100"/>
+		</sequence>
+	</complexType>
+</schema>

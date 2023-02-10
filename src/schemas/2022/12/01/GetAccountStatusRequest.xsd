@@ -5,21 +5,20 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	<include schemaLocation="PersonIdentifier.xsd"/>
-    <include schemaLocation="RequestedPeriode.xsd"/>
-	<include schemaLocation="KontoNavn.xsd"/>
+    <include schemaLocation="RequestedPeriod.xsd"/>
+	<include schemaLocation="AccountName.xsd"/>
 
-	<element name="HentKontoStatusRequest" type="ctr:HentKontoStatusRequestType">
+	<element name="GetAccountStatusRequest" type="ctr:GetAccountStatusRequestType">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for a request for account status</documentation>
 			<documentation xml:lang="da-DK">Element for en forespørgsel efter kontostatus</documentation>
 		</annotation>
 	</element>
-	<complexType name="HentKontoStatusRequestType">
+	<complexType name="GetAccountStatusRequestType">
 		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-            <element name="PersonIdentifierSource" type="ctr:PersonIdentifierSourceType"/>
-            <element name="KontoNavn" type="ctr:KontoNavnType" maxOccurs="unbounded"/>
-            <element name="Periode" type="ctr:RequestedPeriodeType"/>
+            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>            
+            <element name="AccountName" type="ctr:AccountNameType" maxOccurs="100"/>
+            <element name="Period" type="ctr:RequestedPeriodType"/>
 		</sequence>
 	</complexType>
 </schema>

@@ -5,29 +5,29 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	<include schemaLocation="Source.xsd"/>
-	<element name="EkspeditionsIdentifier" type="ctr:EkspeditionsIdentifierType">
+	<element name="AdministrationIdentifier" type="ctr:AdministrationIdentifierType">
 		<annotation>
-			<documentation xml:lang="en-GB">Number or code identifying an expedition</documentation>
+			<documentation xml:lang="en-GB">Number or code identifying an administration</documentation>
 			<documentation xml:lang="da-DK">Nummer eller kode der identificerer en ekspedition</documentation>
 		</annotation>
 	</element>
-	<complexType name="EkspeditionsIdentifierType">
+	<complexType name="AdministrationIdentifierType">
 		<simpleContent>
-			<extension base="ctr:EkspeditionsIdentifierValueType">
-				<attribute name="source" type="ctr:EkspeditionsIdentifierSourceType" use="required"/>
+			<extension base="ctr:AdministrationIdentifierValueType">
+				<attribute name="source" type="ctr:AdministrationIdentifierSourceType" use="required"/>
 			</extension>
 		</simpleContent>
 	</complexType>
-	<simpleType name="EkspeditionsIdentifierValueType">
+	<simpleType name="AdministrationIdentifierValueType">
 		<restriction base="string">
 			<minLength value="1"/>
 			<maxLength value="50"/>
 		</restriction>
 	</simpleType>
-	<simpleType name="EkspeditionsIdentifierSourceType">
-		<union memberTypes="ctr:EkspeditionsIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
+	<simpleType name="AdministrationIdentifierSourceType">
+		<union memberTypes="ctr:AdministrationIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
 	</simpleType>
-	<simpleType name="EkspeditionsIdentifierPredefinedSourceType">
+	<simpleType name="AdministrationIdentifierPredefinedSourceType">
 		<restriction base="string">
 			<minLength value="1"/>
 			<maxLength value="200"/>
