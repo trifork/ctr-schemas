@@ -4,7 +4,7 @@ Contains the schemas and wsdl file used in the CTR project for the new DGWS inte
 
 ## Build
 
-Run mvn clean package to create a zip file of the wsdl and schema files in ctr-schemas repo. The zip file is located in the target folder.
+Run `mvn clean package` to create a zip file of the wsdl and schema files in `ctr-schemas` repo. The zip file is located in the `target` folder.
 
 ## Upload zip file to Github
 
