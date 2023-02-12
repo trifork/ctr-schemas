@@ -12,8 +12,7 @@
       <fileSet>
         <directory>${project.basedir}/src</directory>
         <excludes>
-          <exclude>**/main/assembly/*.xml</exclude>
-          <exclude>**/target/*</exclude>
+          <exclude>**/main/**</exclude>
         </excludes>        
       </fileSet>
     </fileSets>
