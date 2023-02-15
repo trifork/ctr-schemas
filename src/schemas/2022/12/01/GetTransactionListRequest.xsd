@@ -8,13 +8,13 @@
     <include schemaLocation="RequestedPeriod.xsd"/>
 	<include schemaLocation="AccountName.xsd"/>
 
-	<element name="GetAccountStatusRequest" type="ctr:GetAccountStatusRequestType">
+	<element name="GetTransactionListRequest" type="ctr:GetTransactionListRequestType">
 		<annotation>
-			<documentation xml:lang="en-GB">Element for a request for account status</documentation>
-			<documentation xml:lang="da-DK">Element for en forespørgsel efter kontostatus</documentation>
+			<documentation xml:lang="en-GB">Element for a request for transaction list</documentation>
+			<documentation xml:lang="da-DK">Element for en forespørgsel efter transaktionsliste</documentation>
 		</annotation>
 	</element>
-	<complexType name="GetAccountStatusRequestType">
+	<complexType name="GetTransactionListRequestType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>            
             <element name="AccountName" type="ctr:AccountNameType" maxOccurs="100"/>
