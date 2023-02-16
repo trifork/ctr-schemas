@@ -23,12 +23,3 @@
 	
 </schema>
 
-<element name="CTRFaultDetail">
-        <complexType>
-            <sequence>
-                <element name="FaultCode" type="string" />
-                <element name="FaultText" type="string" />
-                <element name="FaultDetails" type="FaultDetailsType" />
-            </sequence>
-        </complexType>
-    </element>

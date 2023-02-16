@@ -1,22 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-!DOCTYPE definitions [
-<!ENTITY ctrStandardSOAPRequestHeaders "
-                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
-                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
-">
-<!ENTITY ctrStandardSOAPResponseHeaders "
-                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
-">
-<!ENTITY operationFaultDeclaration "
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
-">
-<!ENTITY bindingFaultDeclaration "
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
-            </wsdl:fault>
-">
-]>
 <wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"                 
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
@@ -70,7 +52,10 @@
             <xs:include schemaLocation="../schemas/2022/12/01/ChangePersonIdentifierRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/ChangePersonIdentifierResponse.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/ChangePersonIdentifierResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CTRDetail.xsd"/>
         </xs:schema>
     </wsdl:types>
      
@@ -144,7 +129,7 @@
                         message="tns:GetAccountStatusRequest"/>
             <wsdl:output name="GetAccountStatusResponse"
                          message="tns:GetAccountStatusResponse"/>
-&operationFaultDeclaration;
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
         <wsdl:operation name="HentHenstandsOrdninger">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentHenstandsOrdninger" style="document"/>
@@ -152,7 +137,7 @@
                         message="tns:HentHenstandsOrdningerRequest"/>
             <wsdl:output name="HentHenstandsOrdningerResponse"
                          message="tns:HentHenstandsOrdningerResponse"/>
-&operationFaultDeclaration;
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
         <wsdl:operation name="OpretHenstandsOrdning">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretHenstandsOrdning" style="document"/>
@@ -160,7 +145,7 @@
                         message="tns:OpretHenstandsOrdningRequest"/>
             <wsdl:output name="OpretHenstandsOrdningResponse"
                          message="tns:OpretHenstandsOrdningResponse"/>
-&operationFaultDeclaration;
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
         <wsdl:operation name="OpdaterHenstandsOrdning">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpdaterHenstandsOrdning" style="document"/>
@@ -168,15 +153,15 @@
                         message="tns:OpdaterHenstandsOrdningRequest"/>
             <wsdl:output name="OpdaterHenstandsOrdningResponse"
                          message="tns:OpdaterHenstandsOrdningResponse"/>
-&operationFaultDeclaration;
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
-        <wsdl:operation name="OpretTransaktion">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretTransaktion" style="document"/>
+        <wsdl:operation name="CreateTransaction">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateTransaction" style="document"/>
             <wsdl:input name="CreateTransactionRequest"
                         message="tns:CreateTransactionRequest"/>
             <wsdl:output name="CreateTransactionResponse"
                          message="tns:CreateTransactionResponse"/>
-&operationFaultDeclaration;
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
         <wsdl:operation name="GetTransactionList">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetTransactionList" style="document"/>
@@ -184,7 +169,7 @@
                         message="tns:GetTransactionListRequest"/>
             <wsdl:output name="GetTransactionListResponse"
                          message="tns:GetTransactionListResponse"/>
-&operationFaultDeclaration;
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>                    
         <wsdl:operation name="ChangePersonIdentifier">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#ChangePersonIdentifier" style="document"/>
@@ -192,7 +177,7 @@
                         message="tns:ChangePersonIdentifierRequest"/>
             <wsdl:output name="ChangePersonIdentifierResponse"
                          message="tns:ChangePersonIdentifierResponse"/>
-&operationFaultDeclaration;
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
     </wsdl:portType>
 
@@ -203,98 +188,140 @@
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetAccountStatus"
                             style="document"/>
             <wsdl:input name="GetAccountStatusRequest">
-&ctrStandardSOAPRequestHeaders;                     
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                     
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetAccountStatusResponse">
-&ctrStandardSOAPResponseHeaders;               
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
                 <soap:body use="literal"/>
             </wsdl:output>
-&bindingFaultDeclaration;
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+
         </wsdl:operation>
 
         <wsdl:operation name="HentHenstandsOrdninger">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentHenstandsOrdninger"
                             style="document"/>
             <wsdl:input name="HentHenstandsOrdningerRequest">
-&ctrStandardSOAPRequestHeaders;
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="HentHenstandsOrdningerResponse">
-&ctrStandardSOAPResponseHeaders;
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>    
                 <soap:body use="literal"/>
             </wsdl:output>
-&bindingFaultDeclaration;
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+
         </wsdl:operation>
 
         <wsdl:operation name="OpretHenstandsOrdning">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretHenstandsOrdning"
                             style="document"/>
             <wsdl:input name="OpretHenstandsOrdningRequest">
-&ctrStandardSOAPRequestHeaders;
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="OpretHenstandsOrdningResponse">
-&ctrStandardSOAPResponseHeaders;
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
-&bindingFaultDeclaration;
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+
         </wsdl:operation>
 
         <wsdl:operation name="OpdaterHenstandsOrdning">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpdaterHenstandsOrdning"
                             style="document"/>
             <wsdl:input name="OpdaterHenstandsOrdningRequest">
-&ctrStandardSOAPRequestHeaders;
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="OpdaterHenstandsOrdningResponse">
-&ctrStandardSOAPResponseHeaders;
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>    
             <soap:body use="literal"/>
         </wsdl:output>
-&bindingFaultDeclaration;
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+
         </wsdl:operation>
 
         <wsdl:operation name="CreateTransaction">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateTransaction"
                             style="document"/>
             <wsdl:input name="CreateTransactionRequest">
-&ctrStandardSOAPRequestHeaders;                     
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                     
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="CreateTransactionResponse">
-&ctrStandardSOAPResponseHeaders;               
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
                 <soap:body use="literal"/>
             </wsdl:output>
-&bindingFaultDeclaration;
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+
         </wsdl:operation>
 
     <wsdl:operation name="GetTransactionList">
         <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetTransactionList"
                         style="document"/>
         <wsdl:input name="GetTransactionListRequest">
-&ctrStandardSOAPRequestHeaders;                     
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                     
             <soap:body use="literal"/>
         </wsdl:input>
         <wsdl:output name="GetTransactionListResponse">
-&ctrStandardSOAPResponseHeaders;               
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
             <soap:body use="literal"/>
         </wsdl:output>
-&bindingFaultDeclaration;
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+
     </wsdl:operation>
 
     <wsdl:operation name="ChangePersonIdentifier">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#ChangePersonIdentifier"
                             style="document"/>
             <wsdl:input name="ChangePersonIdentifierRequest">
-&ctrStandardSOAPRequestHeaders;                     
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                     
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="ChangePersonIdentifierResponse">
-&ctrStandardSOAPResponseHeaders;               
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
                 <soap:body use="literal"/>
             </wsdl:output>
-&bindingFaultDeclaration;
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+
         </wsdl:operation>
 </wsdl:binding>
 
