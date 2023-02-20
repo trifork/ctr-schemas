@@ -17,7 +17,7 @@
 	<simpleType name="PredefinedReimbursementTypeType">
 		<restriction base="ctr:UndefinedReimbursementTypeType">
 			<enumeration value="Enkelt"/>
-			<enumeration value="Forhoejet"/>
+			<enumeration value="Forhøjet"/>
         </restriction>
 	</simpleType>
 	<simpleType name="UndefinedReimbursementTypeType">

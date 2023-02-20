@@ -16,7 +16,7 @@
 	<complexType name="GetReimbursementsResponseType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>              
-            <element name="Reimbursements" type="ctr:ReimbursementType" minOccurs="0" maxOccurs="100"/>
+            <element name="Reimbursement" type="ctr:ReimbursementType" minOccurs="0" maxOccurs="100"/>
 		</sequence>
 	</complexType>
 </schema>

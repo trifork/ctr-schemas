@@ -6,7 +6,7 @@
 
     <include schemaLocation="ValidFromDate.xsd"/>
 	<include schemaLocation="ValidToDate.xsd"/>
-    <include schemaLocation="ReimbursementsType.xsd"/>
+    <include schemaLocation="ReimbursementType.xsd"/>
     <include schemaLocation="ATCCode.xsd"/>
     <include schemaLocation="JournalNumber.xsd"/>
     <include schemaLocation="PackageNumber.xsd"/>
@@ -22,7 +22,7 @@
 	</element>
 	<complexType name="ReimbursementType">
 		<sequence>
-            <element name="Type" type="ctr:ReimbursementsTypeType" />
+            <element name="Type" type="ctr:ReimbursementTypeType" />
             <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
             <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
             <element name="ATCCode" type="ctr:ATCCodeType" minOccurs="0"/>
