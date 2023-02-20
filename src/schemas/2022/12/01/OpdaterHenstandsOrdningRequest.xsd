@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-		xmlns:ctr="http://lmst.dk/Ctr/100"
-		targetNamespace="http://lmst.dk/Ctr/100"
+		xmlns:ctr="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
 	<include schemaLocation="PersonIdentifier.xsd"/>
@@ -22,10 +22,10 @@
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>           
 			<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType"/>			
-			<element name="ValidFromDate" type="ctr:ValidFromDate"/>
-            <element name="ValidToDate" type="ctr:ValidToDate" minOccurs="0"/>
+			<element name="ValidFromDate" type="ctr:ValidFromDateType"/>
+            <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
 			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           
-			<element name="Active" type="ctr:IsActive"/>
+			<element name="Active" type="ctr:IsActiveType"/>
 			<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0"/>
 		</sequence>
 	</complexType>
