@@ -55,7 +55,10 @@
             <xs:include schemaLocation="../schemas/2022/12/01/ChangePersonIdentifierResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/CTRDetail.xsd"/>
+            <xs:include schemaLocation="../schemas/2022/12/01/CTRWarning.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CTRFault.xsd"/>
         </xs:schema>
     </wsdl:types>
      
