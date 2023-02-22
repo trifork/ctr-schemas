@@ -11,8 +11,8 @@
 	
 	<complexType name="CTRFaultDetailType">
 		<annotation>
-			<documentation xml:lang="en-GB">CTR details for a fault</documentation>
-			<documentation xml:lang="da-DK">CTR detaljer for en fejl</documentation>
+			<documentation xml:lang="en-GB">CTR details for a fault or warning</documentation>
+			<documentation xml:lang="da-DK">CTR detaljer for en fejl eller advarsel</documentation>
 		</annotation>
 		<sequence>
             <element name="FaultCode" type="string" />

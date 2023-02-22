@@ -5,7 +5,7 @@
         elementFormDefault="qualified"
         attributeFormDefault="unqualified">
 
-	<include schemaLocation="CTRDetail.xsd"/>
+	<include schemaLocation="CTRWarning.xsd"/>
 	
 	<element name="ResponseHeader" type="ctr:ResponseHeaderType" />
 	
@@ -15,7 +15,7 @@
 			<documentation xml:lang="da-DK">Response header</documentation>
 		</annotation>
 		<sequence>
-			<element name="CTRDetail" type="ctr:CTRDetailType" minOccurs="1" maxOccurs="100"/>
+			<element name="Warnings" type="ctr:CTRWarningType" minOccurs="0" maxOccurs="1"/>
 		</sequence>
 	</complexType>
 	
