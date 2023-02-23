@@ -6,8 +6,8 @@
 
 	<element name="CreatedDateTime" type="ctr:CreatedDateTimeType">
 		<annotation>
-			<documentation xml:lang="en-GB">Date for creating the reimbursement</documentation>
-			<documentation xml:lang="da-DK">Dato for hvornår bevillingen er oprettet</documentation>
+			<documentation xml:lang="en-GB">Timestamp for creating for instance a transaktion or reimbursement</documentation>
+			<documentation xml:lang="da-DK">Tidsstempel for oprettelse af transaktion / bevilling m.v</documentation>
 		</annotation>
 	</element>
 	<simpleType name="CreatedDateTimeType">

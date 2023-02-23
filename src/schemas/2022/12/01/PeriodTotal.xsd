@@ -4,24 +4,21 @@
 		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 	
-	<include schemaLocation="Amount.xsd"/>
+	<include schemaLocation="Transaction.xsd"/>
 	<include schemaLocation="StartDate.xsd"/>
 	<include schemaLocation="EndDate.xsd"/>
 	
-	<element name="PeriodStatus" type="ctr:PeriodStatusType">
+	<element name="PeriodTotal" type="ctr:PeriodTotalType">
 		<annotation>
-			<documentation xml:lang="en-GB">Account status for a CTR period</documentation>
-			<documentation xml:lang="da-DK">Kontostatus for en CTR periode</documentation>
+			<documentation xml:lang="en-GB">CTR period with transactions</documentation>
+			<documentation xml:lang="da-DK">CTR periode inclusive transaktioner</documentation>
 		</annotation>
 	</element>
-	<complexType name="PeriodStatusType">
+	<complexType name="PeriodTotalType">
 		<sequence>            		
             <element name="StartDate" type="ctr:StartDateType"/> 
             <element name="EndDate" type="ctr:EndDateType"/>
-            <element name="Balance" type="ctr:AmountType"/>
-			<element name="EqualisationAmount" type="ctr:AmountType" minOccurs="0"/>
-			<element name="EligibleReimbursement" type="ctr:AmountType" minOccurs="0"/>
-			<element name="PaidReimbursement" type="ctr:AmountType" minOccurs="0"/>
+            <element name="Transaction" type="ctr:TransactionType" minOccurs="0" maxOccurs="10000"/>
 		</sequence>
 	</complexType>
 </schema>

@@ -21,7 +21,7 @@
             <element name="AccountName" type="ctr:AccountNameType" maxOccurs="100"/>
             <element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>
             <element name="AdministrationIdentifier" type="ctr:AdministrationIdentifierType"/>     
-            <element name="AdministeredDateTime" type="ctr:CreatedDateTimeType"/>
+            <element name="AdministrationDateTime" type="ctr:CreatedDateTimeType"/>
             <element name="ReimbursementBasePrice" type="ctr:AmountType"/>
             <element name="ReportedReimbursement" type="ctr:AmountType"/>
         </sequence>

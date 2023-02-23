@@ -28,9 +28,9 @@
 		<union memberTypes="ctr:AdministrationIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
 	</simpleType>
 	<simpleType name="AdministrationIdentifierPredefinedSourceType">
-		<restriction base="string">
-			<minLength value="1"/>
-			<maxLength value="200"/>
+		<restriction base="ctr:UndefinedSourceType">
+			<enumeration value="EkspId"/>
+			<enumeration value="EffectuationId"/>
 		</restriction>
 	</simpleType>
 </schema>

@@ -13,10 +13,22 @@
             <xs:include schemaLocation="../schemas/medcom/dgws/2006/04/medcom.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetAccountStatusRequest.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/GetAccountStatusRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetAccountStatusResponse.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/GetAccountStatusResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementsRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementsResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetHealthAllowancesRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetHealthAllowancesResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerRequest.xsd"/>           
@@ -84,6 +96,18 @@
     <wsdl:message name="GetAccountStatusResponse">
         <wsdl:part name="GetAccountStatusResponse" element="ctr100:GetAccountStatusResponse"/>
     </wsdl:message>
+    <wsdl:message name="GetReimbursementsRequest">
+        <wsdl:part name="GetReimbursementsRequest" element="ctr100:GetReimbursementsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetReimbursementsResponse">
+        <wsdl:part name="GetReimbursementsResponse" element="ctr100:GetReimbursementsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetHealthAllowancesRequest">
+        <wsdl:part name="GetHealthAllowancesRequest" element="ctr100:GetHealthAllowancesRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetHealthAllowancesResponse">
+        <wsdl:part name="GetHealthAllowancesResponse" element="ctr100:GetHealthAllowancesResponse"/>
+    </wsdl:message>
     <wsdl:message name="HentHenstandsOrdningerRequest">
         <wsdl:part name="HentHenstandsOrdningerRequest" element="ctr100:HentHenstandsOrdningerRequest"/>
     </wsdl:message>
@@ -132,6 +156,22 @@
                         message="tns:GetAccountStatusRequest"/>
             <wsdl:output name="GetAccountStatusResponse"
                          message="tns:GetAccountStatusResponse"/>
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+        </wsdl:operation>
+        <wsdl:operation name="GetReimbursements">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursements" style="document"/>
+            <wsdl:input name="GetReimbursementsRequest"
+                        message="tns:GetReimbursementsRequest"/>
+            <wsdl:output name="GetReimbursementsResponse"
+                         message="tns:GetReimbursementsResponse"/>
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+        </wsdl:operation>
+        <wsdl:operation name="GetHealthAllowances">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetHealthAllowances" style="document"/>
+            <wsdl:input name="GetHealthAllowancesRequest"
+                        message="tns:GetHealthAllowancesRequest"/>
+            <wsdl:output name="GetHealthAllowancesResponse"
+                         message="tns:GetHealthAllowancesResponse"/>
             <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
         <wsdl:operation name="HentHenstandsOrdninger">
@@ -193,18 +233,52 @@
             <wsdl:input name="GetAccountStatusRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
-                     
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetAccountStatusResponse">
-                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
             <wsdl:fault name='CTRDetail'>
                 <soap:fault name='CTRDetail' use='literal'/>
             </wsdl:fault>
+        </wsdl:operation>
 
+        <wsdl:operation name="GetReimbursements">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursements"
+                            style="document"/>
+            <wsdl:input name="GetReimbursementsRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetReimbursementsResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetHealthAllowances">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetHealthAllowances"
+                            style="document"/>
+            <wsdl:input name="GetHealthAllowancesRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetHealthAllowancesResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
         </wsdl:operation>
 
         <wsdl:operation name="HentHenstandsOrdninger">
@@ -214,7 +288,6 @@
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
-
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="HentHenstandsOrdningerResponse">
@@ -224,7 +297,6 @@
             <wsdl:fault name='CTRDetail'>
                 <soap:fault name='CTRDetail' use='literal'/>
             </wsdl:fault>
-
         </wsdl:operation>
 
         <wsdl:operation name="OpretHenstandsOrdning">
@@ -234,7 +306,6 @@
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
-
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="OpretHenstandsOrdningResponse">
@@ -244,7 +315,6 @@
             <wsdl:fault name='CTRDetail'>
                 <soap:fault name='CTRDetail' use='literal'/>
             </wsdl:fault>
-
         </wsdl:operation>
 
         <wsdl:operation name="OpdaterHenstandsOrdning">
@@ -254,7 +324,6 @@
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
-
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="OpdaterHenstandsOrdningResponse">
@@ -264,7 +333,6 @@
             <wsdl:fault name='CTRDetail'>
                 <soap:fault name='CTRDetail' use='literal'/>
             </wsdl:fault>
-
         </wsdl:operation>
 
         <wsdl:operation name="CreateTransaction">
@@ -274,7 +342,6 @@
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
-                     
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="CreateTransactionResponse">
@@ -284,7 +351,6 @@
             <wsdl:fault name='CTRDetail'>
                 <soap:fault name='CTRDetail' use='literal'/>
             </wsdl:fault>
-
         </wsdl:operation>
 
     <wsdl:operation name="GetTransactionList">
@@ -294,7 +360,6 @@
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
-                     
             <soap:body use="literal"/>
         </wsdl:input>
         <wsdl:output name="GetTransactionListResponse">
@@ -304,7 +369,6 @@
             <wsdl:fault name='CTRDetail'>
                 <soap:fault name='CTRDetail' use='literal'/>
             </wsdl:fault>
-
     </wsdl:operation>
 
     <wsdl:operation name="ChangePersonIdentifier">
@@ -314,7 +378,6 @@
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
-                     
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="ChangePersonIdentifierResponse">
@@ -324,7 +387,6 @@
             <wsdl:fault name='CTRDetail'>
                 <soap:fault name='CTRDetail' use='literal'/>
             </wsdl:fault>
-
         </wsdl:operation>
 </wsdl:binding>
 
