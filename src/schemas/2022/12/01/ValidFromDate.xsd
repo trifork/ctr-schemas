@@ -7,7 +7,7 @@
 	
 	<element name="ValidFromDate" type="ctr:ValidFromDateType">
 		<annotation>
-			<documentation xml:lang="en-GB">Date for when CTR data is valid from. Used in Reimbursements, HenstandsOrdning</documentation>
+			<documentation xml:lang="en-GB">Date for when CTR data is valid from. Used in Reimbursements, Deferment</documentation>
 			<documentation xml:lang="da-DK">Dato for hvornår CTR data er gældende fra. Brugt i.f.m. Bevillinger, HenstandsOrdning</documentation>
 		</annotation>
 	</element>

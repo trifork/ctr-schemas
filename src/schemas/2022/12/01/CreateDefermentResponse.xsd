@@ -5,20 +5,20 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
     <include schemaLocation="PersonIdentifier.xsd"/>
-	<include schemaLocation="HenstandsOrdning.xsd"/>
-	<include schemaLocation="HenstandsordningIdentifier.xsd"/>
+	<include schemaLocation="Deferment.xsd"/>
+	<include schemaLocation="DefermentIdentifier.xsd"/>
    
-	<element name="OpretHenstandsOrdningResponse" type="ctr:OpretHenstandsOrdningResponseType">
+	<element name="CreateDefermentResponse" type="ctr:CreateDefermentResponseType">
 		<annotation>
-			<documentation xml:lang="en-GB">Outer container element for a response with the created henstandsordning</documentation>
+			<documentation xml:lang="en-GB">Outer container element for a response with the created Deferment</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med den oprettede henstandsordning</documentation>
 		</annotation>
 	</element>
-	<complexType name="OpretHenstandsOrdningResponseType">
+	<complexType name="CreateDefermentResponseType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-			<element name="HenstandsordningIdentifier" type="ctr:HenstandsordningIdentifierType"/>
-            <element name="HenstandsOrdning" type="ctr:HenstandsOrdningType"/>
+			<element name="DefermentIdentifier" type="ctr:DefermentIdentifierType"/>
+            <element name="Deferment" type="ctr:DefermentType"/>
 		</sequence>
 	</complexType>
 </schema>

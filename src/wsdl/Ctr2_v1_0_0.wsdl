@@ -31,10 +31,10 @@
             <xs:include schemaLocation="../schemas/2022/12/01/GetHealthAllowancesResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerRequest.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/GetDefermentsRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/HentHenstandsOrdningerResponse.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/GetDefermentsResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionListRequest.xsd"/>           
@@ -43,16 +43,16 @@
             <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionListResponse.xsd"/>           
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/OpretHenstandsOrdningRequest.xsd"/>          
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateDefermentRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/OpretHenstandsOrdningResponse.xsd"/>    
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateDefermentResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/OpdaterHenstandsOrdningRequest.xsd"/>          
+            <xs:include schemaLocation="../schemas/2022/12/01/UpdateDefermentRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/OpdaterHenstandsOrdningResponse.xsd"/>
+            <xs:include schemaLocation="../schemas/2022/12/01/UpdateDefermentResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateTransactionRequest.xsd"/>           
@@ -108,23 +108,23 @@
     <wsdl:message name="GetHealthAllowancesResponse">
         <wsdl:part name="GetHealthAllowancesResponse" element="ctr100:GetHealthAllowancesResponse"/>
     </wsdl:message>
-    <wsdl:message name="HentHenstandsOrdningerRequest">
-        <wsdl:part name="HentHenstandsOrdningerRequest" element="ctr100:HentHenstandsOrdningerRequest"/>
+    <wsdl:message name="GetDefermentsRequest">
+        <wsdl:part name="GetDefermentsRequest" element="ctr100:GetDefermentsRequest"/>
     </wsdl:message>
-    <wsdl:message name="HentHenstandsOrdningerResponse">
-        <wsdl:part name="HentHenstandsOrdningerResponse" element="ctr100:HentHenstandsOrdningerResponse"/>
+    <wsdl:message name="GetDefermentsResponse">
+        <wsdl:part name="GetDefermentsResponse" element="ctr100:GetDefermentsResponse"/>
     </wsdl:message>
-    <wsdl:message name="OpretHenstandsOrdningRequest">
-        <wsdl:part name="OpretHenstandsOrdningRequest" element="ctr100:OpretHenstandsOrdningRequest"/>
+    <wsdl:message name="CreateDefermentRequest">
+        <wsdl:part name="CreateDefermentRequest" element="ctr100:CreateDefermentRequest"/>
     </wsdl:message>
-    <wsdl:message name="OpretHenstandsOrdningResponse">
-        <wsdl:part name="OpretHenstandsOrdningResponse" element="ctr100:OpretHenstandsOrdningResponse"/>
+    <wsdl:message name="CreateDefermentResponse">
+        <wsdl:part name="CreateDefermentResponse" element="ctr100:CreateDefermentResponse"/>
     </wsdl:message>
-    <wsdl:message name="OpdaterHenstandsOrdningRequest">
-        <wsdl:part name="OpdaterHenstandsOrdningRequest" element="ctr100:OpdaterHenstandsOrdningRequest"/>
+    <wsdl:message name="UpdateDefermentRequest">
+        <wsdl:part name="UpdateDefermentRequest" element="ctr100:UpdateDefermentRequest"/>
     </wsdl:message>
-    <wsdl:message name="OpdaterHenstandsOrdningResponse">
-        <wsdl:part name="OpdaterHenstandsOrdningResponse" element="ctr100:OpdaterHenstandsOrdningResponse"/>
+    <wsdl:message name="UpdateDefermentResponse">
+        <wsdl:part name="UpdateDefermentResponse" element="ctr100:UpdateDefermentResponse"/>
     </wsdl:message>    
     <wsdl:message name="CreateTransactionRequest">
         <wsdl:part name="CreateTransactionRequest" element="ctr100:CreateTransactionRequest"/>
@@ -174,28 +174,28 @@
                          message="tns:GetHealthAllowancesResponse"/>
             <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
-        <wsdl:operation name="HentHenstandsOrdninger">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentHenstandsOrdninger" style="document"/>
-            <wsdl:input name="HentHenstandsOrdningerRequest"
-                        message="tns:HentHenstandsOrdningerRequest"/>
-            <wsdl:output name="HentHenstandsOrdningerResponse"
-                         message="tns:HentHenstandsOrdningerResponse"/>
+        <wsdl:operation name="GetDeferments">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetDeferments" style="document"/>
+            <wsdl:input name="GetDefermentsRequest"
+                        message="tns:GetDefermentsRequest"/>
+            <wsdl:output name="GetDefermentsResponse"
+                         message="tns:GetDefermentsResponse"/>
             <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
-        <wsdl:operation name="OpretHenstandsOrdning">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretHenstandsOrdning" style="document"/>
-            <wsdl:input name="OpretHenstandsOrdningRequest"
-                        message="tns:OpretHenstandsOrdningRequest"/>
-            <wsdl:output name="OpretHenstandsOrdningResponse"
-                         message="tns:OpretHenstandsOrdningResponse"/>
+        <wsdl:operation name="CreateDeferment">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateDeferment" style="document"/>
+            <wsdl:input name="CreateDefermentRequest"
+                        message="tns:CreateDefermentRequest"/>
+            <wsdl:output name="CreateDefermentResponse"
+                         message="tns:CreateDefermentResponse"/>
             <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
-        <wsdl:operation name="OpdaterHenstandsOrdning">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpdaterHenstandsOrdning" style="document"/>
-            <wsdl:input name="OpdaterHenstandsOrdningRequest"
-                        message="tns:OpdaterHenstandsOrdningRequest"/>
-            <wsdl:output name="OpdaterHenstandsOrdningResponse"
-                         message="tns:OpdaterHenstandsOrdningResponse"/>
+        <wsdl:operation name="UpdateDeferment">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#UpdateDeferment" style="document"/>
+            <wsdl:input name="UpdateDefermentRequest"
+                        message="tns:UpdateDefermentRequest"/>
+            <wsdl:output name="UpdateDefermentResponse"
+                         message="tns:UpdateDefermentResponse"/>
             <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
         <wsdl:operation name="CreateTransaction">
@@ -281,16 +281,16 @@
             </wsdl:fault>
         </wsdl:operation>
 
-        <wsdl:operation name="HentHenstandsOrdninger">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#HentHenstandsOrdninger"
+        <wsdl:operation name="GetDeferments">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetDeferments"
                             style="document"/>
-            <wsdl:input name="HentHenstandsOrdningerRequest">
+            <wsdl:input name="GetDefermentsRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="HentHenstandsOrdningerResponse">
+            <wsdl:output name="GetDefermentsResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>    
                 <soap:body use="literal"/>
             </wsdl:output>
@@ -299,16 +299,16 @@
             </wsdl:fault>
         </wsdl:operation>
 
-        <wsdl:operation name="OpretHenstandsOrdning">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpretHenstandsOrdning"
+        <wsdl:operation name="CreateDeferment">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateDeferment"
                             style="document"/>
-            <wsdl:input name="OpretHenstandsOrdningRequest">
+            <wsdl:input name="CreateDefermentRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="OpretHenstandsOrdningResponse">
+            <wsdl:output name="CreateDefermentResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
@@ -317,16 +317,16 @@
             </wsdl:fault>
         </wsdl:operation>
 
-        <wsdl:operation name="OpdaterHenstandsOrdning">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#OpdaterHenstandsOrdning"
+        <wsdl:operation name="UpdateDeferment">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#UpdateDeferment"
                             style="document"/>
-            <wsdl:input name="OpdaterHenstandsOrdningRequest">
+            <wsdl:input name="UpdateDefermentRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="OpdaterHenstandsOrdningResponse">
+            <wsdl:output name="UpdateDefermentResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>    
             <soap:body use="literal"/>
         </wsdl:output>
