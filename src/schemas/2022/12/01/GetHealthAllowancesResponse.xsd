@@ -6,6 +6,7 @@
 
     <include schemaLocation="PersonIdentifier.xsd"/>
 	<include schemaLocation="Reimbursement.xsd"/>
+	<include schemaLocation="HealthAllowance.xsd"/>
 
 	<element name="GetHealthAllowancesResponse" type="ctr:GetHealthAllowancesResponseType">
 		<annotation>
