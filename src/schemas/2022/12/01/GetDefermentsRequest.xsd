@@ -8,7 +8,7 @@
 
 	<element name="GetDefermentsRequest" type="ctr:GetDefermentsRequestType">
 		<annotation>
-			<documentation xml:lang="en-GB">Element for a request for Defermenter</documentation>
+			<documentation xml:lang="en-GB">Element for a request for Deferments</documentation>
 			<documentation xml:lang="da-DK">Element for en forespørgsel efter henstandsordninger</documentation>
 		</annotation>
 	</element>

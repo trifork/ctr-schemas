@@ -9,7 +9,7 @@
    
 	<element name="GetDefermentsResponse" type="ctr:GetDefermentsResponseType">
 		<annotation>
-			<documentation xml:lang="en-GB">Outer container element for a response with Defermenter</documentation>
+			<documentation xml:lang="en-GB">Outer container element for a response with Deferments</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med henstandsordninger</documentation>
 		</annotation>
 	</element>

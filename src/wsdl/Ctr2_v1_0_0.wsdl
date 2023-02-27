@@ -61,10 +61,22 @@
             <xs:include schemaLocation="../schemas/2022/12/01/CreateTransactionResponse.xsd"/>      
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateFictitiousPersonIdentifierRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateFictitiousPersonIdentifierResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/ChangePersonIdentifierRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/ChangePersonIdentifierResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementRatesRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementRatesResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CTRWarning.xsd"/>
@@ -144,6 +156,18 @@
     <wsdl:message name="ChangePersonIdentifierResponse">
         <wsdl:part name="ChangePersonIdentifierResponse" element="ctr100:ChangePersonIdentifierResponse"/>
     </wsdl:message>
+    <wsdl:message name="CreateFictitiousPersonIdentifierRequest">
+        <wsdl:part name="CreateFictitiousPersonIdentifierRequest" element="ctr100:CreateFictitiousPersonIdentifierRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CreateFictitiousPersonIdentifierResponse">
+        <wsdl:part name="CreateFictitiousPersonIdentifierResponse" element="ctr100:CreateFictitiousPersonIdentifierResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetReimbursementRatesRequest">
+        <wsdl:part name="GetReimbursementRatesRequest" element="ctr100:GetReimbursementRatesRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetReimbursementRatesResponse">
+        <wsdl:part name="GetReimbursementRatesResponse" element="ctr100:GetReimbursementRatesResponse"/>
+    </wsdl:message>
 
     <wsdl:message name="CTRDetail">
         <wsdl:part name="fault" element="ctr100:CTRDetail"/>
@@ -220,6 +244,22 @@
                         message="tns:ChangePersonIdentifierRequest"/>
             <wsdl:output name="ChangePersonIdentifierResponse"
                          message="tns:ChangePersonIdentifierResponse"/>
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateFictitiousPersonIdentifier">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier" style="document"/>
+            <wsdl:input name="CreateFictitiousPersonIdentifierRequest"
+                        message="tns:CreateFictitiousPersonIdentifierRequest"/>
+            <wsdl:output name="CreateFictitiousPersonIdentifierResponse"
+                         message="tns:CreateFictitiousPersonIdentifierResponse"/>
+            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+        </wsdl:operation>
+        <wsdl:operation name="GetReimbursementRates">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursementRates" style="document"/>
+            <wsdl:input name="GetReimbursementRatesRequest"
+                        message="tns:GetReimbursementRatesRequest"/>
+            <wsdl:output name="GetReimbursementRatesResponse"
+                         message="tns:GetReimbursementRatesResponse"/>
             <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
         </wsdl:operation>
     </wsdl:portType>
@@ -388,7 +428,44 @@
                 <soap:fault name='CTRDetail' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
-</wsdl:binding>
+
+        <wsdl:operation name="CreateFictitiousPersonIdentifier">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier"
+                            style="document"/>
+            <wsdl:input name="CreateFictitiousPersonIdentifierRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="CreateFictitiousPersonIdentifierResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetReimbursementRates">
+            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursementRates"
+                            style="document"/>
+            <wsdl:input name="GetReimbursementRatesRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetReimbursementRatesResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRDetail'>
+                <soap:fault name='CTRDetail' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+    </wsdl:binding>
 
     <wsdl:service name="Ctr">
         <wsdl:port name="CtrPort" binding="tns:CtrBinding">

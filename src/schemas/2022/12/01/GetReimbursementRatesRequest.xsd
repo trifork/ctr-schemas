@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="PersonIdentifier.xsd"/>	
+
+	<element name="GetReimbursementRatesRequest" type="ctr:GetReimbursementRatesRequestType">
+		<annotation>
+			<documentation xml:lang="en-GB">Element for a request for Reimbursement rates</documentation>
+			<documentation xml:lang="da-DK">Element for en forespørgsel efter tilskudsgrænser</documentation>
+		</annotation>
+	</element>
+	<complexType name="GetReimbursementRatesRequestType">
+	</complexType>
+</schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<element name="PatientTypeValue" type="ctr:PatientTypeValueType">
+		<annotation>
+			<documentation xml:lang="en-GB">Patient type value type, which has individual rates (e.g. Child, Adult, Terminal )</documentation>
+			<documentation xml:lang="da-DK">Patienttype værdi type, som har individuelle takstrænser (eksempelvis Barn voksen terminal)</documentation>
+		</annotation>
+	</element>
+	<simpleType name="PatientTypeValueType">
+		<union memberTypes="ctr:PredefinedPatientTypeValueType ctr:UndefinedPatientTypeValueType"/>
+	</simpleType>
+	<simpleType name="PredefinedPatientTypeValueType">
+		<restriction base="ctr:UndefinedPatientTypeValueType">
+			<enumeration value="Voksen"/>
+			<enumeration value="Barn"/>
+			<enumeration value="Terminal"/>
+        </restriction>
+	</simpleType>
+	<simpleType name="UndefinedPatientTypeValueType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="200"/>
+		</restriction>
+	</simpleType>
+</schema>
