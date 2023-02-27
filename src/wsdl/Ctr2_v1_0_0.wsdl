@@ -169,8 +169,8 @@
         <wsdl:part name="GetReimbursementRatesResponse" element="ctr100:GetReimbursementRatesResponse"/>
     </wsdl:message>
 
-    <wsdl:message name="CTRDetail">
-        <wsdl:part name="fault" element="ctr100:CTRDetail"/>
+    <wsdl:message name="CTRFault">
+        <wsdl:part name="fault" element="ctr100:CTRFault"/>
     </wsdl:message>
 
     <wsdl:portType name="CtrPortType">
@@ -180,7 +180,7 @@
                         message="tns:GetAccountStatusRequest"/>
             <wsdl:output name="GetAccountStatusResponse"
                          message="tns:GetAccountStatusResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetReimbursements">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursements" style="document"/>
@@ -188,7 +188,7 @@
                         message="tns:GetReimbursementsRequest"/>
             <wsdl:output name="GetReimbursementsResponse"
                          message="tns:GetReimbursementsResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetHealthAllowances">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetHealthAllowances" style="document"/>
@@ -196,7 +196,7 @@
                         message="tns:GetHealthAllowancesRequest"/>
             <wsdl:output name="GetHealthAllowancesResponse"
                          message="tns:GetHealthAllowancesResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetDeferments">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetDeferments" style="document"/>
@@ -204,7 +204,7 @@
                         message="tns:GetDefermentsRequest"/>
             <wsdl:output name="GetDefermentsResponse"
                          message="tns:GetDefermentsResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="CreateDeferment">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateDeferment" style="document"/>
@@ -212,7 +212,7 @@
                         message="tns:CreateDefermentRequest"/>
             <wsdl:output name="CreateDefermentResponse"
                          message="tns:CreateDefermentResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="UpdateDeferment">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#UpdateDeferment" style="document"/>
@@ -220,7 +220,7 @@
                         message="tns:UpdateDefermentRequest"/>
             <wsdl:output name="UpdateDefermentResponse"
                          message="tns:UpdateDefermentResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="CreateTransaction">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateTransaction" style="document"/>
@@ -228,7 +228,7 @@
                         message="tns:CreateTransactionRequest"/>
             <wsdl:output name="CreateTransactionResponse"
                          message="tns:CreateTransactionResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetTransactionList">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetTransactionList" style="document"/>
@@ -236,7 +236,7 @@
                         message="tns:GetTransactionListRequest"/>
             <wsdl:output name="GetTransactionListResponse"
                          message="tns:GetTransactionListResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>                    
         <wsdl:operation name="ChangePersonIdentifier">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#ChangePersonIdentifier" style="document"/>
@@ -244,7 +244,7 @@
                         message="tns:ChangePersonIdentifierRequest"/>
             <wsdl:output name="ChangePersonIdentifierResponse"
                          message="tns:ChangePersonIdentifierResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="CreateFictitiousPersonIdentifier">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier" style="document"/>
@@ -252,7 +252,7 @@
                         message="tns:CreateFictitiousPersonIdentifierRequest"/>
             <wsdl:output name="CreateFictitiousPersonIdentifierResponse"
                          message="tns:CreateFictitiousPersonIdentifierResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetReimbursementRates">
             <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursementRates" style="document"/>
@@ -260,7 +260,7 @@
                         message="tns:GetReimbursementRatesRequest"/>
             <wsdl:output name="GetReimbursementRatesResponse"
                          message="tns:GetReimbursementRatesResponse"/>
-            <wsdl:fault name='CTRDetail' message='tns:CTRDetail'/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
     </wsdl:portType>
 
@@ -280,8 +280,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
@@ -298,8 +298,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
@@ -316,8 +316,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
@@ -334,8 +334,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>    
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
@@ -352,8 +352,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
@@ -370,8 +370,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>    
             <soap:body use="literal"/>
         </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
@@ -388,8 +388,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
@@ -406,8 +406,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
             <soap:body use="literal"/>
         </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
     </wsdl:operation>
 
@@ -424,8 +424,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
@@ -442,8 +442,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
@@ -460,8 +460,8 @@
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
-            <wsdl:fault name='CTRDetail'>
-                <soap:fault name='CTRDetail' use='literal'/>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
         </wsdl:operation>
 
