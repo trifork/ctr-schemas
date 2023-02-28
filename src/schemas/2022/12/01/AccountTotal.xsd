@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+	
+	<include schemaLocation="PeriodTotal.xsd"/>
+	<include schemaLocation="AccountName.xsd"/>
+	<include schemaLocation="AccountDescription.xsd"/>
+	
+	<element name="AccountTotal" type="ctr:AccountTotalType">
+		<annotation>
+			<documentation xml:lang="en-GB">Account with transactions</documentation>
+			<documentation xml:lang="da-DK">Konto inklusiv transaktioner</documentation>
+		</annotation>
+	</element>
+	<complexType name="AccountTotalType">
+		<sequence>           
+            <element name="AccountName" type="ctr:AccountNameType"/>
+			<element name="AccountDescription" type="ctr:AccountDescriptionType"/>
+            <element name="Period" type="ctr:PeriodTotalType" minOccurs="0" maxOccurs="100"/>
+		</sequence>
+	</complexType>
+</schema>

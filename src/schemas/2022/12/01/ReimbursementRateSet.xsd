@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="ValidFromDate.xsd"/>
+	<include schemaLocation="ValidToDate.xsd"/>
+	<include schemaLocation="AccountName.xsd"/>
+	<include schemaLocation="PatientTypeValue.xsd"/>
+	<include schemaLocation="ReimbursementRate.xsd"/>
+	
+	<element name="ReimbursementRateSet" type="ctr:ReimbursementRateSetType">
+		<annotation>
+			<documentation xml:lang="en-GB">Set of reimbursement rates</documentation>
+			<documentation xml:lang="da-DK">Sæt af tilskudsgrænser</documentation>
+		</annotation>
+	</element>
+	<complexType name="ReimbursementRateSetType">
+		<sequence>
+            <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
+            <element name="ValidToDate" type="ctr:ValidToDateType"/>
+            <element name="AccountName" type="ctr:AccountNameType"/>
+            <element name="PatientType" type="ctr:PatientTypeValueType"/>
+			<element name="Rate" type="ctr:ReimbursementRateType"/>
+		</sequence>
+	</complexType>
+</schema>

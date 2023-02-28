@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+	<include schemaLocation="OrganisationIdentifier.xsd"/>
+	<include schemaLocation="OrganisationName.xsd"/>
+	<include schemaLocation="AdministrationIdentifier.xsd"/>
+	<include schemaLocation="CreatedDateTime.xsd"/>
+	<include schemaLocation="Amount.xsd"/>
+    <include schemaLocation="AccountName.xsd"/>
+
+	<element name="Transaction" type="ctr:TransactionType">
+		<annotation>
+			<documentation xml:lang="en-GB">Information about a CTR transaction</documentation>
+			<documentation xml:lang="da-DK">Information om en CTR transaktion</documentation>
+		</annotation>
+	</element>
+    <complexType name="TransactionType">
+	    <sequence>
+            <element name="AccountName" type="ctr:AccountNameType" maxOccurs="100"/>
+			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>
+			<element name="PharmacyName" type="ctr:OrganisationNameType"/>
+            <element name="AdministrationIdentifier" type="ctr:AdministrationIdentifierType"/>
+			<element name="AdministrationDateTime" type="ctr:CreatedDateTimeType"/>
+			<element name="CreatedDateTime" type="ctr:CreatedDateTimeType"/>
+            <element name="ReimbursementBasePrice" type="ctr:AmountType"/>
+			<element name="ReportedReimbursement" type="ctr:AmountType"/>
+			<element name="CalculatedReimbursement" type="ctr:AmountType"/>
+			<element name="EqualisationAmountTransaction" type="ctr:AmountType"/>
+			<element name="Balance" type="ctr:AmountType"/>
+			<element name="EqualisationAmountTotal" type="ctr:AmountType"/>
+        </sequence>
+	</complexType>
+</schema>

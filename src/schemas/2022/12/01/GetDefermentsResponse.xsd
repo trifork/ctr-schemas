@@ -5,18 +5,18 @@
 		elementFormDefault="qualified" attributeFormDefault="unqualified">
 
     <include schemaLocation="PersonIdentifier.xsd"/>
-	<include schemaLocation="HenstandsOrdning.xsd"/>
+	<include schemaLocation="Deferment.xsd"/>
    
-	<element name="HentHenstandsOrdningerResponse" type="ctr:HentHenstandsOrdningerResponseType">
+	<element name="GetDefermentsResponse" type="ctr:GetDefermentsResponseType">
 		<annotation>
-			<documentation xml:lang="en-GB">Outer container element for a response with henstandsordninger</documentation>
+			<documentation xml:lang="en-GB">Outer container element for a response with Deferments</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med henstandsordninger</documentation>
 		</annotation>
 	</element>
-	<complexType name="HentHenstandsOrdningerResponseType">
+	<complexType name="GetDefermentsResponseType">
 		<sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>       
-            <element name="HenstandsOrdning" type="ctr:HenstandsOrdningType" minOccurs="0" maxOccurs="100"/>
+            <element name="Deferment" type="ctr:DefermentType" minOccurs="0" maxOccurs="100"/>
 		</sequence>
 	</complexType>
 </schema>

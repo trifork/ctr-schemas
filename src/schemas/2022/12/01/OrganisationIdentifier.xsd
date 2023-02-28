@@ -33,6 +33,7 @@
 			<enumeration value="CVR"/>			
 			<enumeration value="SOR"/>
 			<enumeration value="ApoteksId"/>
+			<enumeration value="Kommunekode"/>
 		</restriction>
 	</simpleType>
 </schema>
