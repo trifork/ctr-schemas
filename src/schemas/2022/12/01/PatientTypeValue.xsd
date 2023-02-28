@@ -7,7 +7,7 @@
 	<element name="PatientTypeValue" type="ctr:PatientTypeValueType">
 		<annotation>
 			<documentation xml:lang="en-GB">Patient type value type, which has individual rates (e.g. Child, Adult, Terminal )</documentation>
-			<documentation xml:lang="da-DK">Patienttype værdi type, som har individuelle takstrænser (eksempelvis Barn voksen terminal)</documentation>
+			<documentation xml:lang="da-DK">Patienttype værdi type, som har individuelle takstgrænser (eksempelvis Barn, Voksen, Terminal)</documentation>
 		</annotation>
 	</element>
 	<simpleType name="PatientTypeValueType">

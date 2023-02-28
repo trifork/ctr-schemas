@@ -6,7 +6,7 @@
         attributeFormDefault="unqualified">
 	<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType">
 		<annotation>
-			<documentation xml:lang="en-GB">Reason for discontinuance of Defermenter</documentation>
+			<documentation xml:lang="en-GB">Reason for discontinuance of Deferments</documentation>
 			<documentation xml:lang="da-DK">Ophørsårsag for henstandsordninger</documentation>
 		</annotation>
 	</element>

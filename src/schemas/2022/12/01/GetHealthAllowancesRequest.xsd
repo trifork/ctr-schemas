@@ -8,7 +8,7 @@
 
 	<element name="GetHealthAllowancesRequest" type="ctr:GetHealthAllowancesRequestType">
 		<annotation>
-			<documentation xml:lang="en-GB">Element for a request to fetch HealthAllowances</documentation>
+			<documentation xml:lang="en-GB">Element for a request to fetch health allowances</documentation>
 			<documentation xml:lang="da-DK">Element for en forespørgsel til at hente kommunale helbredstillæg</documentation>
 		</annotation>
 	</element>

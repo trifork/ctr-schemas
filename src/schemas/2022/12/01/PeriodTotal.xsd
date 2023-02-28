@@ -11,7 +11,7 @@
 	<element name="PeriodTotal" type="ctr:PeriodTotalType">
 		<annotation>
 			<documentation xml:lang="en-GB">CTR period with transactions</documentation>
-			<documentation xml:lang="da-DK">CTR periode inclusive transaktioner</documentation>
+			<documentation xml:lang="da-DK">CTR periode inklusiv transaktioner</documentation>
 		</annotation>
 	</element>
 	<complexType name="PeriodTotalType">
