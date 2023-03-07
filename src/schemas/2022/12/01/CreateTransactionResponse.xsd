@@ -7,16 +7,16 @@
     <include schemaLocation="PersonIdentifier.xsd"/>
 	<include schemaLocation="CreatedTransaction.xsd"/>
     
-	<element name="CreateTransactionResponse" type="ctr:CreateTransactionResponseType">
+	<element name="CreateTransactionResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response after creating a CTR transaction</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar efter at have oprettet en CTR transaktion</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="CreatedTransaction" type="ctr:CreatedTransactionType" maxOccurs="100"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="CreateTransactionResponseType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>     
-			<element name="CreatedTransaction" type="ctr:CreatedTransactionType" maxOccurs="100"/>
-		</sequence>
-	</complexType>
 </schema>

@@ -6,15 +6,15 @@
 	
     <include schemaLocation="PersonIdentifier.xsd"/>
 
-	<element name="CreateFictitiousPersonIdentifierResponse" type="ctr:CreateFictitiousPersonIdentifierType">
+	<element name="CreateFictitiousPersonIdentifierResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response after creating a fictitious personidentiifer</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar efter at have oprettet et fiktivt cpr</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="CreateFictitiousPersonIdentifierType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>     
-		</sequence>
-	</complexType>
 </schema>

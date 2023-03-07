@@ -7,16 +7,16 @@
     <include schemaLocation="PersonIdentifier.xsd"/>
 	<include schemaLocation="Reimbursement.xsd"/>
 
-	<element name="GetReimbursementsResponse" type="ctr:GetReimbursementsResponseType">
+	<element name="GetReimbursementsResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response with CTR reimbursements</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med CTR bevillinger</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="Reimbursement" type="ctr:ReimbursementType" minOccurs="0" maxOccurs="100"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="GetReimbursementsResponseType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>              
-            <element name="Reimbursement" type="ctr:ReimbursementType" minOccurs="0" maxOccurs="100"/>
-		</sequence>
-	</complexType>
 </schema>

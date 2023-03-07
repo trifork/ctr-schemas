@@ -6,15 +6,15 @@
 
 	<include schemaLocation="PersonIdentifier.xsd"/>   
 
-	<element name="ChangePersonIdentifierResponse" type="ctr:ChangePersonIdentifierResponseType">
+	<element name="ChangePersonIdentifierResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response after changing the official danish person identifier</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar efter at have skiftet person identifikation</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="ChangePersonIdentifierResponseType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>                     
-		</sequence>
-	</complexType>
 </schema>

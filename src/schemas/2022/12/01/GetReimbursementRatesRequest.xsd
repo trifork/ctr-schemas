@@ -6,12 +6,12 @@
 
 	<include schemaLocation="PersonIdentifier.xsd"/>	
 
-	<element name="GetReimbursementRatesRequest" type="ctr:GetReimbursementRatesRequestType">
+	<element name="GetReimbursementRatesRequest">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for a request for Reimbursement rates</documentation>
 			<documentation xml:lang="da-DK">Element for en forespørgsel efter tilskudsgrænser</documentation>
 		</annotation>
+		<complexType>
+		</complexType>
 	</element>
-	<complexType name="GetReimbursementRatesRequestType">
-	</complexType>
 </schema>

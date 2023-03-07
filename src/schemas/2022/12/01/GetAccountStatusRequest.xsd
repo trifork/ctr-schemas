@@ -8,17 +8,17 @@
     <include schemaLocation="RequestedPeriod.xsd"/>
 	<include schemaLocation="AccountName.xsd"/>
 
-	<element name="GetAccountStatusRequest" type="ctr:GetAccountStatusRequestType">
+	<element name="GetAccountStatusRequest">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for a request for account status</documentation>
 			<documentation xml:lang="da-DK">Element for en forespørgsel efter kontostatus</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="AccountName" type="ctr:AccountNameType" maxOccurs="100"/>
+				<element name="Period" type="ctr:RequestedPeriodType"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="GetAccountStatusRequestType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>            
-            <element name="AccountName" type="ctr:AccountNameType" maxOccurs="100"/>
-            <element name="Period" type="ctr:RequestedPeriodType"/>
-		</sequence>
-	</complexType>
 </schema>

@@ -7,16 +7,16 @@
 	<include schemaLocation="PersonIdentifier.xsd"/>
 	<include schemaLocation="CreateTransaction.xsd"/>
 
-	<element name="CreateTransactionRequest" type="ctr:CreateTransactionRequestType">
+	<element name="CreateTransactionRequest">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for creating one or more CTR transactions</documentation>
 			<documentation xml:lang="da-DK">Element for at oprette en eller flere CTR transaktioner</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="CreateTransaction" type="ctr:CreateTransactionType" maxOccurs="100"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="CreateTransactionRequestType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-			<element name="CreateTransaction" type="ctr:CreateTransactionType" maxOccurs="100"/>         
-		</sequence>
-	</complexType>
 </schema>

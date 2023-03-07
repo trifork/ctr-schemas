@@ -6,15 +6,15 @@
 
     <include schemaLocation="ReimbursementRateSet.xsd"/>
 
-	<element name="GetReimbursementRatesResponse" type="ctr:GetReimbursementRatesResponseType">
+	<element name="GetReimbursementRatesResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response with Reimbursement rates</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med tilskudsgrænser</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="ReimbursementRates" type="ctr:ReimbursementRateSetType" minOccurs="0" maxOccurs="100"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="GetReimbursementRatesResponseType">
-		<sequence>
-            <element name="ReimbursementRates" type="ctr:ReimbursementRateSetType" minOccurs="0" maxOccurs="100"/>
-		</sequence>
-	</complexType>
 </schema>
