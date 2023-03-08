@@ -11,20 +11,20 @@
 	<include schemaLocation="OrganisationIdentifier.xsd"/>
 	<include schemaLocation="DiscontinuanceReason.xsd"/>
 
-	<element name="UpdateDefermentRequest" type="ctr:UpdateDefermentRequestType">
+	<element name="UpdateDefermentRequest">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for updating a Deferment</documentation>
 			<documentation xml:lang="da-DK">Element for at opdatere en henstandsordning</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="DefermentIdentifier" type="ctr:DefermentIdentifierType"/>
+				<element name="ValidFromDate" type="ctr:ValidFromDateType"/>
+				<element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
+				<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>
+				<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="UpdateDefermentRequestType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>           
-			<element name="DefermentIdentifier" type="ctr:DefermentIdentifierType"/>
-			<element name="ValidFromDate" type="ctr:ValidFromDateType"/>
-            <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
-			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           
-			<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0"/>
-		</sequence>
-	</complexType>
 </schema>

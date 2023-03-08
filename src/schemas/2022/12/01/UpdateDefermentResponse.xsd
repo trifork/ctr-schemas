@@ -8,17 +8,17 @@
 	<include schemaLocation="Deferment.xsd"/>
 	<include schemaLocation="DefermentIdentifier.xsd"/>
    
-	<element name="UpdateDefermentResponse" type="ctr:UpdateDefermentResponseType">
+	<element name="UpdateDefermentResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response with the updated Deferment</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med den opdaterede henstandsordning</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="DefermentIdentifier" type="ctr:DefermentIdentifierType"/>
+				<element name="Deferment" type="ctr:DefermentType"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="UpdateDefermentResponseType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-			<element name="DefermentIdentifier" type="ctr:DefermentIdentifierType"/>
-            <element name="Deferment" type="ctr:DefermentType"/>
-		</sequence>
-	</complexType>
 </schema>

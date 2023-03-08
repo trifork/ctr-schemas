@@ -9,18 +9,18 @@
     <include schemaLocation="IsChild.xsd"/>
     <include schemaLocation="AccountStatus.xsd"/>
 
-	<element name="GetAccountStatusResponse" type="ctr:GetAccountStatusResponseType">
+	<element name="GetAccountStatusResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response with one or more account status</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med en eller flere kontostatus</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="IsChild" type="ctr:IsChildType"/>
+				<element name="PatientStatus" type="ctr:PatientStatusType"/>
+				<element name="AccountStatus" type="ctr:AccountStatusType" minOccurs="0" maxOccurs="100"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="GetAccountStatusResponseType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>           
-            <element name="IsChild" type="ctr:IsChildType"/>
-            <element name="PatientStatus" type="ctr:PatientStatusType"/>
-            <element name="AccountStatus" type="ctr:AccountStatusType" minOccurs="0" maxOccurs="100"/>
-		</sequence>
-	</complexType>
 </schema>

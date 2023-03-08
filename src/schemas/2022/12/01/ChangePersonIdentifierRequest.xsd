@@ -6,16 +6,16 @@
 
 	<include schemaLocation="PersonIdentifier.xsd"/>   
 
-	<element name="ChangePersonIdentifierRequest" type="ctr:ChangePersonIdentifierRequestType">
+	<element name="ChangePersonIdentifierRequest">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for a request for changing the official danish person identifier</documentation>
 			<documentation xml:lang="da-DK">Element for en forespørgsel efter at skifte person identifikation</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="OldPersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="NewPersonIdentifier" type="ctr:PersonIdentifierType"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="ChangePersonIdentifierRequestType">
-		<sequence>
-            <element name="OldPersonIdentifier" type="ctr:PersonIdentifierType"/>
-            <element name="NewPersonIdentifier" type="ctr:PersonIdentifierType"/>
-		</sequence>
-	</complexType>
 </schema>

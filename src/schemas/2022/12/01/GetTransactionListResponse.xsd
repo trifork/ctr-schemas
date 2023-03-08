@@ -9,18 +9,18 @@
 	<include schemaLocation="PatientStatus.xsd"/>
 	<include schemaLocation="AccountTotal.xsd"/>
 
-	<element name="GetTransactionListResponse" type="ctr:GetTransactionListResponseType">
+	<element name="GetTransactionListResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response with transaction list</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med transaktionsliste</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="IsChild" type="ctr:IsChildType"/>
+				<element name="PatientStatus" type="ctr:PatientStatusType"/>
+				<element name="Account" type="ctr:AccountTotalType"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="GetTransactionListResponseType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-			<element name="IsChild" type="ctr:IsChildType"/>
-			<element name="PatientStatus" type="ctr:PatientStatusType"/>
-			<element name="Account" type="ctr:AccountTotalType"/>
-		</sequence>
-	</complexType>
 </schema>

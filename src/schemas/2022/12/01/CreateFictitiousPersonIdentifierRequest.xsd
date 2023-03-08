@@ -7,16 +7,16 @@
 	<include schemaLocation="CountryCode.xsd"/>
 	<include schemaLocation="Birthdate.xsd"/>
 
-	<element name="CreateFictitiousPersonIdentifierRequest" type="ctr:CreateFictitiousPersonIdentifierRequestType">
+	<element name="CreateFictitiousPersonIdentifierRequest">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for creating a new fictitious person identifier</documentation>
 			<documentation xml:lang="da-DK">Element for at oprette et nyt fiktivt cpr-nummer</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="CountryCode" type="ctr:CountryCodeType"/>
+				<element name="BirthDate" type="ctr:BirthdateType"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="CreateFictitiousPersonIdentifierRequestType">
-		<sequence>
-            <element name="CountryCode" type="ctr:CountryCodeType"/>
-			<element name="BirthDate" type="ctr:BirthdateType"/>
-		</sequence>
-	</complexType>
 </schema>

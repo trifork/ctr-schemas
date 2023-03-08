@@ -8,16 +8,16 @@
 	<include schemaLocation="Reimbursement.xsd"/>
 	<include schemaLocation="HealthAllowance.xsd"/>
 
-	<element name="GetHealthAllowancesResponse" type="ctr:GetHealthAllowancesResponseType">
+	<element name="GetHealthAllowancesResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response with Health Allowances</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med kommunale helbredstillæg</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="HealthAllowance" type="ctr:HealthAllowanceType" minOccurs="0" maxOccurs="100"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="GetHealthAllowancesResponseType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>              
-            <element name="HealthAllowance" type="ctr:HealthAllowanceType" minOccurs="0" maxOccurs="100"/>
-		</sequence>
-	</complexType>
 </schema>

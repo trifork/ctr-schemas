@@ -10,19 +10,19 @@
 	<include schemaLocation="OrganisationIdentifier.xsd"/>
 	<include schemaLocation="DiscontinuanceReason.xsd"/>
 
-	<element name="CreateDefermentRequest" type="ctr:CreateDefermentRequestType">
+	<element name="CreateDefermentRequest">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for creating a Deferment</documentation>
 			<documentation xml:lang="da-DK">Element for at oprette en henstandsordning</documentation>
 		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="ValidFromDate" type="ctr:ValidFromDateType"/>
+				<element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
+				<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>
+				<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0" maxOccurs="1"/>
+			</sequence>
+		</complexType>
 	</element>
-	<complexType name="CreateDefermentRequestType">
-		<sequence>
-            <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-			<element name="ValidFromDate" type="ctr:ValidFromDateType"/>
-            <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
-			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>
-			<element name="DiscontinuanceReason" type="ctr:DiscontinuanceReasonType" minOccurs="0" maxOccurs="1"/>
-		</sequence>
-	</complexType>
 </schema>
