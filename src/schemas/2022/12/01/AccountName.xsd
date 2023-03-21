@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" 
-        xmlns:ctr="http://lmst.dk/Ctr/xml.schema/2022/12/01"
-		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
-        elementFormDefault="qualified" 
-        attributeFormDefault="unqualified">
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified" >
 
 	<element name="AccountName" type="ctr:AccountNameType">
 		<annotation>
@@ -12,9 +11,18 @@
 		</annotation>
 	</element>
 	<simpleType name="AccountNameType">
+		<union memberTypes="ctr:PredefinedAccountNameType ctr:UndefinedAccountNameType"/>
+	</simpleType>
+	<simpleType name="PredefinedAccountNameType">
+		<restriction base="ctr:UndefinedAccountNameType">
+			<enumeration value="CTR-A"/>
+			<enumeration value="CTR-B"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="UndefinedAccountNameType">
 		<restriction base="string">
 			<minLength value="1"/>
-			<maxLength value="50"/>
+			<maxLength value="10"/>
 		</restriction>
 	</simpleType>
 </schema>

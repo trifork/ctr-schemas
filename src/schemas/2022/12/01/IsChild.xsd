@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-		xmlns:ctr="http://lmst.dk/Ctr/xml.schema/2022/12/01"
-		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
-		elementFormDefault="qualified" attributeFormDefault="unqualified">
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified">
 	
 	<element name="IsChild" type="ctr:IsChildType">
 		<annotation>

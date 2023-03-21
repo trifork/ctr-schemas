@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified">
+    
+	<element name="ReimbursementGrantType" type="ctr:ReimbursementGrantTypeType">
+		<annotation>
+			<documentation xml:lang="en-GB">ReimbursementGrant type</documentation>
+			<documentation xml:lang="da-DK">Bevillingstype</documentation>
+		</annotation>
+	</element>
+	
+	<simpleType name="ReimbursementGrantTypeType">
+		<union memberTypes="ctr:PredefinedReimbursementGrantTypeType ctr:UndefinedReimbursementGrantTypeType"/>
+	</simpleType>
+	<simpleType name="PredefinedReimbursementGrantTypeType">
+		<restriction base="ctr:UndefinedReimbursementGrantTypeType">
+			<enumeration value="Enkelt"/>
+			<enumeration value="Forhøjet"/>
+        </restriction>
+	</simpleType>
+	<simpleType name="UndefinedReimbursementGrantTypeType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="100"/>
+		</restriction>
+	</simpleType>
+</schema>
