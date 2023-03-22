@@ -25,7 +25,7 @@
 			<enumeration value="Administration"/>
 			<enumeration value="SystemOpslag"/>
 			<enumeration value="ApotekOpslag"/>
-			<enumeration value="Apoteksindberetning"/>
+			<enumeration value="ApotekIndberetning"/>
 		</restriction>
 	</simpleType>
 
