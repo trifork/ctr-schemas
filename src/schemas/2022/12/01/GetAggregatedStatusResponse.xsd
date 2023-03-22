@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified">
+
+	<include schemaLocation="PatientStatus.xsd"/>
+    <include schemaLocation="PersonIdentifier.xsd"/>
+    <include schemaLocation="IsChild.xsd"/>
+    <include schemaLocation="AccountStatus.xsd"/>
+	<include schemaLocation="HealthAllowance.xsd"/>
+	<include schemaLocation="ReimbursementGrant.xsd"/>
+	<include schemaLocation="Deferment.xsd"/>
+
+	<element name="GetAggregatedStatusResponse">
+		<annotation>
+			<documentation xml:lang="en-GB">Outer container element for a response with both account status health allowances, reimbursement grants and deferments</documentation>
+			<documentation xml:lang="da-DK">Ydre container-element for et svar med både kontostatus, helbredstillæg, bevillinger og henstandsordninger</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="IsChild" type="ctr:IsChildType"/>
+				<element name="PatientStatus" type="ctr:PatientStatusType"/>
+				<element name="AccountStatus" type="ctr:AccountStatusType" minOccurs="0" maxOccurs="100"/>
+				<element name="HealthAllowance" type="ctr:HealthAllowanceType" minOccurs="0" maxOccurs="100"/>
+				<element name="ReimbursementGrant" type="ctr:ReimbursementGrantType" minOccurs="0" maxOccurs="100"/>
+				<element name="Deferment" type="ctr:DefermentType" minOccurs="0" maxOccurs="100"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

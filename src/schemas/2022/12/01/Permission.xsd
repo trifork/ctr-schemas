@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified">
+	
+	<element name="Permission" type="ctr:PermissionType">
+		<annotation>
+			<documentation xml:lang="en-GB">A Permission is the right to perform an action</documentation>
+			<documentation xml:lang="da-DK">Permission modellerer retten til at udføre en handling</documentation>
+		</annotation>
+	</element>
+	<simpleType name="PermissionType">
+		<union memberTypes="ctr:PredefinedPermission ctr:UndefinedPermission"/>
+	</simpleType>
+	<simpleType name="UndefinedPermission">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="200"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="PredefinedPermission">
+		<restriction base="ctr:UndefinedPermission">
+			<enumeration value="BorgerOpslag"/>
+			<enumeration value="Administration"/>
+			<enumeration value="SystemOpslag"/>
+			<enumeration value="ApotekOpslag"/>
+			<enumeration value="Apoteksindberetning"/>
+		</restriction>
+	</simpleType>
+
+</schema>

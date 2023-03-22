@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified">
+
+	<include schemaLocation="PersonIdentifier.xsd"/>
+	
+	<element name="GetCallersPermissionsToPerson" type="ctr:GetCallersPermissionsToPersonType">
+		<annotation>
+			<documentation xml:lang="da-DK">Forespørgsel på rettigheder til person</documentation>
+		</annotation>
+	</element>
+	<complexType name="GetCallersPermissionsToPersonType">
+		<sequence>
+			<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+		</sequence>
+	</complexType>
+</schema>
