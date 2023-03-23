@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified">
+
+    <element name="GetAllPermissions" type="ctr:GetAllPermissionsType">
+		<annotation>
+			<documentation xml:lang="en-GB">Request for all permissions</documentation>
+			<documentation xml:lang="da-DK">Forespørgsel på alle rettigheder</documentation>
+		</annotation>
+	</element>
+	<complexType name="GetAllPermissionsType"/>
+</schema>

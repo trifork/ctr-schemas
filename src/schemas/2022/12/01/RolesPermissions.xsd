@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified">
+
+
+	<include schemaLocation="Permission.xsd"/>
+	<include schemaLocation="RequestedRole.xsd"/>
+	<element name="RolesPermissions" type="ctr:RolesPermissionsType">
+		<annotation>
+			<documentation xml:lang="en-GB">Permissions for a role</documentation>
+			<documentation xml:lang="da-DK">En rolles rettigheder</documentation>
+		</annotation>
+	</element>
+	<complexType name="RolesPermissionsType">
+		<sequence>
+			<element name="RequestedRole" type="ctr:RequestedRoleType"/>
+			<element name="Permission" type="ctr:PermissionType" minOccurs="0" maxOccurs="100"/>
+		</sequence>
+	</complexType>
+</schema>

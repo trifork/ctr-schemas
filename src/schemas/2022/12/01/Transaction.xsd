@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-		xmlns:ctr="http://lmst.dk/Ctr/xml.schema/2022/12/01"
-		targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01"
-		elementFormDefault="qualified" attributeFormDefault="unqualified">
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified">
 
 	<include schemaLocation="OrganisationIdentifier.xsd"/>
 	<include schemaLocation="OrganisationName.xsd"/>
@@ -19,7 +19,6 @@
 	</element>
     <complexType name="TransactionType">
 	    <sequence>
-            <element name="AccountName" type="ctr:AccountNameType" maxOccurs="100"/>
 			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>
 			<element name="PharmacyName" type="ctr:OrganisationNameType"/>
             <element name="AdministrationIdentifier" type="ctr:AdministrationIdentifierType"/>

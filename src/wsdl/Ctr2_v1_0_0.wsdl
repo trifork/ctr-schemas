@@ -2,87 +2,108 @@
 <wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
                   xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"                 
                   xmlns:xs="http://www.w3.org/2001/XMLSchema"
-                  xmlns:ctr100="http://lmst.dk/Ctr/xml.schema/2022/12/01"
-                  xmlns:tns="http://lmst.dk/Ctr/xml.schema/2022/12/01"
+                  xmlns:ctr100="http://lmst.dk/ctr/xml.schema/2022/12/01"
+                  xmlns:tns="http://lmst.dk/ctr/xml.schema/2022/12/01"
                   xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
                   xmlns:medcom="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd"
-                  targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01">
+                  targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01">
 
     <wsdl:types>
         <xs:schema targetNamespace="http://www.medcom.dk/dgws/2006/04/dgws-1.0.xsd">
             <xs:include schemaLocation="../schemas/medcom/dgws/2006/04/medcom.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetAccountStatusRequest.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetAccountStatusResponse.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementsRequest.xsd"/>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementGrantsRequest.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementsResponse.xsd"/>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementGrantsResponse.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetHealthAllowancesRequest.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetHealthAllowancesResponse.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetDefermentsRequest.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetDefermentsResponse.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionListRequest.xsd"/>           
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionListResponse.xsd"/>           
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateDefermentRequest.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateDefermentResponse.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/UpdateDefermentRequest.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/UpdateDefermentResponse.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateTransactionRequest.xsd"/>           
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateTransactionResponse.xsd"/>      
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateFictitiousPersonIdentifierRequest.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateFictitiousPersonIdentifierResponse.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/ChangePersonIdentifierRequest.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/ChangePersonIdentifierResponse.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementRatesRequest.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementRatesResponse.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetPermissionsRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetPermissionsResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetAggregatedStatusRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetAggregatedStatusResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CTRWarning.xsd"/>
         </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/Ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CTRFault.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/ResponseHeader.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/OnBehalfOf.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" elementFormDefault="qualified">
+            <xs:include schemaLocation="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
         </xs:schema>
     </wsdl:types>
      
@@ -108,11 +129,11 @@
     <wsdl:message name="GetAccountStatusResponse">
         <wsdl:part name="GetAccountStatusResponse" element="ctr100:GetAccountStatusResponse"/>
     </wsdl:message>
-    <wsdl:message name="GetReimbursementsRequest">
-        <wsdl:part name="GetReimbursementsRequest" element="ctr100:GetReimbursementsRequest"/>
+    <wsdl:message name="GetReimbursementGrantsRequest">
+        <wsdl:part name="GetReimbursementGrantsRequest" element="ctr100:GetReimbursementGrantsRequest"/>
     </wsdl:message>
-    <wsdl:message name="GetReimbursementsResponse">
-        <wsdl:part name="GetReimbursementsResponse" element="ctr100:GetReimbursementsResponse"/>
+    <wsdl:message name="GetReimbursementGrantsResponse">
+        <wsdl:part name="GetReimbursementGrantsResponse" element="ctr100:GetReimbursementGrantsResponse"/>
     </wsdl:message>
     <wsdl:message name="GetHealthAllowancesRequest">
         <wsdl:part name="GetHealthAllowancesRequest" element="ctr100:GetHealthAllowancesRequest"/>
@@ -168,6 +189,18 @@
     <wsdl:message name="GetReimbursementRatesResponse">
         <wsdl:part name="GetReimbursementRatesResponse" element="ctr100:GetReimbursementRatesResponse"/>
     </wsdl:message>
+    <wsdl:message name="GetPermissionsRequest">
+        <wsdl:part name="GetPermissionsRequest" element="ctr100:GetPermissionsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetPermissionsResponse">
+        <wsdl:part name="GetPermissionsResponse" element="ctr100:GetPermissionsResponse"/>
+    </wsdl:message>
+    <wsdl:message name="GetAggregatedStatusRequest">
+        <wsdl:part name="GetAggregatedStatusRequest" element="ctr100:GetAggregatedStatusRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetAggregatedStatusResponse">
+        <wsdl:part name="GetAggregatedStatusResponse" element="ctr100:GetAggregatedStatusResponse"/>
+    </wsdl:message>
 
     <wsdl:message name="CTRFault">
         <wsdl:part name="fault" element="ctr100:CTRFault"/>
@@ -175,23 +208,23 @@
 
     <wsdl:portType name="CtrPortType">
         <wsdl:operation name="GetAccountStatus">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetAccountStatus" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetAccountStatus" style="document"/>
             <wsdl:input name="GetAccountStatusRequest"
                         message="tns:GetAccountStatusRequest"/>
             <wsdl:output name="GetAccountStatusResponse"
                          message="tns:GetAccountStatusResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
-        <wsdl:operation name="GetReimbursements">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursements" style="document"/>
-            <wsdl:input name="GetReimbursementsRequest"
-                        message="tns:GetReimbursementsRequest"/>
-            <wsdl:output name="GetReimbursementsResponse"
-                         message="tns:GetReimbursementsResponse"/>
+        <wsdl:operation name="GetReimbursementGrants">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetReimbursementGrants" style="document"/>
+            <wsdl:input name="GetReimbursementGrantsRequest"
+                        message="tns:GetReimbursementGrantsRequest"/>
+            <wsdl:output name="GetReimbursementGrantsResponse"
+                         message="tns:GetReimbursementGrantsResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetHealthAllowances">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetHealthAllowances" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetHealthAllowances" style="document"/>
             <wsdl:input name="GetHealthAllowancesRequest"
                         message="tns:GetHealthAllowancesRequest"/>
             <wsdl:output name="GetHealthAllowancesResponse"
@@ -199,7 +232,7 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetDeferments">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetDeferments" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetDeferments" style="document"/>
             <wsdl:input name="GetDefermentsRequest"
                         message="tns:GetDefermentsRequest"/>
             <wsdl:output name="GetDefermentsResponse"
@@ -207,7 +240,7 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="CreateDeferment">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateDeferment" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateDeferment" style="document"/>
             <wsdl:input name="CreateDefermentRequest"
                         message="tns:CreateDefermentRequest"/>
             <wsdl:output name="CreateDefermentResponse"
@@ -215,7 +248,7 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="UpdateDeferment">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#UpdateDeferment" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#UpdateDeferment" style="document"/>
             <wsdl:input name="UpdateDefermentRequest"
                         message="tns:UpdateDefermentRequest"/>
             <wsdl:output name="UpdateDefermentResponse"
@@ -223,7 +256,7 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="CreateTransaction">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateTransaction" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateTransaction" style="document"/>
             <wsdl:input name="CreateTransactionRequest"
                         message="tns:CreateTransactionRequest"/>
             <wsdl:output name="CreateTransactionResponse"
@@ -231,7 +264,7 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetTransactionList">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetTransactionList" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetTransactionList" style="document"/>
             <wsdl:input name="GetTransactionListRequest"
                         message="tns:GetTransactionListRequest"/>
             <wsdl:output name="GetTransactionListResponse"
@@ -239,7 +272,7 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>                    
         <wsdl:operation name="ChangePersonIdentifier">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#ChangePersonIdentifier" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#ChangePersonIdentifier" style="document"/>
             <wsdl:input name="ChangePersonIdentifierRequest"
                         message="tns:ChangePersonIdentifierRequest"/>
             <wsdl:output name="ChangePersonIdentifierResponse"
@@ -247,7 +280,7 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="CreateFictitiousPersonIdentifier">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier" style="document"/>
             <wsdl:input name="CreateFictitiousPersonIdentifierRequest"
                         message="tns:CreateFictitiousPersonIdentifierRequest"/>
             <wsdl:output name="CreateFictitiousPersonIdentifierResponse"
@@ -255,11 +288,27 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetReimbursementRates">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursementRates" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetReimbursementRates" style="document"/>
             <wsdl:input name="GetReimbursementRatesRequest"
                         message="tns:GetReimbursementRatesRequest"/>
             <wsdl:output name="GetReimbursementRatesResponse"
                          message="tns:GetReimbursementRatesResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="GetPermissions">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetPermissions" style="document"/>
+            <wsdl:input name="GetPermissionsRequest"
+                        message="tns:GetPermissionsRequest"/>
+            <wsdl:output name="GetPermissionsResponse"
+                         message="tns:GetPermissionsResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="GetAggregatedStatus">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetAggregatedStatus" style="document"/>
+            <wsdl:input name="GetAggregatedStatusRequest"
+                        message="tns:GetAggregatedStatusRequest"/>
+            <wsdl:output name="GetAggregatedStatusResponse"
+                         message="tns:GetAggregatedStatusResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
     </wsdl:portType>
@@ -268,7 +317,7 @@
         <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
 
         <wsdl:operation name="GetAccountStatus">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetAccountStatus"
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetAccountStatus"
                             style="document"/>
             <wsdl:input name="GetAccountStatusRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -285,16 +334,16 @@
             </wsdl:fault>
         </wsdl:operation>
 
-        <wsdl:operation name="GetReimbursements">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursements"
+        <wsdl:operation name="GetReimbursementGrants">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetReimbursementGrants"
                             style="document"/>
-            <wsdl:input name="GetReimbursementsRequest">
+            <wsdl:input name="GetReimbursementGrantsRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="GetReimbursementsResponse">
+            <wsdl:output name="GetReimbursementGrantsResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
@@ -304,7 +353,7 @@
         </wsdl:operation>
 
         <wsdl:operation name="GetHealthAllowances">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetHealthAllowances"
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetHealthAllowances"
                             style="document"/>
             <wsdl:input name="GetHealthAllowancesRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -322,7 +371,7 @@
         </wsdl:operation>
 
         <wsdl:operation name="GetDeferments">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetDeferments"
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetDeferments"
                             style="document"/>
             <wsdl:input name="GetDefermentsRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -340,7 +389,7 @@
         </wsdl:operation>
 
         <wsdl:operation name="CreateDeferment">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateDeferment"
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateDeferment"
                             style="document"/>
             <wsdl:input name="CreateDefermentRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -358,7 +407,7 @@
         </wsdl:operation>
 
         <wsdl:operation name="UpdateDeferment">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#UpdateDeferment"
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#UpdateDeferment"
                             style="document"/>
             <wsdl:input name="UpdateDefermentRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -376,7 +425,7 @@
         </wsdl:operation>
 
         <wsdl:operation name="CreateTransaction">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateTransaction"
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateTransaction"
                             style="document"/>
             <wsdl:input name="CreateTransactionRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -394,7 +443,7 @@
         </wsdl:operation>
 
     <wsdl:operation name="GetTransactionList">
-        <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetTransactionList"
+        <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetTransactionList"
                         style="document"/>
         <wsdl:input name="GetTransactionListRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -412,7 +461,7 @@
     </wsdl:operation>
 
     <wsdl:operation name="ChangePersonIdentifier">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#ChangePersonIdentifier"
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#ChangePersonIdentifier"
                             style="document"/>
             <wsdl:input name="ChangePersonIdentifierRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -430,7 +479,7 @@
         </wsdl:operation>
 
         <wsdl:operation name="CreateFictitiousPersonIdentifier">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier"
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier"
                             style="document"/>
             <wsdl:input name="CreateFictitiousPersonIdentifierRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -448,7 +497,7 @@
         </wsdl:operation>
 
         <wsdl:operation name="GetReimbursementRates">
-            <soap:operation soapAction="http://lmst.dk/Ctr/xml.schema/2022/12/01#GetReimbursementRates"
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetReimbursementRates"
                             style="document"/>
             <wsdl:input name="GetReimbursementRatesRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
@@ -465,11 +514,47 @@
             </wsdl:fault>
         </wsdl:operation>
 
+        <wsdl:operation name="GetPermissions">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetPermissions"
+                            style="document"/>
+            <wsdl:input name="GetPermissionsRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetPermissionsResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetAggregatedStatus">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetAggregatedStatus"
+                            style="document"/>
+            <wsdl:input name="GetAggregatedStatusRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetAggregatedStatusResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
     </wsdl:binding>
 
     <wsdl:service name="Ctr">
         <wsdl:port name="CtrPort" binding="tns:CtrBinding">
-            <soap:address location="http://localhost:9999/ws/Ctr"/>
+            <soap:address location="http://localhost:9999/ws/ctr"/>
         </wsdl:port>
     </wsdl:service>
 
