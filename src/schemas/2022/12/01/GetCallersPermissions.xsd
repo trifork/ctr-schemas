@@ -6,7 +6,8 @@
 
     <element name="GetCallersPermissions" type="ctr:GetCallersPermissionsType">
 		<annotation>
-			<documentation xml:lang="da-DK">Forespørgsel på rettigheder</documentation>
+			<documentation xml:lang="en-GB">Request for permissions for the user</documentation>
+			<documentation xml:lang="da-DK">Forespørgsel på rettigheder for brugeren</documentation>
 		</annotation>
 	</element>
 	<complexType name="GetCallersPermissionsType"/>

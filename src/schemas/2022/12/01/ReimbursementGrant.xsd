@@ -16,7 +16,7 @@
     
 	<element name="ReimbursementGrant" type="ctr:ReimbursementGrantType">
 		<annotation>
-			<documentation xml:lang="en-GB">Description of a CTR reimbursement</documentation>
+			<documentation xml:lang="en-GB">Description of a CTR reimbursement grant</documentation>
 			<documentation xml:lang="da-DK">Beskrivelse af en CTR bevilling</documentation>
 		</annotation>
 	</element>

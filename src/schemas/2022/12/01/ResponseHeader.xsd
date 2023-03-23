@@ -14,7 +14,7 @@
 			<documentation xml:lang="da-DK">Response header</documentation>
 		</annotation>
 		<sequence>
-			<element name="Warnings" type="ctr:CTRWarningType" minOccurs="0" maxOccurs="10"/>
+			<element name="Warning" type="ctr:CTRWarningType" minOccurs="0" maxOccurs="10"/>
 		</sequence>
 	</complexType>
 	

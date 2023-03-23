@@ -8,7 +8,8 @@
 	
 	<element name="GetCallersPermissionsToPerson" type="ctr:GetCallersPermissionsToPersonType">
 		<annotation>
-			<documentation xml:lang="da-DK">Forespørgsel på rettigheder til person</documentation>
+			<documentation xml:lang="en-GB">Request for the users permissions to act on a specific person</documentation>
+			<documentation xml:lang="da-DK">Forespørgsel på brugerens rettigheder i forhold til en given person</documentation>
 		</annotation>
 	</element>
 	<complexType name="GetCallersPermissionsToPersonType">

@@ -8,7 +8,7 @@
 
 	<element name="GetReimbursementGrantsRequest">
 		<annotation>
-			<documentation xml:lang="en-GB">Element for a request for CTR reimbursements</documentation>
+			<documentation xml:lang="en-GB">Element for a request for CTR reimbursement grants</documentation>
 			<documentation xml:lang="da-DK">Element for en forespørgsel efter CTR bevillinger</documentation>
 		</annotation>
 		<complexType>

@@ -16,7 +16,7 @@
 	<complexType name="RolesPermissionsType">
 		<sequence>
 			<element name="RequestedRole" type="ctr:RequestedRoleType"/>
-			<element name="Permission" type="ctr:PermissionType" minOccurs="0" maxOccurs="unbounded"/>
+			<element name="Permission" type="ctr:PermissionType" minOccurs="0" maxOccurs="100"/>
 		</sequence>
 	</complexType>
 </schema>

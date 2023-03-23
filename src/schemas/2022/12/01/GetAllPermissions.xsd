@@ -6,7 +6,8 @@
 
     <element name="GetAllPermissions" type="ctr:GetAllPermissionsType">
 		<annotation>
-			<documentation xml:lang="da-DK">Forespørgsel på rettigheder til person</documentation>
+			<documentation xml:lang="en-GB">Request for all permissions</documentation>
+			<documentation xml:lang="da-DK">Forespørgsel på alle rettigheder</documentation>
 		</annotation>
 	</element>
 	<complexType name="GetAllPermissionsType"/>

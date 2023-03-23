@@ -6,6 +6,7 @@
 
 <element name="RequestedRole" type="ctr:RequestedRoleType">
 		<annotation>
+			<documentation xml:lang="en-GB">User role</documentation>
 			<documentation xml:lang="da-DK">Brugerens rolle</documentation>
 		</annotation>
 	</element>

@@ -13,7 +13,7 @@
 		</annotation>
 		<complexType>
 			<sequence>
-				<element name="RolesPermissions" type="ctr:RolesPermissionsType" minOccurs="0" maxOccurs="unbounded"/>
+				<element name="RolesPermission" type="ctr:RolesPermissionsType" minOccurs="0" maxOccurs="unbounded"/>
 			</sequence>
 		</complexType>
 	</element>
