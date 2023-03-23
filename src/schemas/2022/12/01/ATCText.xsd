@@ -7,7 +7,8 @@
 		<annotation>
 			<documentation xml:lang="en-GB">Drug ATC group</documentation>
 
-			<documentation xml:lang="da-DK">Lægemidlets ATC-gruppe (LMS12 felt 8)</documentation>
+			<documentation xml:lang="da-DK">Lægemidlets ATC-gruppe</documentation>
+
 		</annotation>
 	</element>
 	<simpleType name="ATCTextType">
