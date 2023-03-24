@@ -32,7 +32,7 @@
 			<enumeration value="EAN-Lokationsnummer"/>
 			<enumeration value="CVR"/>			
 			<enumeration value="SOR"/>
-			<enumeration value="ApoteksId"/>
+			<enumeration value="ApoteksNr"/>
 			<enumeration value="Kommunekode"/>
 		</restriction>
 	</simpleType>
