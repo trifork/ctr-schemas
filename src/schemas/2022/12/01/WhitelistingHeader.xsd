@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified">
+    
+    <include schemaLocation="SystemType.xsd"/>
+    <include schemaLocation="SystemOwnerName.xsd" />
+    <include schemaLocation="SystemName.xsd" />
+    <include schemaLocation="SystemVersion.xsd" />
+    <include schemaLocation="OrgResponsibleName.xsd" />
+    <include schemaLocation="OrgUsingName.xsd" />
+    <include schemaLocation="OrgUsingID.xsd" />
+    <include schemaLocation="RequestedRole.xsd" />
+    <include schemaLocation="BorgerOpslag.xsd" />
+
+    <element name="WhitelistingHeader" type="ctr:WhitelistingHeaderType">
+        <annotation>
+            <documentation xml:lang="en-GB">Whitelisting header.</documentation>
+            <documentation xml:lang="da-DK">Whitelisting header.</documentation>
+        </annotation>
+    </element>
+    <complexType name="WhitelistingHeaderType">
+        <sequence>
+            <element name="SystemOwnerName" type="ctr:SystemOwnerNameType" minOccurs="1" maxOccurs="1" />
+            <element name="SystemName" type="ctr:SystemNameType" minOccurs="1" maxOccurs="1" />
+            <element name="SystemVersion" type="ctr:SystemVersionType" minOccurs="1" maxOccurs="1" />
+            <choice>
+                <sequence>
+                    <element name="OrgResponsibleName" type="ctr:OrgResponsibleNameType" minOccurs="1" maxOccurs="1" />
+                    <element name="OrgUsingName" type="ctr:OrgUsingNameType" minOccurs="1" maxOccurs="1" />
+                    <element name="OrgUsingID"  type="ctr:OrgUsingIDType" minOccurs="1" maxOccurs="1" />
+                </sequence>
+                <element name="BorgerOpslag" type="ctr:BorgerOpslagType" minOccurs="1" maxOccurs="1" />
+            </choice>
+            <choice>
+                <element name="RequestedRole" type="ctr:RequestedRoleType" minOccurs="1" maxOccurs="1" />
+                <element name="SystemType" type="ctr:SystemTypeType" minOccurs="1" maxOccurs="1" />
+            </choice>
+        </sequence>
+    </complexType>
+</schema>
+

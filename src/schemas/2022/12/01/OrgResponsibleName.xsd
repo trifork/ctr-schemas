@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified" >
+
+
+	<element name="OrgResponsibleName" type="ctr:OrgResponsibleNameType">
+		<annotation>
+			<documentation xml:lang="da-DK">Det entydige navn på den organisation, der har ansvaret for it-systemet. Det bemærkes, at organisationen meget vel kan være en ikke-sundhedsfaglig organisation der måske endda ikke engang kan identificeres via en klassifikation som CVR som i tilfældet en driftsafdeling i en region. Derfor anvendes der ikke klassifikationer for denne attribut. Udfaldsrummet dikteres alene af leverandøren af afsendersystemet</documentation>
+		</annotation>
+	</element>
+	<simpleType name="OrgResponsibleNameType">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="200"/>
+		</restriction>
+	</simpleType>
+</schema>
