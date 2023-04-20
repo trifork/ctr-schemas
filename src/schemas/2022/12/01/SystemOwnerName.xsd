@@ -6,6 +6,7 @@
 
 	<element name="SystemOwnerName" type="ctr:SystemOwnerNameType">
 		<annotation>
+			<documentation xml:lang="en-GB">Unique name of the developer organisation of the client system. Based on the danish CVR register</documentation>
 			<documentation xml:lang="da-DK">Det entydige navn på leverandøren af afsendersystemet. Udfaldsrummet dikteres via det Centrale Virksomheds Register</documentation>
 		</annotation>
 	</element>

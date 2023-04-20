@@ -7,7 +7,7 @@
 	<element name="TransactionIdentifier" type="ctr:TransactionIdentifierType">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for uniquely identifying a CTR transaction</documentation>
-			<documentation xml:lang="da-DK">Element for entydig identifikation af en CTR-transaction</documentation>
+			<documentation xml:lang="da-DK">Element for entydig identifikation af en CTR-transaktion</documentation>
 		</annotation>
 	</element>
 	<simpleType name="TransactionIdentifierType">

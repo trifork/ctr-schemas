@@ -6,7 +6,8 @@
 
 <element name="NameFormat" type="ctr:NameFormat">
 		<annotation>
-			<documentation xml:lang="da-DK">Klassifikation af organisations-ider</documentation>
+			<documentation xml:lang="en-GB">Classification of organisation IDs</documentation>
+			<documentation xml:lang="da-DK">Klassifikation af organisations-ID'er</documentation>
 		</annotation>
 	</element>
 	<simpleType name="NameFormat">

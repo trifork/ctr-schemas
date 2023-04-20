@@ -6,6 +6,7 @@
 
 	<element name="BorgerOpslag" type="ctr:BorgerOpslagType">
 		<annotation>
+			<documentation xml:lang="en-GB">Indicates that this is a citizen initiated request</documentation>
 			<documentation xml:lang="da-DK">Angiver der er tale om et borger opslag</documentation>
 		</annotation>
 	</element>
