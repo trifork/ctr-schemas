@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified" >
+
+	<element name="SystemType" type="ctr:SystemTypeType">
+		<annotation>
+			<documentation xml:lang="en-GB">Declararation of the system type as part of the whitelisting on any call</documentation>
+			<documentation xml:lang="da-DK">Angivelse af system type som en del af whitelisting for alle kald</documentation>
+		</annotation>
+	</element>
+	<simpleType name="SystemTypeType">
+		<union memberTypes="ctr:PredefinedSystemTypes ctr:UndefinedSystemTypes"/>
+	</simpleType>
+	<simpleType name="PredefinedSystemTypes">
+		<restriction base="string">
+			<enumeration value="Elektronisk patientjournal"/>
+			<enumeration value="Elektronisk omsorgsjournal"/>
+			<enumeration value="Læge-praksissystem"/>
+			<enumeration value="Tandlægesystem"/>
+			<enumeration value="Apotekersystem"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="UndefinedSystemTypes">
+		<restriction base="string">
+			<minLength value="1"/>
+			<maxLength value="200"/>
+		</restriction>
+	</simpleType>
+</schema>

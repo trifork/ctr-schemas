@@ -10,6 +10,7 @@
 	<include schemaLocation="CreatedDateTime.xsd"/>
 	<include schemaLocation="Amount.xsd"/>
     <include schemaLocation="AccountName.xsd"/>
+	<include schemaLocation="TransactionIdentifier.xsd"/>
 
 	<element name="Transaction" type="ctr:TransactionType">
 		<annotation>
@@ -19,6 +20,7 @@
 	</element>
     <complexType name="TransactionType">
 	    <sequence>
+			<element name="TransactionIdentifier" type="ctr:TransactionIdentifierType"/>
 			<element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>
 			<element name="PharmacyName" type="ctr:OrganisationNameType"/>
             <element name="AdministrationIdentifier" type="ctr:AdministrationIdentifierType"/>

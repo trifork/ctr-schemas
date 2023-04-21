@@ -15,6 +15,6 @@
 	<complexType name="ATCType">
 		<sequence>
 			<element name="Code" type="ctr:ATCCodeType"/>
-			<element name="Text" type="ctr:ATCTextType"/>
+			<element name="Text" type="ctr:ATCTextType" minOccurs="0"/>
 		</sequence>
 	</complexType></schema>

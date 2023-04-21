@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified">
+
+    <element name="MinLogSessionId" type="ctr:MinLogSessionIdType">
+        <annotation>
+            <documentation xml:lang="en-GB">Technical session id defined by the client system that  links more registrations belonging to the same session</documentation>
+            <documentation xml:lang="da-DK">Teknisk sessions id defineret af klient systemerne der derved kan koble flere kald hørende til den samme konsultation</documentation>
+        </annotation>
+    </element>
+    <simpleType name="MinLogSessionIdType">
+        <restriction base="string">
+            <maxLength value="40"/>
+        </restriction>
+    </simpleType>
+</schema>

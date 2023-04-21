@@ -100,7 +100,7 @@
             <xs:include schemaLocation="../schemas/2022/12/01/ResponseHeader.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/OnBehalfOf.xsd"/>
+            <xs:include schemaLocation="../schemas/2022/12/01/RequestHeader.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" elementFormDefault="qualified">
             <xs:include schemaLocation="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"/>
@@ -111,8 +111,8 @@
         <wsdl:part name="CTRResponseHeader" element="ctr100:ResponseHeader"/>        
     </wsdl:message>
 
-    <wsdl:message name="OnBehalfOfHeader">
-        <wsdl:part name="OnBehalfOfHeader" element="ctr100:OnBehalfOf"/>
+    <wsdl:message name="RequestHeader">
+        <wsdl:part name="RequestHeader" element="ctr100:RequestHeader"/>
     </wsdl:message>
 
     <wsdl:message name="SecurityHeader">
@@ -322,7 +322,7 @@
             <wsdl:input name="GetAccountStatusRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetAccountStatusResponse">
@@ -340,7 +340,7 @@
             <wsdl:input name="GetReimbursementGrantsRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetReimbursementGrantsResponse">
@@ -358,7 +358,7 @@
             <wsdl:input name="GetHealthAllowancesRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetHealthAllowancesResponse">
@@ -376,7 +376,7 @@
             <wsdl:input name="GetDefermentsRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />        
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetDefermentsResponse">
@@ -394,7 +394,7 @@
             <wsdl:input name="CreateDefermentRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />        
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="CreateDefermentResponse">
@@ -412,7 +412,7 @@
             <wsdl:input name="UpdateDefermentRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />        
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="UpdateDefermentResponse">
@@ -430,7 +430,7 @@
             <wsdl:input name="CreateTransactionRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />        
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="CreateTransactionResponse">
@@ -448,7 +448,7 @@
         <wsdl:input name="GetTransactionListRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />        
             <soap:body use="literal"/>
         </wsdl:input>
         <wsdl:output name="GetTransactionListResponse">
@@ -466,7 +466,7 @@
             <wsdl:input name="ChangePersonIdentifierRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />        
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />        
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="ChangePersonIdentifierResponse">
@@ -484,7 +484,7 @@
             <wsdl:input name="CreateFictitiousPersonIdentifierRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="CreateFictitiousPersonIdentifierResponse">
@@ -502,7 +502,7 @@
             <wsdl:input name="GetReimbursementRatesRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetReimbursementRatesResponse">
@@ -520,7 +520,7 @@
             <wsdl:input name="GetPermissionsRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetPermissionsResponse">
@@ -538,7 +538,7 @@
             <wsdl:input name="GetAggregatedStatusRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='OnBehalfOfHeader' message='tns:OnBehalfOfHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetAggregatedStatusResponse">
