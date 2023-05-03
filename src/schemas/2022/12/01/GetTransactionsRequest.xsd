@@ -8,7 +8,7 @@
     <include schemaLocation="RequestedPeriod.xsd"/>
 	<include schemaLocation="AccountName.xsd"/>
 
-	<element name="GetTransactionListRequest">
+	<element name="GetTransactionsRequest">
 		<annotation>
 			<documentation xml:lang="en-GB">Element for a request for transaction list</documentation>
 			<documentation xml:lang="da-DK">Element for en forespørgsel efter transaktionsliste</documentation>

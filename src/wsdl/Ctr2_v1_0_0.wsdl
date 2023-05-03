@@ -37,10 +37,10 @@
             <xs:include schemaLocation="../schemas/2022/12/01/GetDefermentsResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionListRequest.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionsRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionListResponse.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/GetTransactionsResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateDefermentRequest.xsd"/>
@@ -165,11 +165,11 @@
     <wsdl:message name="CreateTransactionResponse">
         <wsdl:part name="CreateTransactionResponse" element="ctr100:CreateTransactionResponse"/>
     </wsdl:message>
-    <wsdl:message name="GetTransactionListRequest">
-        <wsdl:part name="GetTransactionListRequest" element="ctr100:GetTransactionListRequest"/>
+    <wsdl:message name="GetTransactionsRequest">
+        <wsdl:part name="GetTransactionsRequest" element="ctr100:GetTransactionsRequest"/>
     </wsdl:message>
-    <wsdl:message name="GetTransactionListResponse">
-        <wsdl:part name="GetTransactionListResponse" element="ctr100:GetTransactionListResponse"/>
+    <wsdl:message name="GetTransactionsResponse">
+        <wsdl:part name="GetTransactionsResponse" element="ctr100:GetTransactionsResponse"/>
     </wsdl:message> 
     <wsdl:message name="ChangePersonIdentifierRequest">
         <wsdl:part name="ChangePersonIdentifierRequest" element="ctr100:ChangePersonIdentifierRequest"/>
@@ -263,12 +263,12 @@
                          message="tns:CreateTransactionResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
-        <wsdl:operation name="GetTransactionList">
-            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetTransactionList" style="document"/>
-            <wsdl:input name="GetTransactionListRequest"
-                        message="tns:GetTransactionListRequest"/>
-            <wsdl:output name="GetTransactionListResponse"
-                         message="tns:GetTransactionListResponse"/>
+        <wsdl:operation name="GetTransactions">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetTransactions" style="document"/>
+            <wsdl:input name="GetTransactionsRequest"
+                        message="tns:GetTransactionsRequest"/>
+            <wsdl:output name="GetTransactionsResponse"
+                         message="tns:GetTransactionsResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>                    
         <wsdl:operation name="ChangePersonIdentifier">
@@ -442,16 +442,16 @@
             </wsdl:fault>
         </wsdl:operation>
 
-    <wsdl:operation name="GetTransactionList">
-        <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetTransactionList"
+    <wsdl:operation name="GetTransactions">
+        <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetTransactions"
                         style="document"/>
-        <wsdl:input name="GetTransactionListRequest">
+        <wsdl:input name="GetTransactionsRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />        
             <soap:body use="literal"/>
         </wsdl:input>
-        <wsdl:output name="GetTransactionListResponse">
+        <wsdl:output name="GetTransactionsResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
             <soap:body use="literal"/>
         </wsdl:output>
