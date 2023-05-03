@@ -19,7 +19,7 @@
 				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
 				<element name="IsChild" type="ctr:IsChildType"/>
 				<element name="PatientStatus" type="ctr:PatientStatusType"/>
-				<element name="Account" type="ctr:AccountTotalType"/>
+				<element name="Account" type="ctr:AccountTotalType" maxOccurs="100"/>
 			</sequence>
 		</complexType>
 	</element>
