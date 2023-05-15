@@ -6,8 +6,7 @@
 
     <include schemaLocation="PersonIdentifier.xsd"/>
 	<include schemaLocation="Deferment.xsd"/>
-	<include schemaLocation="DefermentIdentifier.xsd"/>
-   
+
 	<element name="UpdateDefermentResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response with the updated Deferment</documentation>
@@ -16,7 +15,6 @@
 		<complexType>
 			<sequence>
 				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-				<element name="DefermentIdentifier" type="ctr:DefermentIdentifierType"/>
 				<element name="Deferment" type="ctr:DefermentType"/>
 			</sequence>
 		</complexType>

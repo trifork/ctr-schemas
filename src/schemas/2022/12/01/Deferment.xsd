@@ -8,6 +8,7 @@
 	<include schemaLocation="DiscontinuanceReason.xsd"/>
 	<include schemaLocation="ValidFromDate.xsd"/>
 	<include schemaLocation="ValidToDate.xsd"/>
+	<include schemaLocation="DefermentIdentifier.xsd"/>
 	
 	<element name="Deferment" type="ctr:DefermentType">
 		<annotation>
@@ -17,6 +18,7 @@
 	</element>
 	<complexType name="DefermentType">
 		<sequence>
+			<element name="DefermentIdentifier" type="ctr:DefermentIdentifierType"/>
             <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
             <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
             <element name="PharmacyIdentifier" type="ctr:OrganisationIdentifierType"/>           
