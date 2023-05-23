@@ -22,7 +22,7 @@
             <element name="ValidToDate" type="ctr:ValidToDateType"/>
             <element name="AccountName" type="ctr:AccountNameType"/>
             <element name="PatientType" type="ctr:PatientTypeValueType"/>
-			<element name="Rate" type="ctr:ReimbursementRateType"/>
+			<element name="Rate" type="ctr:ReimbursementRateType" maxOccurs="100"/>
 		</sequence>
 	</complexType>
 </schema>
