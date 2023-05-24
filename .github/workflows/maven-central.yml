@@ -1,0 +1,30 @@
+name: Zip and publish wsdl and schemas with Maven to Maven Central Repository
+
+on:
+  release:
+    types: [ created ]
+
+jobs:
+  publish:
+    name: Publish to Maven Central Repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main repository
+        uses: actions/checkout@v3
+
+      - name: Set up Maven Central Repository
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'
+          server-id: TODI
+          server-username: MAVEN_USERNAME
+          server-password: MAVEN_PASSWORD
+     
+      - name: Clean and package with Maven
+        run: mvn clean package
+      - name: Publish package
+        run: mvn --batch-mode --settings deploy-settings.xml deploy -Dfile=target/*.zip
+        env:
+          MAVEN_USERNAME: ${{ secrets.TODO_USERNAME }}
+          MAVEN_PASSWORD: ${{ secrets.TODO_TOKEN }}   
