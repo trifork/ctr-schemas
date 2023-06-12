@@ -91,9 +91,6 @@
             <xs:include schemaLocation="../schemas/2022/12/01/GetAggregatedStatusResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/CTRWarning.xsd"/>
-        </xs:schema>
-        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CTRFault.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
