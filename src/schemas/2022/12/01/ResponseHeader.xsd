@@ -4,7 +4,7 @@
 		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
         elementFormDefault="qualified">
 
-	<include schemaLocation="CTRWarning.xsd"/>
+	<include schemaLocation="CTRFaultDetail.xsd"/>
 	
 	<element name="ResponseHeader" type="ctr:ResponseHeaderType" />
 	
@@ -14,7 +14,7 @@
 			<documentation xml:lang="da-DK">Response header</documentation>
 		</annotation>
 		<sequence>
-			<element name="Warning" type="ctr:CTRWarningType" minOccurs="0" maxOccurs="10"/>
+			<element name="Warning" type="ctr:CTRFaultDetailType" minOccurs="0" maxOccurs="10"/>
 		</sequence>
 	</complexType>
 	
