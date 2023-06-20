@@ -6,7 +6,7 @@
 
     <groupId>dk.lmst.ctr</groupId>
     <artifactId>ctr-schemas</artifactId>
-    <version>1.1.9-SNAPSHOT</version>
+    <version>1.1.10-SNAPSHOT</version>
     <name>ctr-schemas</name>
     <description>CTR schemas</description>
     <packaging>pom</packaging>
@@ -24,6 +24,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <id>resources</id>
@@ -39,7 +40,105 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <version>3.1.1</version>
+                <executions>
+                    <execution>
+                        <id>unpack-ctr</id>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <phase>verify</phase>
+                        <configuration>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>dk.lmst.ctr</groupId>
+                                    <artifactId>ctr-schemas</artifactId>
+                                    <version>${project.version}</version>
+                                    <classifier>src</classifier>
+                                    <type>zip</type>
+                                </artifactItem>
+                            </artifactItems>
+                            <includes>
+                                src/wsdl/Ctr2_v1_0_0.wsdl,
+                                src/schemas/**,
+                            </includes>
+                            <outputDirectory>${project.build.directory}/api/ctr-schemas</outputDirectory>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>xml-maven-plugin</artifactId>
+                <version>1.0.2</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>transform</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <transformationSets>
+                        <transformationSet>
+                            <dir>${project.build.directory}/api/ctr-schemas/src/wsdl</dir>
+                            <includes>*.wsdl</includes>
+                            <stylesheet>src/main/xslt/strip-security-imports.xsl</stylesheet>
+                            <addedToClasspath>false</addedToClasspath>
+                            <outputDir>${project.build.directory}/api/ctr-schemas/src/wsdl</outputDir>
+                        </transformationSet>
+                    </transformationSets>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>
+                <version>2.6</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>wsimport</goal>
+                        </goals>
+                        <phase>verify</phase>
+                        <configuration>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalDTD=all</vmArg>
+                            </vmArgs>
+                            <encoding>UTF-8</encoding>
+                            <xnocompile>true</xnocompile>
+                            <extension>true</extension>
+                            <keep>true</keep>
+                            <wsdlFiles>
+                                <wsdlFile>${project.build.directory}/api/ctr-schemas/src/wsdl/Ctr2_v1_0_0.wsdl</wsdlFile>
+                            </wsdlFiles>
+                            <bindingFiles>
+                                <bindingFile>${basedir}/src/main/xjb/jaxb-bindings-wsimport.xjb</bindingFile>
+                            </bindingFiles>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-    
+    <dependencies>
+        <dependency>
+            <groupId>javax.xml.ws</groupId>
+            <artifactId>jaxws-api</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.jws</groupId>
+            <artifactId>javax.jws-api</artifactId>
+            <version>1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.12.5</version>
+        </dependency>
+    </dependencies>
 </project>
