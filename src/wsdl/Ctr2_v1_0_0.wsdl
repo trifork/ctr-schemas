@@ -55,10 +55,22 @@
             <xs:include schemaLocation="../schemas/2022/12/01/UpdateDefermentResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/CreateTransactionRequest.xsd"/>           
+            <xs:include schemaLocation="../schemas/2022/12/01/UpdatePatientStatusRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/CreateTransactionResponse.xsd"/>      
+            <xs:include schemaLocation="../schemas/2022/12/01/UpdatePatientStatusResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateTransactionRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateTransactionResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateForeignTransactionRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateForeignTransactionResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateFictitiousPersonIdentifierRequest.xsd"/>
@@ -77,6 +89,12 @@
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementRatesResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/UpdateReimbursementRatesRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/UpdateReimbursementRatesResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetPermissionsRequest.xsd"/>
@@ -155,12 +173,24 @@
     </wsdl:message>
     <wsdl:message name="UpdateDefermentResponse">
         <wsdl:part name="UpdateDefermentResponse" element="ctr100:UpdateDefermentResponse"/>
-    </wsdl:message>    
+    </wsdl:message>
+    <wsdl:message name="UpdatePatientStatusRequest">
+        <wsdl:part name="UpdatePatientStatusRequest" element="ctr100:UpdatePatientStatusRequest"/>
+    </wsdl:message>
+    <wsdl:message name="UpdatePatientStatusResponse">
+        <wsdl:part name="UpdatePatientStatusResponse" element="ctr100:UpdatePatientStatusResponse"/>
+    </wsdl:message>
     <wsdl:message name="CreateTransactionRequest">
         <wsdl:part name="CreateTransactionRequest" element="ctr100:CreateTransactionRequest"/>
     </wsdl:message>
     <wsdl:message name="CreateTransactionResponse">
         <wsdl:part name="CreateTransactionResponse" element="ctr100:CreateTransactionResponse"/>
+    </wsdl:message>
+    <wsdl:message name="CreateForeignTransactionRequest">
+        <wsdl:part name="CreateForeignTransactionRequest" element="ctr100:CreateForeignTransactionRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CreateForeignTransactionResponse">
+        <wsdl:part name="CreateForeignTransactionResponse" element="ctr100:CreateForeignTransactionResponse"/>
     </wsdl:message>
     <wsdl:message name="GetTransactionsRequest">
         <wsdl:part name="GetTransactionsRequest" element="ctr100:GetTransactionsRequest"/>
@@ -185,6 +215,12 @@
     </wsdl:message>
     <wsdl:message name="GetReimbursementRatesResponse">
         <wsdl:part name="GetReimbursementRatesResponse" element="ctr100:GetReimbursementRatesResponse"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateReimbursementRatesRequest">
+        <wsdl:part name="UpdateReimbursementRatesRequest" element="ctr100:UpdateReimbursementRatesRequest"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateReimbursementRatesResponse">
+        <wsdl:part name="UpdateReimbursementRatesResponse" element="ctr100:UpdateReimbursementRatesResponse"/>
     </wsdl:message>
     <wsdl:message name="GetPermissionsRequest">
         <wsdl:part name="GetPermissionsRequest" element="ctr100:GetPermissionsRequest"/>
@@ -252,12 +288,28 @@
                          message="tns:UpdateDefermentResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
+        <wsdl:operation name="UpdatePatientStatus">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#UpdatePatientStatus" style="document"/>
+            <wsdl:input name="UpdatePatientStatusRequest"
+                        message="tns:UpdatePatientStatusRequest"/>
+            <wsdl:output name="UpdatePatientStatusResponse"
+                         message="tns:UpdatePatientStatusResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
         <wsdl:operation name="CreateTransaction">
             <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateTransaction" style="document"/>
             <wsdl:input name="CreateTransactionRequest"
                         message="tns:CreateTransactionRequest"/>
             <wsdl:output name="CreateTransactionResponse"
                          message="tns:CreateTransactionResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateForeignTransaction">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateForeignTransaction" style="document"/>
+            <wsdl:input name="CreateForeignTransactionRequest"
+                        message="tns:CreateForeignTransactionRequest"/>
+            <wsdl:output name="CreateForeignTransactionResponse"
+                         message="tns:CreateForeignTransactionResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetTransactions">
@@ -290,6 +342,14 @@
                         message="tns:GetReimbursementRatesRequest"/>
             <wsdl:output name="GetReimbursementRatesResponse"
                          message="tns:GetReimbursementRatesResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateReimbursementRates">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#UpdateReimbursementRates" style="document"/>
+            <wsdl:input name="UpdateReimbursementRatesRequest"
+                        message="tns:UpdateReimbursementRatesRequest"/>
+            <wsdl:output name="UpdateReimbursementRatesResponse"
+                         message="tns:UpdateReimbursementRatesResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetPermissions">
@@ -409,13 +469,31 @@
             <wsdl:input name="UpdateDefermentRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />        
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="UpdateDefermentResponse">
-                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>    
-            <soap:body use="literal"/>
-        </wsdl:output>
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="UpdatePatientStatus">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#UpdatePatientStatus"
+                            style="document"/>
+            <wsdl:input name="UpdatePatientStatusRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="UpdatePatientStatusResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
             <wsdl:fault name='CTRFault'>
                 <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
@@ -439,25 +517,43 @@
             </wsdl:fault>
         </wsdl:operation>
 
-    <wsdl:operation name="GetTransactions">
-        <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetTransactions"
-                        style="document"/>
-        <wsdl:input name="GetTransactionsRequest">
+        <wsdl:operation name="CreateForeignTransaction">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateForeignTransaction"
+                            style="document"/>
+            <wsdl:input name="CreateForeignTransactionRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
-                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />        
-            <soap:body use="literal"/>
-        </wsdl:input>
-        <wsdl:output name="GetTransactionsResponse">
-                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>                   
-            <soap:body use="literal"/>
-        </wsdl:output>
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="CreateForeignTransactionResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
             <wsdl:fault name='CTRFault'>
                 <soap:fault name='CTRFault' use='literal'/>
             </wsdl:fault>
-    </wsdl:operation>
+        </wsdl:operation>
 
-    <wsdl:operation name="ChangePersonIdentifier">
+        <wsdl:operation name="GetTransactions">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetTransactions"
+                            style="document"/>
+            <wsdl:input name="GetTransactionsRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetTransactionsResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="ChangePersonIdentifier">
             <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#ChangePersonIdentifier"
                             style="document"/>
             <wsdl:input name="ChangePersonIdentifierRequest">
@@ -503,6 +599,24 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetReimbursementRatesResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="UpdateReimbursementRates">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#UpdateReimbursementRates"
+                            style="document"/>
+            <wsdl:input name="UpdateReimbursementRatesRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="UpdateReimbursementRatesResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
