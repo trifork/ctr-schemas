@@ -4,7 +4,7 @@
 		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
 		elementFormDefault="qualified">
 
-	<include schemaLocation="PersonIdentifier.xsd"/>	
+	<include schemaLocation="ValidAtDate.xsd"/>
 
 	<element name="GetReimbursementRatesRequest">
 		<annotation>
@@ -12,6 +12,9 @@
 			<documentation xml:lang="da-DK">Element for en forespørgsel efter tilskudsgrænser</documentation>
 		</annotation>
 		<complexType>
+			<sequence>
+				<element name="Date" type="ctr:ValidAtDateType" minOccurs="0"/>
+			</sequence>
 		</complexType>
 	</element>
 </schema>
