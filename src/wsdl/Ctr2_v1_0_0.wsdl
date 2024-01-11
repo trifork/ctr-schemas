@@ -519,6 +519,24 @@
             </wsdl:fault>
         </wsdl:operation>
 
+        <wsdl:operation name="GetPatientStatusHistory">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetPatientStatusHistory"
+                            style="document"/>
+            <wsdl:input name="GetPatientStatusHistory">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetPatientStatusResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
         <wsdl:operation name="CreateTransaction">
             <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateTransaction"
                             style="document"/>
