@@ -4,7 +4,7 @@
         targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
         elementFormDefault="qualified">
 
-    <include schemaLocation="PatientStatus.xsd"/>
+    <include schemaLocation="PatientHistoricalStatus.xsd"/>
 
     <element name="GetPatientStatusHistoryResponse">
         <annotation>
@@ -13,7 +13,7 @@
         </annotation>
         <complexType>
             <sequence>
-                <element name="PatientHistoryStatus" type="ctr:PatientStatusType" minOccurs="0" maxOccurs="unbounded"/>
+                <element name="PatientHistoryStatus" type="ctr:PatientHistoricalStatusType" minOccurs="0" maxOccurs="unbounded"/>
             </sequence>
         </complexType>
     </element>
