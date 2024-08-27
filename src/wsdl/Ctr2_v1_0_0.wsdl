@@ -61,6 +61,12 @@
             <xs:include schemaLocation="../schemas/2022/12/01/UpdatePatientStatusResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetPatientStatusHistoryRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetPatientStatusHistoryResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/CreateTransactionRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
@@ -180,6 +186,12 @@
     <wsdl:message name="UpdatePatientStatusResponse">
         <wsdl:part name="UpdatePatientStatusResponse" element="ctr100:UpdatePatientStatusResponse"/>
     </wsdl:message>
+    <wsdl:message name="GetPatientStatusHistoryRequest">
+        <wsdl:part name="GetPatientStatusHistoryRequest" element="ctr100:GetPatientStatusHistoryRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetPatientStatusHistoryResponse">
+        <wsdl:part name="GetPatientStatusHistoryResponse" element="ctr100:GetPatientStatusHistoryResponse"/>
+    </wsdl:message>
     <wsdl:message name="CreateTransactionRequest">
         <wsdl:part name="CreateTransactionRequest" element="ctr100:CreateTransactionRequest"/>
     </wsdl:message>
@@ -294,6 +306,14 @@
                         message="tns:UpdatePatientStatusRequest"/>
             <wsdl:output name="UpdatePatientStatusResponse"
                          message="tns:UpdatePatientStatusResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="GetPatientStatusHistory">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetPatientStatusHistory" style="document"/>
+            <wsdl:input name="GetPatientStatusHistoryRequest"
+                        message="tns:GetPatientStatusHistoryRequest"/>
+            <wsdl:output name="GetPatientStatusHistoryResponse"
+                         message="tns:GetPatientStatusHistoryResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="CreateTransaction">
@@ -491,6 +511,24 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="UpdatePatientStatusResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetPatientStatusHistory">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetPatientStatusHistory"
+                            style="document"/>
+            <wsdl:input name="GetPatientStatusHistory">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetPatientStatusResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
