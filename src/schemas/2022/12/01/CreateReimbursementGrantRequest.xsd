@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+		xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+		elementFormDefault="qualified">
+
+	<include schemaLocation="PersonIdentifier.xsd"/>	
+	<include schemaLocation="ReimbursementGrant.xsd"/>
+
+	<element name="CreateReimbursementGrantRequest">
+		<annotation>
+			<documentation xml:lang="en-GB">Element for creating a CTR reimbursement grant</documentation>
+			<documentation xml:lang="da-DK">Element for at oprette en CTR bevilling</documentation>
+		</annotation>
+		<complexType>
+			<sequence>
+				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+				<element name="ReimbursementGrant" type="ctr:ReimbursementGrantType"/>
+			</sequence>
+		</complexType>
+	</element>
+</schema>

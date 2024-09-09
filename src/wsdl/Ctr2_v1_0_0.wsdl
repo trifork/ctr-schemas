@@ -22,6 +22,18 @@
             <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementGrantsRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateReimbursementGrantRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateReimbursementGrantResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/UpdateReimbursementGrantRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/UpdateReimbursementGrantResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementGrantsResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
@@ -156,6 +168,18 @@
     <wsdl:message name="GetReimbursementGrantsResponse">
         <wsdl:part name="GetReimbursementGrantsResponse" element="ctr100:GetReimbursementGrantsResponse"/>
     </wsdl:message>
+    <wsdl:message name="CreateReimbursementGrantRequest">
+        <wsdl:part name="CreateReimbursementGrantRequest" element="ctr100:CreateReimbursementGrantRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CreateReimbursementGrantResponse">
+        <wsdl:part name="CreateReimbursementGrantResponse" element="ctr100:CreateReimbursementGrantResponse"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateReimbursementGrantRequest">
+        <wsdl:part name="UpdateReimbursementGrantRequest" element="ctr100:UpdateReimbursementGrantRequest"/>
+    </wsdl:message>
+    <wsdl:message name="UpdateReimbursementGrantResponse">
+        <wsdl:part name="UpdateReimbursementGrantResponse" element="ctr100:UpdateReimbursementGrantResponse"/>
+    </wsdl:message>
     <wsdl:message name="GetHealthAllowancesRequest">
         <wsdl:part name="GetHealthAllowancesRequest" element="ctr100:GetHealthAllowancesRequest"/>
     </wsdl:message>
@@ -266,6 +290,22 @@
                         message="tns:GetReimbursementGrantsRequest"/>
             <wsdl:output name="GetReimbursementGrantsResponse"
                          message="tns:GetReimbursementGrantsResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateReimbursementGrant">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateReimbursementGrant" style="document"/>
+            <wsdl:input name="CreateReimbursementGrantRequest"
+                        message="tns:CreateReimbursementGrantRequest"/>
+            <wsdl:output name="CreateReimbursementGrantResponse"
+                         message="tns:CreateReimbursementGrantResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="UpdateReimbursementGrant">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#UpdateReimbursementGrant" style="document"/>
+            <wsdl:input name="UpdateReimbursementGrantRequest"
+                        message="tns:UpdateReimbursementGrantRequest"/>
+            <wsdl:output name="UpdateReimbursementGrantResponse"
+                         message="tns:UpdateReimbursementGrantResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetHealthAllowances">
@@ -421,6 +461,42 @@
                 <soap:body use="literal"/>
             </wsdl:input>
             <wsdl:output name="GetReimbursementGrantsResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="CreateReimbursementGrant">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateReimbursementGrant"
+                            style="document"/>
+            <wsdl:input name="CreateReimbursementGrantRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="CreateReimbursementGrantResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="UpdateReimbursementGrant">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#UpdateReimbursementGrant"
+                            style="document"/>
+            <wsdl:input name="UpdateReimbursementGrantRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="UpdateReimbursementGrantResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
