@@ -4,24 +4,39 @@
         targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
         elementFormDefault="qualified">
 
-    <element name="HealthAllowanceType" type="ctr:HealthAllowanceTypeType">
+    <element name="MunicipalAllowanceType" type="ctr:MunicipalAllowanceTypeType">
         <annotation>
-            <documentation xml:lang="en-GB">Health Allowance type</documentation>
-            <documentation xml:lang="da-DK">Helbredstillæg type</documentation>
+            <documentation xml:lang="en-GB">Municipal Allowance type</documentation>
+            <documentation xml:lang="da-DK">Kommunalttillægstype</documentation>
         </annotation>
     </element>
 
-    <simpleType name="HealthAllowanceTypeType">
-        <union memberTypes="ctr:PredefinedHealthAllowanceTypeType ctr:UndefinedHealthAllowanceTypeType"/>
+    <simpleType name="MunicipalAllowanceTypeType">
+        <union memberTypes="ctr:PredefinedMunicipalAllowanceTypeType ctr:UndefinedMunicipalAllowanceTypeType"/>
     </simpleType>
-    <simpleType name="PredefinedHealthAllowanceTypeType">
-        <restriction base="ctr:UndefinedHealthAllowanceTypeType">
-            <enumeration value="Helbredstillæg"/>
-            <enumeration value="Kontanthjælpsmodtager"/>
-            <enumeration value="Barn af Kontanthjælpsmodtager"/>
+    <simpleType name="PredefinedMunicipalAllowanceTypeType">
+        <restriction base="ctr:UndefinedMunicipalAllowanceTypeType">
+            <enumeration value="Helbredstillæg">
+                <annotation>
+                    <documentation xml:lang="en-GB">Health allowance</documentation>
+                    <documentation xml:lang="da-DK">Helbredstillæg</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Kontanthjælpsmodtager">
+                <annotation>
+                    <documentation xml:lang="en-GB">Municipal allowance for a cash beneficiary</documentation>
+                    <documentation xml:lang="en-GB">Kommunalt tillæg til kontanthjælpsmodtager</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Barn af Kontanthjælpsmodtager">
+                <annotation>
+                    <documentation xml:lang="en-GB">Municipal allowance for a child of a cash beneficiary</documentation>
+                    <documentation xml:lang="en-GB">Kommunalt tillæg til barn af kontanthjælpsmodtager</documentation>
+                </annotation>
+            </enumeration>
         </restriction>
     </simpleType>
-    <simpleType name="UndefinedHealthAllowanceTypeType">
+    <simpleType name="UndefinedMunicipalAllowanceTypeType">
         <restriction base="string">
             <minLength value="1"/>
             <maxLength value="100"/>

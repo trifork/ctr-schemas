@@ -22,7 +22,7 @@
 		<sequence>
             <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
             <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
-			<element name="Type" type="ctr:HealthAllowanceTypeType"/>
+			<element name="Type" type="ctr:MunicipalAllowanceTypeType"/>
             <element name="MunicipalityNumber" type="ctr:OrganisationIdentifierType"/>
             <element name="MunicipalityName" type="ctr:OrganisationNameType" minOccurs="0"/>
 			<element name="InvoicingMunicipalityNumber" type="ctr:InvoiceNumberType" minOccurs="0"/>

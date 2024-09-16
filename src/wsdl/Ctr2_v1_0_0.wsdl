@@ -310,9 +310,9 @@
         </wsdl:operation>
         <wsdl:operation name="GetMunicipalAllowances">
             <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetMunicipalAllowances" style="document"/>
-            <wsdl:input name="GetHealthAllowancesRequest"
+            <wsdl:input name="GetMunicipalAllowancesRequest"
                         message="tns:GetMunicipalAllowancesRequest"/>
-            <wsdl:output name="GetHealthAllowancesResponse"
+            <wsdl:output name="GetMunicipalAllowancesResponse"
                          message="tns:GetMunicipalAllowancesResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
