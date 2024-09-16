@@ -8,8 +8,8 @@
 
     <element name="InvoiceNumber" type="ctr:InvoiceNumberType">
         <annotation>
-            <documentation xml:lang="en-GB">Element for uniquely identifying a person (in Denmark) i.e. CPR, e-CPR, Fiktiv CPR.</documentation>
-            <documentation xml:lang="da-DK">Element for entydig identifikation af en person (i Danmark) dvs. CPR, e-CPR, Fiktiv CPR.</documentation>
+            <documentation xml:lang="en-GB">Element for specifying an invoicing number, for instance, EAN location number.</documentation>
+            <documentation xml:lang="da-DK">Element for at specificere et fakturanummer f.eks. EAN-lokationsnummer.</documentation>
         </annotation>
     </element>
     <complexType name="InvoiceNumberType">
