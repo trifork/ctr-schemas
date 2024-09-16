@@ -9,6 +9,8 @@
 	<include schemaLocation="OrganisationIdentifier.xsd"/>
 	<include schemaLocation="OrganisationName.xsd"/>
 	<include schemaLocation="Percentage.xsd"/>
+	<include schemaLocation="HealthAllowanceType.xsd"/>
+	<include schemaLocation="InvoiceNumber.xsd"/>
 
 	<element name="HealthAllowance" type="ctr:HealthAllowanceType">
 		<annotation>
@@ -20,8 +22,10 @@
 		<sequence>
             <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
             <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
+			<element name="Type" type="ctr:HealthAllowanceTypeType"/>
             <element name="MunicipalityNumber" type="ctr:OrganisationIdentifierType"/>
             <element name="MunicipalityName" type="ctr:OrganisationNameType" minOccurs="0"/>
+			<element name="InvoicingMunicipalityNumber" type="ctr:InvoiceNumberType" minOccurs="0"/>
             <element name="Rate" type="ctr:PercentageType" minOccurs="0"/>
 		</sequence>
 	</complexType>
