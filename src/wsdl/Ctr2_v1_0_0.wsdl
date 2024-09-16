@@ -37,10 +37,10 @@
             <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementGrantsResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetHealthAllowancesRequest.xsd"/>
+            <xs:include schemaLocation="../schemas/2022/12/01/GetMunicipalAllowancesRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
-            <xs:include schemaLocation="../schemas/2022/12/01/GetHealthAllowancesResponse.xsd"/>
+            <xs:include schemaLocation="../schemas/2022/12/01/GetMunicipalAllowancesResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetDefermentsRequest.xsd"/>
@@ -180,11 +180,11 @@
     <wsdl:message name="UpdateReimbursementGrantResponse">
         <wsdl:part name="UpdateReimbursementGrantResponse" element="ctr100:UpdateReimbursementGrantResponse"/>
     </wsdl:message>
-    <wsdl:message name="GetHealthAllowancesRequest">
-        <wsdl:part name="GetHealthAllowancesRequest" element="ctr100:GetHealthAllowancesRequest"/>
+    <wsdl:message name="GetMunicipalAllowancesRequest">
+        <wsdl:part name="GetMunicipalAllowancesRequest" element="ctr100:GetMunicipalAllowancesRequest"/>
     </wsdl:message>
-    <wsdl:message name="GetHealthAllowancesResponse">
-        <wsdl:part name="GetHealthAllowancesResponse" element="ctr100:GetHealthAllowancesResponse"/>
+    <wsdl:message name="GetMunicipalAllowancesResponse">
+        <wsdl:part name="GetMunicipalAllowancesResponse" element="ctr100:GetMunicipalAllowancesResponse"/>
     </wsdl:message>
     <wsdl:message name="GetDefermentsRequest">
         <wsdl:part name="GetDefermentsRequest" element="ctr100:GetDefermentsRequest"/>
@@ -308,12 +308,12 @@
                          message="tns:UpdateReimbursementGrantResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
-        <wsdl:operation name="GetHealthAllowances">
-            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetHealthAllowances" style="document"/>
+        <wsdl:operation name="GetMunicipalAllowances">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetMunicipalAllowances" style="document"/>
             <wsdl:input name="GetHealthAllowancesRequest"
-                        message="tns:GetHealthAllowancesRequest"/>
+                        message="tns:GetMunicipalAllowancesRequest"/>
             <wsdl:output name="GetHealthAllowancesResponse"
-                         message="tns:GetHealthAllowancesResponse"/>
+                         message="tns:GetMunicipalAllowancesResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetDeferments">
@@ -505,16 +505,16 @@
             </wsdl:fault>
         </wsdl:operation>
 
-        <wsdl:operation name="GetHealthAllowances">
-            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetHealthAllowances"
+        <wsdl:operation name="GetMunicipalAllowances">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetMunicipalAllowances"
                             style="document"/>
-            <wsdl:input name="GetHealthAllowancesRequest">
+            <wsdl:input name="GetMunicipalAllowancesRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="GetHealthAllowancesResponse">
+            <wsdl:output name="GetMunicipalAllowancesResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>

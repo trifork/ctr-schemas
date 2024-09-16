@@ -6,17 +6,17 @@
 
     <include schemaLocation="PersonIdentifier.xsd"/>
 	<include schemaLocation="ReimbursementGrant.xsd"/>
-	<include schemaLocation="HealthAllowance.xsd"/>
+	<include schemaLocation="MunicipalAllowance.xsd"/>
 
-	<element name="GetHealthAllowancesResponse">
+	<element name="GetMunicipalAllowancesResponse">
 		<annotation>
-			<documentation xml:lang="en-GB">Outer container element for a response with Health Allowances</documentation>
-			<documentation xml:lang="da-DK">Ydre container-element for et svar med kommunale helbredstillæg</documentation>
+			<documentation xml:lang="en-GB">Outer container element for a response with Municipal Allowances</documentation>
+			<documentation xml:lang="da-DK">Ydre container-element for et svar med kommunale tillæg</documentation>
 		</annotation>
 		<complexType>
 			<sequence>
 				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-				<element name="HealthAllowance" type="ctr:HealthAllowanceType" minOccurs="0" maxOccurs="100"/>
+				<element name="MunicipalAllowance" type="ctr:MunicipalAllowanceType" minOccurs="0" maxOccurs="100"/>
 			</sequence>
 		</complexType>
 	</element>

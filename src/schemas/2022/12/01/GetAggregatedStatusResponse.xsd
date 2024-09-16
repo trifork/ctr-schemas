@@ -8,7 +8,7 @@
     <include schemaLocation="PersonIdentifier.xsd"/>
     <include schemaLocation="IsChild.xsd"/>
     <include schemaLocation="AccountStatus.xsd"/>
-	<include schemaLocation="HealthAllowance.xsd"/>
+	<include schemaLocation="MunicipalAllowance.xsd"/>
 	<include schemaLocation="ReimbursementGrant.xsd"/>
 	<include schemaLocation="Deferment.xsd"/>
 
@@ -23,7 +23,7 @@
 				<element name="IsChild" type="ctr:IsChildType"/>
 				<element name="PatientStatus" type="ctr:PatientStatusType"/>
 				<element name="AccountStatus" type="ctr:AccountStatusType" minOccurs="0" maxOccurs="100"/>
-				<element name="HealthAllowance" type="ctr:HealthAllowanceType" minOccurs="0" maxOccurs="100"/>
+				<element name="HealthAllowance" type="ctr:MunicipalAllowanceType" minOccurs="0" maxOccurs="100"/>
 				<element name="ReimbursementGrant" type="ctr:ReimbursementGrantType" minOccurs="0" maxOccurs="100"/>
 				<element name="Deferment" type="ctr:DefermentType" minOccurs="0" maxOccurs="100"/>
 			</sequence>
