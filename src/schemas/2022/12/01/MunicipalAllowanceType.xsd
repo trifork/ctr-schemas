@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified">
+
+    <element name="MunicipalAllowanceType" type="ctr:MunicipalAllowanceTypeType">
+        <annotation>
+            <documentation xml:lang="en-GB">Municipal Allowance type</documentation>
+            <documentation xml:lang="da-DK">Kommunalttillægstype</documentation>
+        </annotation>
+    </element>
+
+    <simpleType name="MunicipalAllowanceTypeType">
+        <union memberTypes="ctr:PredefinedMunicipalAllowanceTypeType ctr:UndefinedMunicipalAllowanceTypeType"/>
+    </simpleType>
+    <simpleType name="PredefinedMunicipalAllowanceTypeType">
+        <restriction base="ctr:UndefinedMunicipalAllowanceTypeType">
+            <enumeration value="Helbredstillæg">
+                <annotation>
+                    <documentation xml:lang="en-GB">Health allowance</documentation>
+                    <documentation xml:lang="da-DK">Helbredstillæg</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Kontanthjælpsmodtager">
+                <annotation>
+                    <documentation xml:lang="en-GB">Municipal allowance for a welfare recipient</documentation>
+                    <documentation xml:lang="en-GB">Kommunalt tillæg til kontanthjælpsmodtager</documentation>
+                </annotation>
+            </enumeration>
+            <enumeration value="Barn af Kontanthjælpsmodtager">
+                <annotation>
+                    <documentation xml:lang="en-GB">Municipal allowance for a child of a welfare recipient</documentation>
+                    <documentation xml:lang="en-GB">Kommunalt tillæg til barn af kontanthjælpsmodtager</documentation>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+    <simpleType name="UndefinedMunicipalAllowanceTypeType">
+        <restriction base="string">
+            <minLength value="1"/>
+            <maxLength value="100"/>
+        </restriction>
+    </simpleType>
+</schema>

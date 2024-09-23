@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified">
+
+    <include schemaLocation="Source.xsd"/>
+
+    <element name="InvoicingMunicipalityNumber" type="ctr:InvoicingMunicipalityNumberType">
+        <annotation>
+            <documentation xml:lang="en-GB">Element for specifying an invoicing number, for instance, EAN location number.</documentation>
+            <documentation xml:lang="da-DK">Element for at specificere et fakturanummer f.eks. EAN-lokationsnummer.</documentation>
+        </annotation>
+    </element>
+    <complexType name="InvoicingMunicipalityNumberType">
+        <simpleContent>
+            <extension base="ctr:InvoicingMunicipalityNumberValueType">
+                <attribute name="source" type="ctr:InvoicingMunicipalityNumberSourceType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <simpleType name="InvoicingMunicipalityNumberValueType">
+        <restriction base="string">
+            <minLength value="1"/>
+            <maxLength value="50"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="InvoicingMunicipalityNumberSourceType">
+        <union memberTypes="ctr:InvoicingMunicipalityNumberPredefinedSourceType ctr:UndefinedSourceType"/>
+    </simpleType>
+
+    <simpleType name="InvoicingMunicipalityNumberPredefinedSourceType">
+        <restriction base="ctr:UndefinedSourceType">
+            <enumeration value="EAN-Lokationsnummer"/>
+        </restriction>
+    </simpleType>
+</schema>

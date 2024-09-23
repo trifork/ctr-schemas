@@ -9,19 +9,23 @@
 	<include schemaLocation="OrganisationIdentifier.xsd"/>
 	<include schemaLocation="OrganisationName.xsd"/>
 	<include schemaLocation="Percentage.xsd"/>
+	<include schemaLocation="MunicipalAllowanceType.xsd"/>
+	<include schemaLocation="InvoicingMunicipalityNumber.xsd"/>
 
-	<element name="HealthAllowance" type="ctr:HealthAllowanceType">
+	<element name="MunicipalAllowance" type="ctr:MunicipalAllowanceType">
 		<annotation>
-			<documentation xml:lang="en-GB">Information about a HealthAllowance</documentation>
-			<documentation xml:lang="da-DK">Information om et kommunalt helbredstillæg</documentation>
+			<documentation xml:lang="en-GB">Information about a municipal allowance</documentation>
+			<documentation xml:lang="da-DK">Information om et kommunalt tillæg</documentation>
 		</annotation>
 	</element>
-	<complexType name="HealthAllowanceType">
+	<complexType name="MunicipalAllowanceType">
 		<sequence>
             <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
             <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
+			<element name="Type" type="ctr:MunicipalAllowanceTypeType"/>
             <element name="MunicipalityNumber" type="ctr:OrganisationIdentifierType"/>
             <element name="MunicipalityName" type="ctr:OrganisationNameType" minOccurs="0"/>
+			<element name="InvoicingMunicipalityNumber" type="ctr:InvoicingMunicipalityNumberType" minOccurs="0"/>
             <element name="Rate" type="ctr:PercentageType" minOccurs="0"/>
 		</sequence>
 	</complexType>
