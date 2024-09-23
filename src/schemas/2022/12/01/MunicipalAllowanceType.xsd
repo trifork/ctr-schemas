@@ -24,13 +24,13 @@
             </enumeration>
             <enumeration value="Kontanthjælpsmodtager">
                 <annotation>
-                    <documentation xml:lang="en-GB">Municipal allowance for a cash beneficiary</documentation>
+                    <documentation xml:lang="en-GB">Municipal allowance for a welfare recipient</documentation>
                     <documentation xml:lang="en-GB">Kommunalt tillæg til kontanthjælpsmodtager</documentation>
                 </annotation>
             </enumeration>
             <enumeration value="Barn af Kontanthjælpsmodtager">
                 <annotation>
-                    <documentation xml:lang="en-GB">Municipal allowance for a child of a cash beneficiary</documentation>
+                    <documentation xml:lang="en-GB">Municipal allowance for a child of a welfare recipient</documentation>
                     <documentation xml:lang="en-GB">Kommunalt tillæg til barn af kontanthjælpsmodtager</documentation>
                 </annotation>
             </enumeration>

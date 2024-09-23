@@ -10,7 +10,7 @@
 	<include schemaLocation="OrganisationName.xsd"/>
 	<include schemaLocation="Percentage.xsd"/>
 	<include schemaLocation="MunicipalAllowanceType.xsd"/>
-	<include schemaLocation="InvoiceNumber.xsd"/>
+	<include schemaLocation="InvoicingMunicipalityNumber.xsd"/>
 
 	<element name="MunicipalAllowance" type="ctr:MunicipalAllowanceType">
 		<annotation>
@@ -25,7 +25,7 @@
 			<element name="Type" type="ctr:MunicipalAllowanceTypeType"/>
             <element name="MunicipalityNumber" type="ctr:OrganisationIdentifierType"/>
             <element name="MunicipalityName" type="ctr:OrganisationNameType" minOccurs="0"/>
-			<element name="InvoicingMunicipalityNumber" type="ctr:InvoiceNumberType" minOccurs="0"/>
+			<element name="InvoicingMunicipalityNumber" type="ctr:InvoicingMunicipalityNumberType" minOccurs="0"/>
             <element name="Rate" type="ctr:PercentageType" minOccurs="0"/>
 		</sequence>
 	</complexType>
