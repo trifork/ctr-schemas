@@ -5,7 +5,7 @@
 		elementFormDefault="qualified">
 
 	<include schemaLocation="PersonIdentifier.xsd"/>	
-	<include schemaLocation="ReimbursementGrant.xsd"/>
+	<include schemaLocation="SaveReimbursementGrant.xsd"/>
 
 	<element name="CreateReimbursementGrantRequest">
 		<annotation>
@@ -15,7 +15,7 @@
 		<complexType>
 			<sequence>
 				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-				<element name="ReimbursementGrant" type="ctr:ReimbursementGrantType"/>
+				<element name="ReimbursementGrant" type="ctr:SaveReimbursementGrantType"/>
 			</sequence>
 		</complexType>
 	</element>

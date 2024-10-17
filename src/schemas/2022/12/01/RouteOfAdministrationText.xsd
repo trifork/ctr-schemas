@@ -6,14 +6,14 @@
 		attributeFormDefault="unqualified">
 	<element name="RouteOfAdministrationText" type="ctr:RouteOfAdministrationTextType">
 		<annotation>
-			<documentation xml:lang="en-GB">Indicates the formulations route of administration</documentation>
-			<documentation xml:lang="da-DK">Angiver medicinens administrationsvej</documentation>
+			<documentation xml:lang="en-GB">Intended for the formulations route of administration. There is no validation of data, and the field has been used inconsistently, e.g. for dosage form</documentation>
+			<documentation xml:lang="da-DK">Har til hensigt at angive medicinens administrationsvej. Der er ikke validering af data, og feltet er blevet brugt inkonsistent, eks. til doseringsform</documentation>
 		</annotation>
 	</element>
 	<simpleType name="RouteOfAdministrationTextType">
 		<restriction base="string">
 			<minLength value="1"/>
-			<maxLength value="50"/>
+			<maxLength value="15"/>
 		</restriction>
 	</simpleType>
 </schema>
