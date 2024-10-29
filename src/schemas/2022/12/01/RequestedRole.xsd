@@ -22,7 +22,7 @@
             <enumeration value="Værge"/>
 			<enumeration value="Web administrator"/>
 			<enumeration value="Apoteksansat"/>
-			<enumeration value="Recept Registrator"/>
+			<enumeration value="Recept registrator"/>
 			<enumeration value="Supporter"/>
 		</restriction>
 	</simpleType>
