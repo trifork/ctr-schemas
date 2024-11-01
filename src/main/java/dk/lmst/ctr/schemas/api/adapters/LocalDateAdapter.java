@@ -1,8 +1,8 @@
-package dk.lmst.ctr.schemas.api.adapters;
+package dk.fmkonline.jaxb.adapters;
 
-import org.joda.time.LocalDate;
+import java.time.LocalDate;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
 
@@ -13,7 +13,7 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
         if (v.endsWith("Z")) {
             v = v.substring(0, v.length() - 1);
         }
-        return new LocalDate(v);
+        return LocalDate.parse(v);
     }
 
     public String marshal(LocalDate v) throws Exception {
@@ -22,5 +22,4 @@ public class LocalDateAdapter extends XmlAdapter<String, LocalDate> {
         }
         return v.toString();
     }
-
 }
