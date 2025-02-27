@@ -1,6 +1,6 @@
-package dk.lmst.ctr.schemas.api.adapters;
+package dk.fmkonline.jaxb.adapters;
 
-import javax.xml.bind.annotation.adapters.XmlAdapter;
+import jakarta.xml.bind.annotation.adapters.XmlAdapter;
 
 public class LongAdapter extends XmlAdapter<String, Long> {
 

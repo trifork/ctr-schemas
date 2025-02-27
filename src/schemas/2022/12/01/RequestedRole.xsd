@@ -23,6 +23,8 @@
 			<enumeration value="Web administrator"/>
 			<enumeration value="Apoteksansat"/>
 			<enumeration value="Apotekersystem"/> <!-- Alternatively specify SystemType in whitelisting header -->
+			<enumeration value="Recept registrator"/>
+			<enumeration value="Supporter"/>
 		</restriction>
 	</simpleType>
 	<simpleType name="UndefinedRequestedRole">

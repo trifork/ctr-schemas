@@ -19,6 +19,7 @@
             <element name="AccountName" type="ctr:AccountNameType"/>
             <element name="AdministrationDateTime" type="ctr:CreatedDateTimeType"/>
             <element name="ReimbursementBasePrice" type="ctr:AmountType"/>
+			<element name="ReportedReimbursement" type="ctr:AmountType" minOccurs="0"/>
         </sequence>
 	</complexType>
 </schema>
