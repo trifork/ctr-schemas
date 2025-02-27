@@ -22,6 +22,7 @@
             <enumeration value="Værge"/>
 			<enumeration value="Web administrator"/>
 			<enumeration value="Apoteksansat"/>
+			<enumeration value="Apotekersystem"/> <!-- Alternatively specify SystemType in whitelisting header -->
 		</restriction>
 	</simpleType>
 	<simpleType name="UndefinedRequestedRole">
