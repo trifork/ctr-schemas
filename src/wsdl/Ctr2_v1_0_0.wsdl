@@ -598,13 +598,13 @@
         <wsdl:operation name="GetPatientStatusHistory">
             <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetPatientStatusHistory"
                             style="document"/>
-            <wsdl:input name="GetPatientStatusHistory">
+            <wsdl:input name="GetPatientStatusHistoryRequest">
                 <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
                 <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
                 <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
                 <soap:body use="literal"/>
             </wsdl:input>
-            <wsdl:output name="GetPatientStatusResponse">
+            <wsdl:output name="GetPatientStatusHistoryResponse">
                 <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
                 <soap:body use="literal"/>
             </wsdl:output>
