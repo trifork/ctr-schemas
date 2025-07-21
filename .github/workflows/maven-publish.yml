@@ -9,14 +9,17 @@ jobs:
     name: Package and publish to Github packages
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main repository
-        uses: actions/checkout@v3
+      # Check out main repository
+      - name: Check out main repository
+        uses: actions/checkout@v4
 
+      # Clean and package with Maven
       - name: Clean and package with Maven
         run: mvn clean package
+
+      # Publish artifacts to GitHub Packages with Maven
       - name: Run publish with Maven
         env:
           GITHUB_USERNAME: x-access-token
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run:
-            mvn --settings deploy-settings.xml deploy -Dfile=target/*.zip
+        run: mvn --settings deploy-settings.xml deploy -Dfile=target/*.zip
