@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Check out main repository
-      - name: Checkout main repository
+      - name: Check out main repository
         uses: actions/checkout@v4
 
       # Clean and package with Maven
