@@ -9,7 +9,7 @@ jobs:
     name: Package and publish to Github packages
     runs-on: ubuntu-latest
     steps:
-      # Checkout main repository
+      # Check out main repository
       - name: Checkout main repository
         uses: actions/checkout@v4
 
