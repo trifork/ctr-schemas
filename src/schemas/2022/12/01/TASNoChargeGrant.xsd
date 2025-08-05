@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified">
+
+    <include schemaLocation="ValidFromDate.xsd"/>
+    <include schemaLocation="ValidToDate.xsd"/>
+    <include schemaLocation="Doctor.xsd"/>
+    <include schemaLocation="NoChargeGrantType.xsd"/>
+    <include schemaLocation="Percentage.xsd"/>
+    <include schemaLocation="CreatedDateTime.xsd"/>
+    <include schemaLocation="OrganisationIdentifier.xsd"/>
+
+    <element name="TASNoChargeGrant" type="ctr:TASNoChargeGrantType">
+        <annotation>
+            <documentation xml:lang="en-GB">Description of a CTR no-charge grant</documentation>
+            <documentation xml:lang="da-DK">Beskrivelse af en CTR vederlagsfri bevilling</documentation>
+        </annotation>
+    </element>
+    <complexType name="TASNoChargeGrantType">
+        <sequence>
+            <element name="Type" type="ctr:NoChargeGrantTypeType" />
+            <element name="Doctor" type="ctr:DoctorType" />
+            <element name="DoctorOrganisation" type="ctr:OrganisationIdentifierType" />
+            <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
+            <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
+            <element name="Rate" type="ctr:PercentageType" minOccurs="0"/>
+            <element name="CreatedDateTime" type="ctr:CreatedDateTimeType"/>
+        </sequence>
+    </complexType>
+</schema>
