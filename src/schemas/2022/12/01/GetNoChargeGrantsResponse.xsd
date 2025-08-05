@@ -7,7 +7,7 @@
     <include schemaLocation="PersonIdentifier.xsd"/>
 	<include schemaLocation="NoChargeGrant.xsd"/>
 
-	<element name="GetReimbursementGrantsResponse">
+	<element name="GetNoChargeGrantsResponse">
 		<annotation>
 			<documentation xml:lang="en-GB">Outer container element for a response with CTR no-charge grants</documentation>
 			<documentation xml:lang="da-DK">Ydre container-element for et svar med CTR vederlagsfrie bevillinger</documentation>

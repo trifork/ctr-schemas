@@ -7,7 +7,7 @@
     <include schemaLocation="PersonIdentifier.xsd"/>
     <include schemaLocation="TASNoChargeGrant.xsd"/>
 
-    <element name="CreateReimbursementGrantRequest">
+    <element name="CreateNoChargeGrantRequest">
         <annotation>
             <documentation xml:lang="en-GB">Element for creating a CTR no charge grant</documentation>
             <documentation xml:lang="da-DK">Element for at oprette en CTR vederlagsfri bevilling</documentation>
