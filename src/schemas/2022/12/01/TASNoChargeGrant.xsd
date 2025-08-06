@@ -26,7 +26,6 @@
             <element name="ValidFromDate" type="ctr:ValidFromDateType"/>
             <element name="ValidToDate" type="ctr:ValidToDateType" minOccurs="0"/>
             <element name="Rate" type="ctr:PercentageType" minOccurs="0"/>
-            <element name="CreatedDateTime" type="ctr:CreatedDateTimeType"/>
         </sequence>
     </complexType>
 </schema>

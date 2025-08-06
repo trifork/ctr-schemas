@@ -109,6 +109,12 @@
             <xs:include schemaLocation="../schemas/2022/12/01/CreateNoChargeGrantResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/DeleteNoChargeGrantRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/DeleteNoChargeGrantResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetNoChargeGrantsByDoctorRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
@@ -281,6 +287,13 @@
         <wsdl:part name="CreateNoChargeGrantResponse" element="ctr100:CreateNoChargeGrantResponse"/>
     </wsdl:message>
 
+    <wsdl:message name="DeleteNoChargeGrantRequest">
+        <wsdl:part name="DeleteNoChargeGrantRequest" element="ctr100:DeleteNoChargeGrantRequest"/>
+    </wsdl:message>
+    <wsdl:message name="DeleteNoChargeGrantResponse">
+        <wsdl:part name="DeleteNoChargeGrantResponse" element="ctr100:DeleteNoChargeGrantResponse"/>
+    </wsdl:message>
+
     <wsdl:message name="GetNoChargeGrantsByDoctorRequest">
         <wsdl:part name="GetNoChargeGrantsByDoctorRequest" element="ctr100:GetNoChargeGrantsByDoctorRequest"/>
     </wsdl:message>
@@ -450,15 +463,23 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="CreateNoChargeGrant">
-            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateNoChargeGrant" style="document"/>
             <wsdl:input name="CreateNoChargeGrantRequest"
                         message="tns:CreateNoChargeGrantRequest"/>
             <wsdl:output name="CreateNoChargeGrantResponse"
                          message="tns:CreateNoChargeGrantResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
+        <wsdl:operation name="DeleteNoChargeGrant">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#DeleteNoChargeGrant" style="document"/>
+            <wsdl:input name="DeleteNoChargeGrantRequest"
+                        message="tns:DeleteNoChargeGrantRequest"/>
+            <wsdl:output name="DeleteNoChargeGrantResponse"
+                         message="tns:DeleteNoChargeGrantResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
         <wsdl:operation name="GetNoChargeGrantsByDoctor">
-            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetNoChargeGrantsByDoctor" style="document"/>
             <wsdl:input name="GetNoChargeGrantsByDoctorRequest"
                         message="tns:GetNoChargeGrantsByDoctorRequest"/>
             <wsdl:output name="GetNoChargeGrantsByDoctorResponse"
@@ -466,7 +487,7 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetNoChargeGrantsForPatient">
-            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetNoChargeGrantsForPatient" style="document"/>
             <wsdl:input name="GetNoChargeGrantsForPatientRequest"
                         message="tns:GetNoChargeGrantsForPatientRequest"/>
             <wsdl:output name="GetNoChargeGrantsForPatientResponse"
@@ -474,7 +495,7 @@
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetNoChargeGrants">
-            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateFictitiousPersonIdentifier" style="document"/>
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetNoChargeGrants" style="document"/>
             <wsdl:input name="GetNoChargeGrantsRequest"
                         message="tns:GetNoChargeGrantsRequest"/>
             <wsdl:output name="GetNoChargeGrantsResponse"

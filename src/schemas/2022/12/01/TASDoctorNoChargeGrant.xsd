@@ -5,7 +5,7 @@
         elementFormDefault="qualified">
 
     <include schemaLocation="PersonIdentifier.xsd"/>
-    <include schemaLocation="NoChargeGrant.xsd"/>
+    <include schemaLocation="TASNoChargeGrant.xsd"/>
 
     <element name="TASDoctorNoChargeGrant" type="ctr:TASDoctorNoChargeGrantType">
         <annotation>
@@ -16,7 +16,7 @@
     <complexType name="TASDoctorNoChargeGrantType">
         <sequence>
             <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-            <element name="NoChargeGrant" type="ctr:NoChargeGrantType"/>
+            <element name="NoChargeGrant" type="ctr:TASNoChargeGrantType"/>
         </sequence>
     </complexType>
 </schema>

@@ -14,7 +14,6 @@
 		</annotation>
 		<complexType>
 			<sequence>
-				<element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
 				<element name="NoChargeGrant" type="ctr:TASDoctorNoChargeGrantType" minOccurs="0" maxOccurs="100"/>
 			</sequence>
 		</complexType>

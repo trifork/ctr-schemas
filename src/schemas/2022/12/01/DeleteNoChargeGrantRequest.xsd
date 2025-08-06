@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified">
+
+    <include schemaLocation="PersonIdentifier.xsd"/>
+    <include schemaLocation="AuthorisationIdentifier.xsd"/>
+    <include schemaLocation="NoChargeGrantType.xsd"/>
+
+    <element name="DeleteNoChargeGrantRequest">
+        <annotation>
+            <documentation xml:lang="en-GB">Element for deleting a CTR no charge grant</documentation>
+            <documentation xml:lang="da-DK">Element for at slette en CTR vederlagsfri bevilling</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+                <element name="AuthorisationIdentifier" type="ctr:AuthorisationIdentifierType"/>
+                <element name="Type" type="ctr:NoChargeGrantTypeType"/>
+            </sequence>
+        </complexType>
+    </element>
+</schema>
