@@ -103,6 +103,36 @@
             <xs:include schemaLocation="../schemas/2022/12/01/ChangePersonIdentifierResponse.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateNoChargeGrantRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/CreateNoChargeGrantResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/DeleteNoChargeGrantRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/DeleteNoChargeGrantResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetNoChargeGrantsByDoctorRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetNoChargeGrantsByDoctorResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetNoChargeGrantsForPatientRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetNoChargeGrantsForPatientResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetNoChargeGrantsRequest.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
+            <xs:include schemaLocation="../schemas/2022/12/01/GetNoChargeGrantsResponse.xsd"/>
+        </xs:schema>
+        <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
             <xs:include schemaLocation="../schemas/2022/12/01/GetReimbursementRatesRequest.xsd"/>
         </xs:schema>
         <xs:schema targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01" elementFormDefault="qualified">
@@ -249,6 +279,42 @@
     <wsdl:message name="GetReimbursementRatesRequest">
         <wsdl:part name="GetReimbursementRatesRequest" element="ctr100:GetReimbursementRatesRequest"/>
     </wsdl:message>
+
+    <wsdl:message name="CreateNoChargeGrantRequest">
+        <wsdl:part name="CreateNoChargeGrantRequest" element="ctr100:CreateNoChargeGrantRequest"/>
+    </wsdl:message>
+    <wsdl:message name="CreateNoChargeGrantResponse">
+        <wsdl:part name="CreateNoChargeGrantResponse" element="ctr100:CreateNoChargeGrantResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="DeleteNoChargeGrantRequest">
+        <wsdl:part name="DeleteNoChargeGrantRequest" element="ctr100:DeleteNoChargeGrantRequest"/>
+    </wsdl:message>
+    <wsdl:message name="DeleteNoChargeGrantResponse">
+        <wsdl:part name="DeleteNoChargeGrantResponse" element="ctr100:DeleteNoChargeGrantResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="GetNoChargeGrantsByDoctorRequest">
+        <wsdl:part name="GetNoChargeGrantsByDoctorRequest" element="ctr100:GetNoChargeGrantsByDoctorRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetNoChargeGrantsByDoctorResponse">
+        <wsdl:part name="GetNoChargeGrantsByDoctorResponse" element="ctr100:GetNoChargeGrantsByDoctorResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="GetNoChargeGrantsForPatientRequest">
+        <wsdl:part name="GetNoChargeGrantsForPatientRequest" element="ctr100:GetNoChargeGrantsForPatientRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetNoChargeGrantsForPatientResponse">
+        <wsdl:part name="GetNoChargeGrantsForPatientResponse" element="ctr100:GetNoChargeGrantsForPatientResponse"/>
+    </wsdl:message>
+
+    <wsdl:message name="GetNoChargeGrantsRequest">
+        <wsdl:part name="GetNoChargeGrantsRequest" element="ctr100:GetNoChargeGrantsRequest"/>
+    </wsdl:message>
+    <wsdl:message name="GetNoChargeGrantsResponse">
+        <wsdl:part name="GetNoChargeGrantsResponse" element="ctr100:GetNoChargeGrantsResponse"/>
+    </wsdl:message>
+
     <wsdl:message name="GetReimbursementRatesResponse">
         <wsdl:part name="GetReimbursementRatesResponse" element="ctr100:GetReimbursementRatesResponse"/>
     </wsdl:message>
@@ -394,6 +460,46 @@
                         message="tns:CreateFictitiousPersonIdentifierRequest"/>
             <wsdl:output name="CreateFictitiousPersonIdentifierResponse"
                          message="tns:CreateFictitiousPersonIdentifierResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="CreateNoChargeGrant">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateNoChargeGrant" style="document"/>
+            <wsdl:input name="CreateNoChargeGrantRequest"
+                        message="tns:CreateNoChargeGrantRequest"/>
+            <wsdl:output name="CreateNoChargeGrantResponse"
+                         message="tns:CreateNoChargeGrantResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="DeleteNoChargeGrant">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#DeleteNoChargeGrant" style="document"/>
+            <wsdl:input name="DeleteNoChargeGrantRequest"
+                        message="tns:DeleteNoChargeGrantRequest"/>
+            <wsdl:output name="DeleteNoChargeGrantResponse"
+                         message="tns:DeleteNoChargeGrantResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="GetNoChargeGrantsByDoctor">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetNoChargeGrantsByDoctor" style="document"/>
+            <wsdl:input name="GetNoChargeGrantsByDoctorRequest"
+                        message="tns:GetNoChargeGrantsByDoctorRequest"/>
+            <wsdl:output name="GetNoChargeGrantsByDoctorResponse"
+                         message="tns:GetNoChargeGrantsByDoctorResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="GetNoChargeGrantsForPatient">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetNoChargeGrantsForPatient" style="document"/>
+            <wsdl:input name="GetNoChargeGrantsForPatientRequest"
+                        message="tns:GetNoChargeGrantsForPatientRequest"/>
+            <wsdl:output name="GetNoChargeGrantsForPatientResponse"
+                         message="tns:GetNoChargeGrantsForPatientResponse"/>
+            <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
+        </wsdl:operation>
+        <wsdl:operation name="GetNoChargeGrants">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetNoChargeGrants" style="document"/>
+            <wsdl:input name="GetNoChargeGrantsRequest"
+                        message="tns:GetNoChargeGrantsRequest"/>
+            <wsdl:output name="GetNoChargeGrantsResponse"
+                         message="tns:GetNoChargeGrantsResponse"/>
             <wsdl:fault name='CTRFault' message='tns:CTRFault'/>
         </wsdl:operation>
         <wsdl:operation name="GetReimbursementRates">
