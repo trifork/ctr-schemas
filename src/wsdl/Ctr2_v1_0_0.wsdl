@@ -845,6 +845,96 @@
             </wsdl:fault>
         </wsdl:operation>
 
+        <wsdl:operation name="CreateNoChargeGrant">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#CreateNoChargeGrant"
+                            style="document"/>
+            <wsdl:input name="CreateNoChargeGrantRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="CreateNoChargeGrantResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="DeleteNoChargeGrant">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#DeleteNoChargeGrant"
+                            style="document"/>
+            <wsdl:input name="DeleteNoChargeGrantRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="DeleteNoChargeGrantResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetNoChargeGrantsByDoctor">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetNoChargeGrantsByDoctor"
+                            style="document"/>
+            <wsdl:input name="GetNoChargeGrantsByDoctorRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetNoChargeGrantsByDoctorResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetNoChargeGrantsForPatient">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetNoChargeGrantsForPatient"
+                            style="document"/>
+            <wsdl:input name="GetNoChargeGrantsForPatientRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetNoChargeGrantsForPatientResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
+        <wsdl:operation name="GetNoChargeGrants">
+            <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetNoChargeGrants"
+                            style="document"/>
+            <wsdl:input name="GetNoChargeGrantsRequest">
+                <soap:header use='literal' part='SecurityHeader' message='tns:SecurityHeader' />
+                <soap:header use='literal' part='MedcomHeader' message='tns:MedComHeader' />
+                <soap:header use='literal' part='RequestHeader' message='tns:RequestHeader' />
+                <soap:body use="literal"/>
+            </wsdl:input>
+            <wsdl:output name="GetNoChargeGrantsResponse">
+                <soap:header use='literal' part='CTRResponseHeader' message='tns:CTRResponseHeader'/>
+                <soap:body use="literal"/>
+            </wsdl:output>
+            <wsdl:fault name='CTRFault'>
+                <soap:fault name='CTRFault' use='literal'/>
+            </wsdl:fault>
+        </wsdl:operation>
+
         <wsdl:operation name="GetPermissions">
             <soap:operation soapAction="http://lmst.dk/ctr/xml.schema/2022/12/01#GetPermissions"
                             style="document"/>
