@@ -8,7 +8,7 @@
 
     <element name="NoChargeGrantIdentifier" type="ctr:NoChargeGrantIdentifierType">
         <annotation>
-            <documentation xml:lang="en-GB">Element for uniquely identifying a TAS No Charge Grant</documentation>
+            <documentation xml:lang="en-GB">Element for uniquely identifying a No Charge Grant</documentation>
             <documentation xml:lang="da-DK">Element for entydig identifikation af en vederlagsfri bevilling</documentation>
         </annotation>
     </element>

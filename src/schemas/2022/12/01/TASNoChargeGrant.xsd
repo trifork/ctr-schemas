@@ -15,13 +15,13 @@
 
     <element name="TASNoChargeGrant" type="ctr:TASNoChargeGrantType">
         <annotation>
-            <documentation xml:lang="en-GB">Description of a CTR no-charge grant</documentation>
+            <documentation xml:lang="en-GB">Description of a CTR TAS no-charge grant</documentation>
             <documentation xml:lang="da-DK">Beskrivelse af en CTR vederlagsfri bevilling</documentation>
         </annotation>
     </element>
     <complexType name="TASNoChargeGrantType">
         <sequence>
-            <element name="TASIdentifier" type="ctr:NoChargeGrantIdentifierType" />
+            <element name="NoChargeGrantIdentifier" type="ctr:NoChargeGrantIdentifierType" />
             <element name="Type" type="ctr:NoChargeGrantTypeType" />
             <element name="Doctor" type="ctr:DoctorType" />
             <element name="DoctorOrganisation" type="ctr:OrganisationIdentifierType" />
