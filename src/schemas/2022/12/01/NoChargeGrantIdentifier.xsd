@@ -6,33 +6,33 @@
 
     <include schemaLocation="Source.xsd"/>
 
-    <element name="TASIdentifier" type="ctr:TASIdentifierType">
+    <element name="NoChargeGrantIdentifier" type="ctr:NoChargeGrantIdentifierType">
         <annotation>
             <documentation xml:lang="en-GB">Element for uniquely identifying a TAS No Charge Grant</documentation>
-            <documentation xml:lang="da-DK">Element for entydig identifikation af en TAS vederlagsfri bevilling</documentation>
+            <documentation xml:lang="da-DK">Element for entydig identifikation af en vederlagsfri bevilling</documentation>
         </annotation>
     </element>
-    <complexType name="TASIdentifierType">
+    <complexType name="NoChargeGrantIdentifierType">
         <simpleContent>
-            <extension base="ctr:TASIdentifierValueType">
-                <attribute name="source" type="ctr:TASIdentifierSourceType" use="required"/>
+            <extension base="ctr:NoChargeGrantIdentifierValueType">
+                <attribute name="source" type="ctr:NoChargeGrantIdentifierSourceType" use="required"/>
             </extension>
         </simpleContent>
     </complexType>
-    <simpleType name="TASIdentifierValueType">
+    <simpleType name="NoChargeGrantIdentifierValueType">
         <restriction base="string">
             <minLength value="1"/>
             <maxLength value="50"/>
         </restriction>
     </simpleType>
 
-    <simpleType name="TASIdentifierSourceType">
-        <union memberTypes="ctr:TASIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
+    <simpleType name="NoChargeGrantIdentifierSourceType">
+        <union memberTypes="ctr:NoChargeGrantIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
     </simpleType>
 
-    <simpleType name="TASIdentifierPredefinedSourceType">
+    <simpleType name="NoChargeGrantIdentifierPredefinedSourceType">
         <restriction base="ctr:UndefinedSourceType">
-            <enumeration value="DefermentId"/>
+            <enumeration value="NoChargeGrantId"/>
         </restriction>
     </simpleType>
 </schema>

@@ -4,7 +4,7 @@
         targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
         elementFormDefault="qualified">
 
-    <include schemaLocation="TASIdentifier.xsd"/>
+    <include schemaLocation="NoChargeGrantIdentifier.xsd"/>
     <include schemaLocation="ValidFromDate.xsd"/>
     <include schemaLocation="ValidToDate.xsd"/>
     <include schemaLocation="Doctor.xsd"/>
@@ -21,7 +21,7 @@
     </element>
     <complexType name="TASNoChargeGrantType">
         <sequence>
-            <element name="TASIdentifier" type="ctr:TASIdentifierType" />
+            <element name="TASIdentifier" type="ctr:NoChargeGrantIdentifierType" />
             <element name="Type" type="ctr:NoChargeGrantTypeType" />
             <element name="Doctor" type="ctr:DoctorType" />
             <element name="DoctorOrganisation" type="ctr:OrganisationIdentifierType" />
