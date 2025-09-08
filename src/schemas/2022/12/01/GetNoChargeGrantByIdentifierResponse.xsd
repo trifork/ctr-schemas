@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified">
+
+    <include schemaLocation="TASNoChargeGrant.xsd"/>
+
+    <element name="GetNoChargeGrantByIdentifierResponse">
+        <annotation>
+            <documentation xml:lang="en-GB">Outer container element for a response with CTR no-charge grant</documentation>
+            <documentation xml:lang="da-DK">Ydre container-element for et svar med CTR vederlagsfri bevilling</documentation>
+        </annotation>
+        <complexType>
+            <sequence>
+                <element name="NoChargeGrant" type="ctr:TASNoChargeGrantType" minOccurs="0" maxOccurs="100" />
+            </sequence>
+        </complexType>
+    </element>
+</schema>
