@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified">
+
+    <include schemaLocation="Source.xsd"/>
+
+    <element name="TASIdentifier" type="ctr:TASIdentifierType">
+        <annotation>
+            <documentation xml:lang="en-GB">Element for uniquely identifying a TAS No Charge Grant</documentation>
+            <documentation xml:lang="da-DK">Element for entydig identifikation af en TAS vederlagsfri bevilling</documentation>
+        </annotation>
+    </element>
+    <complexType name="TASIdentifierType">
+        <simpleContent>
+            <extension base="ctr:TASIdentifierValueType">
+                <attribute name="source" type="ctr:TASIdentifierSourceType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <simpleType name="TASIdentifierValueType">
+        <restriction base="string">
+            <minLength value="1"/>
+            <maxLength value="50"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="TASIdentifierSourceType">
+        <union memberTypes="ctr:TASIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
+    </simpleType>
+
+    <simpleType name="TASIdentifierPredefinedSourceType">
+        <restriction base="ctr:UndefinedSourceType">
+            <enumeration value="DefermentId"/>
+        </restriction>
+    </simpleType>
+</schema>
