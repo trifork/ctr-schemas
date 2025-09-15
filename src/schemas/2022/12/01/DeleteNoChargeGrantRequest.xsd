@@ -4,20 +4,16 @@
         targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
         elementFormDefault="qualified">
 
-    <include schemaLocation="PersonIdentifier.xsd"/>
-    <include schemaLocation="AuthorisationIdentifier.xsd"/>
-    <include schemaLocation="NoChargeGrantType.xsd"/>
+    <include schemaLocation="NoChargeGrantIdentifier.xsd"/>
 
     <element name="DeleteNoChargeGrantRequest">
         <annotation>
-            <documentation xml:lang="en-GB">Element for deleting a CTR no charge grant</documentation>
-            <documentation xml:lang="da-DK">Element for at slette en CTR vederlagsfri bevilling</documentation>
+            <documentation xml:lang="en-GB">Element for deleting a CTR no charge grant by no charge grant identification</documentation>
+            <documentation xml:lang="da-DK">Element for at slette en CTR vederlagsfri bevilling med vederlagsfri identifikation</documentation>
         </annotation>
         <complexType>
             <sequence>
-                <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-                <element name="AuthorisationIdentifier" type="ctr:AuthorisationIdentifierType"/>
-                <element name="Type" type="ctr:NoChargeGrantTypeType"/>
+                <element name="NoChargeGrantIdentifier" type="ctr:NoChargeGrantIdentifierType"/>
             </sequence>
         </complexType>
     </element>
