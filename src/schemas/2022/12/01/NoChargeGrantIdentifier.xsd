@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        xmlns:ctr="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
+        elementFormDefault="qualified">
+
+    <include schemaLocation="Source.xsd"/>
+
+    <element name="NoChargeGrantIdentifier" type="ctr:NoChargeGrantIdentifierType">
+        <annotation>
+            <documentation xml:lang="en-GB">Element for uniquely identifying a No Charge Grant</documentation>
+            <documentation xml:lang="da-DK">Element for entydig identifikation af en vederlagsfri bevilling</documentation>
+        </annotation>
+    </element>
+    <complexType name="NoChargeGrantIdentifierType">
+        <simpleContent>
+            <extension base="ctr:NoChargeGrantIdentifierValueType">
+                <attribute name="source" type="ctr:NoChargeGrantIdentifierSourceType" use="required"/>
+            </extension>
+        </simpleContent>
+    </complexType>
+    <simpleType name="NoChargeGrantIdentifierValueType">
+        <restriction base="string">
+            <minLength value="1"/>
+            <maxLength value="50"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="NoChargeGrantIdentifierSourceType">
+        <union memberTypes="ctr:NoChargeGrantIdentifierPredefinedSourceType ctr:UndefinedSourceType"/>
+    </simpleType>
+
+    <simpleType name="NoChargeGrantIdentifierPredefinedSourceType">
+        <restriction base="ctr:UndefinedSourceType">
+            <enumeration value="NoChargeGrantId"/>
+        </restriction>
+    </simpleType>
+</schema>

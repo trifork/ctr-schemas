@@ -5,6 +5,7 @@
         elementFormDefault="qualified">
 
     <include schemaLocation="PersonIdentifier.xsd"/>
+    <include schemaLocation="NoChargeGrantIdentifier.xsd"/>
 
     <element name="CreateNoChargeGrantResponse">
         <annotation>
@@ -14,6 +15,7 @@
         <complexType>
             <sequence>
                 <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
+                <element name="NoChargeGrantIdentifier" type="ctr:NoChargeGrantIdentifierType"/>
             </sequence>
         </complexType>
     </element>

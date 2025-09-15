@@ -25,6 +25,7 @@
 			<enumeration value="Apotekersystem"/>
 			<enumeration value="Recept registrator"/>
 			<enumeration value="Supporter"/>
+			<enumeration value="Læge"/>
 		</restriction>
 	</simpleType>
 	<simpleType name="UndefinedRequestedRole">
