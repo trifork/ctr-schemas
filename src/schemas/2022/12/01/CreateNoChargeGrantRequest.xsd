@@ -15,7 +15,7 @@
         <complexType>
             <sequence>
                 <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-                <element name="CreateNoChargeGrant" type="ctr:CreateNoChargeGrantType" maxOccurs="100"/>
+                <element name="CreateNoChargeGrant" type="ctr:CreateNoChargeGrantType"/>
             </sequence>
         </complexType>
     </element>
