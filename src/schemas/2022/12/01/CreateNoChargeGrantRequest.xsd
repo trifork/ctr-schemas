@@ -5,7 +5,7 @@
         elementFormDefault="qualified">
 
     <include schemaLocation="PersonIdentifier.xsd"/>
-    <include schemaLocation="TASNoChargeGrant.xsd"/>
+    <include schemaLocation="CreateNoChargeGrant.xsd"/>
 
     <element name="CreateNoChargeGrantRequest">
         <annotation>
@@ -15,7 +15,7 @@
         <complexType>
             <sequence>
                 <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
-                <element name="NoChargeGrant" type="ctr:TASNoChargeGrantType"/>
+                <element name="CreateNoChargeGrant" type="ctr:CreateNoChargeGrantType" maxOccurs="100"/>
             </sequence>
         </complexType>
     </element>
