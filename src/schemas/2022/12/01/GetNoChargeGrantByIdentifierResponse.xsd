@@ -4,6 +4,7 @@
         targetNamespace="http://lmst.dk/ctr/xml.schema/2022/12/01"
         elementFormDefault="qualified">
 
+    <include schemaLocation="PersonIdentifier.xsd"/>
     <include schemaLocation="TASNoChargeGrant.xsd"/>
 
     <element name="GetNoChargeGrantByIdentifierResponse">
@@ -13,6 +14,7 @@
         </annotation>
         <complexType>
             <sequence>
+                <element name="PersonIdentifier" type="ctr:PersonIdentifierType"/>
                 <element name="NoChargeGrant" type="ctr:TASNoChargeGrantType" minOccurs="0" maxOccurs="100" />
             </sequence>
         </complexType>
