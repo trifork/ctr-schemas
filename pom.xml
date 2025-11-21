@@ -6,7 +6,7 @@
 
     <groupId>dk.lmst.ctr</groupId>
     <artifactId>ctr-schemas</artifactId>
-    <version>1.1.28</version>
+    <version>1.1.29</version>
     <name>ctr-schemas</name>
     <description>CTR schemas</description>
     <packaging>pom</packaging>
