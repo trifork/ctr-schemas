@@ -16,6 +16,7 @@
 		<restriction base="ctr:UndefinedDiscontinuanceReasonType">
 			<enumeration value="Ukendt"/>
 			<enumeration value="Mislighold"/>
+			<enumeration value="Opsagt"/>
         </restriction>
 	</simpleType>
 	<simpleType name="UndefinedDiscontinuanceReasonType">
